@@ -12,6 +12,9 @@
 //class AAA {
     //int i;
 //};
+//
+
+double rms(double* seq, int n);
 
 template<class T> class List {};
 
