@@ -17,11 +17,14 @@
                    //time(&ltime);
                         //return ctime(&ltime);
                          //}
+//namespace alps{
+//double B::do_job() {return 0.0;}
+//}
 
-double rms(double* seq, int n) {
-    double sum = 0.0;
-    for (int i = 0; i < n; ++i) {
-        sum += seq[i];
-    }
-    return sum;
-}
+//double rms(double* seq, int n) {
+    //double sum = 0.0;
+    //for (int i = 0; i < n; ++i) {
+        //sum += seq[i];
+    //}
+    //return sum;
+//}

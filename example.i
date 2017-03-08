@@ -13,4 +13,6 @@ import_array();
 
 %apply (double* IN_ARRAY1, int DIM1) {(double* seq, int n)};
 
+%include "/opt/ALPSCore/include/alps/gf/gf.hpp"
+%include "/opt/ALPSCore/include/alps/gf/mesh.hpp"
 %include "example.hpp"
