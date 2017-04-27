@@ -3006,14 +3006,15 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_char swig_types[0]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[1]
-#define SWIGTYPE_p_std__invalid_argument swig_types[2]
-#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[3]
-#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t swig_types[4]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[5]
-static swig_type_info *swig_types[7];
-static swig_module_info swig_module = {swig_types, 6, 0, 0, 0, 0};
+#define SWIGTYPE_p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t swig_types[0]
+#define SWIGTYPE_p_char swig_types[1]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[2]
+#define SWIGTYPE_p_std__invalid_argument swig_types[3]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[4]
+#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t swig_types[5]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[6]
+static swig_type_info *swig_types[8];
+static swig_module_info swig_module = {swig_types, 7, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3120,6 +3121,7 @@ namespace swig {
 
 #define SWIG_FILE_WITH_INIT
 #include "example.hpp"
+#include <Eigen/Core>
 
 
 #ifndef SWIG_FILE_WITH_INIT
@@ -3641,8 +3643,58 @@ SWIG_AsVal_ptrdiff_t (PyObject * obj, ptrdiff_t *val)
 #include <vector>
 
 
+SWIGINTERN swig_type_info*
+SWIG_pchar_descriptor(void)
+{
+  static int init = 0;
+  static swig_type_info* info = 0;
+  if (!init) {
+    info = SWIG_TypeQuery("_p_char");
+    init = 1;
+  }
+  return info;
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_FromCharPtrAndSize(const char* carray, size_t size)
+{
+  if (carray) {
+    if (size > INT_MAX) {
+      swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
+      return pchar_descriptor ? 
+	SWIG_InternalNewPointerObj(const_cast< char * >(carray), pchar_descriptor, 0) : SWIG_Py_Void();
+    } else {
+#if PY_VERSION_HEX >= 0x03000000
+#if defined(SWIG_PYTHON_STRICT_BYTE_CHAR)
+      return PyBytes_FromStringAndSize(carray, static_cast< Py_ssize_t >(size));
+#else
+#if PY_VERSION_HEX >= 0x03010000
+      return PyUnicode_DecodeUTF8(carray, static_cast< Py_ssize_t >(size), "surrogateescape");
+#else
+      return PyUnicode_FromStringAndSize(carray, static_cast< Py_ssize_t >(size));
+#endif
+#endif
+#else
+      return PyString_FromStringAndSize(carray, static_cast< Py_ssize_t >(size));
+#endif
+    }
+  } else {
+    return SWIG_Py_Void();
+  }
+}
+
+
+SWIGINTERNINLINE PyObject * 
+SWIG_FromCharPtr(const char *cptr)
+{ 
+  return SWIG_FromCharPtrAndSize(cptr, (cptr ? strlen(cptr) : 0));
+}
+
+
 #define SWIG_FILE_WITH_INIT
 #include <vector>
+#include "Eigen/Core"
 
 
 #if NPY_API_VERSION < 0x00000007
@@ -4115,20 +4167,30 @@ SWIG_AsVal_ptrdiff_t (PyObject * obj, ptrdiff_t *val)
 
 
 
-  template <typename T> int NumPyType() {return -1;};
-  template<> int NumPyType<double>() {return NPY_DOUBLE;};
-  template<> int NumPyType<std::complex<double> >() {return NPY_CDOUBLE;};
-  template<> int NumPyType<int>() {return NPY_INT;};
+  template <typename T> int num_py_type() {return -1;};
+  template<> int num_py_type<double>() {return NPY_DOUBLE;};
+  template<> int num_py_type<std::complex<double> >() {return NPY_CDOUBLE;};
+  template<> int num_py_type<int>() {return NPY_INT;};
 
-  template <typename T>
+  template <typename OBJ>
   struct CXXTypeTraits {
     typedef double scalar;
     static int dim();
-    static int size(const T& obj, int i);
-    static bool resize(T& obj, const std::vector<int>& sizes);
-    static void set_zero(T& obj); 
-    static scalar& element_at(T& obj, const std::vector<int>& indices);
+    static int size(const OBJ& obj, int i);
+    static bool resize(OBJ& obj, const std::vector<int>& sizes);
+    static void set_zero(OBJ& obj); 
+    static scalar& element_at(OBJ& obj, const std::vector<int>& indices);
   };
+
+  template<typename S, typename T>
+  void copy_data_to_numpy(std::vector<int>& data_size, S* out, T* in);
+
+/*
+  template <typename OBJ>
+  struct element_at {
+    static typename CXXTypeTraits<OBJ>::scalar& at(OBJ& obj, const std::vector<int>& indices);
+  };
+*/
 
   template <typename S>
   struct CXXTypeTraits<std::vector<S> > {
@@ -4153,35 +4215,99 @@ SWIG_AsVal_ptrdiff_t (PyObject * obj, ptrdiff_t *val)
     }
   };
 
+/*
+  template <typename S>
+  struct element_at<std::vector<S> > {
+    typedef std::vector<S> OBJ;
+    static S& at(OBJ& obj, const std::vector<int>& indices) {
+      assert(indices.size()==1 && indices[0] < obj.size());
+      return obj[indices[0]];
+    }
+  };
+*/
+
+  //template <typename Derived>
+  template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
+  struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
+    typedef S scalar;
+    typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> obj_type;
+    static int dim() {
+      return 2;
+    };
+    static int size(const obj_type& obj, int i) {
+      assert(i<=1);
+      if (i==0) {
+        return obj.rows();
+      } else {
+        return obj.cols();
+      }
+    }
+    static bool resize(obj_type& obj, const std::vector<int>& sizes) {
+      assert(sizes.size()==dim());
+      bool dynamic_row = RowsAtCompileTime == Eigen::Dynamic;
+      bool dynamic_col = ColsAtCompileTime == Eigen::Dynamic;
+      if (dynamic_row && dynamic_col) {
+        //dynamic matrix
+        obj.resize(sizes[0], size[1]);
+      } else if (!dynamic_row && !dynamic_col) {
+        if (RowsAtCompileTime == size[0] && ColsAtCompileTime == size[1]) {
+          return true;
+        }
+        return false;
+      } else {
+        //FIXME: RESIZABLE?
+        return false;
+      }
+      return true;
+    }
+    static void set_zero(obj_type& obj) {
+      obj.setZero();
+    } 
+    static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
+      assert(indices.size()==2);
+      return obj(indices[0], indices[1]);
+    }
+  };
+
+/*
+  template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
+  struct element_at<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
+    typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> OBJ;
+    static S& at(OBJ& obj, const std::vector<int>& indices) {
+      assert(indices.size()==1 && indices[0] < obj.size());
+      return obj[indices[0]];
+    }
+  };
+*/
+
 
   template <class A>
-  bool ConvertFromNumpy(A* out, PyObject* in)
+  bool ConvertFromNumpyToCXX(A* out, PyObject* in)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
+    const int dim = traits::dim();
 
     // Check object type
     if (!is_array(in))
     {
-      PyErr_SetString(PyExc_ValueError, "The given input is not known as a NumPy array or matrix.");
+      PyErr_SetString(PyExc_ValueError, "Input is not as a numpy array or matrix.");
       return false;
     }
 
     // Check data type
-    if (array_type(in) != NumPyType<scalar>())
+    if (array_type(in) != num_py_type<scalar>())
     {
-      PyErr_SetString(PyExc_ValueError, "Type mismatch between NumPy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "Type mismatch between numpy and C++ objects.");
       return false;
     }
 
     // Check dimensions
     if (array_numdims(in) != traits::dim())
     {
-      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between numpy and C++ objects.");
       return false;
     }
-
-    const int dim = traits::dim();
 
     std::vector<int> data_size(dim);
     bool resize_required = false;
@@ -4206,11 +4332,10 @@ SWIG_AsVal_ptrdiff_t (PyObject * obj, ptrdiff_t *val)
       return false;
     }
 
-    //FIXME: CHECK THIS
-    //traits::set_zero(*out, data_size);
     traits::set_zero(*out);
 
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
+
     int lin_idx = 0;
     std::vector<int> indices(dim);
     if (dim==1) {
@@ -4232,6 +4357,161 @@ SWIG_AsVal_ptrdiff_t (PyObject * obj, ptrdiff_t *val)
 
     return true;
   };
+
+  // Copy elements in C++ object into an existing numpy object
+  template <class A>
+  bool CopyFromCXXToNumPyArray(PyObject* out, A* in)
+  {
+    typedef CXXTypeTraits<A> traits;
+    typedef typename traits::scalar scalar;
+    const int dim = traits::dim();
+
+    // Check object type
+    if (!is_array(out))
+    {
+      PyErr_SetString(PyExc_ValueError, "The given input is not known as a NumPy array or matrix.");
+      return false;
+    }
+
+    // Check data type
+    if (array_type(out) != num_py_type<scalar>())
+    {
+      PyErr_SetString(PyExc_ValueError, "Type mismatch between NumPy and C++ objects.");
+      return false;
+    }
+
+    // Check dimensions
+    if (array_numdims(out) != traits::dim())
+    {
+      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ objects.");
+      return false;
+    }
+
+    // Check sizes
+    std::vector<int> data_size(dim);
+    bool size_mismatch = false;
+    for (int i=0; i<dim; ++i) {
+      data_size[i] = array_size(out,i);
+      size_mismatch = size_mismatch || (traits::size(*in,i) != data_size[i]);
+      std::cout << " debug " << i << " " << traits::size(*in,i) << " " << data_size[i] << std::endl;
+    }
+    if (size_mismatch) {
+      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ object (return argument).");
+      return false;
+    }
+
+    // Extract data
+    int isNewObject = 0;
+    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(out, array_type(out), &isNewObject);
+    //CORRECT?
+    if (temp == NULL || isNewObject != 0) {
+      PyErr_SetString(PyExc_ValueError, "Impossible to convert the input into a Python array object.");
+      return false;
+    }
+
+    scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
+
+    copy_data_to_numpy(data_size, data, in);
+
+/*
+    int lin_idx = 0;
+    std::vector<int> indices(dim);
+    if (dim==1) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        indices[0] = i;
+        data[lin_idx] = traits::element_at(*in, indices);
+        ++lin_idx;
+      }
+    } else if (dim==2) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        for (int j = 0; j < data_size[1]; ++j) {
+          indices[0] = i;
+          indices[1] = j;
+          data[lin_idx] = traits::element_at(*in, indices);
+          ++lin_idx;
+        }
+      }
+    }
+*/
+
+    return true;
+  };
+
+  template <class A>
+  bool ConvertFromCXXToNumPyArray(PyObject** out, A* in)
+  {
+    typedef CXXTypeTraits<A> traits;
+    typedef typename traits::scalar scalar;
+    const int dim = traits::dim();
+
+    std::vector<npy_intp> dims(dim);
+    for (int i=0; i<dim; ++i) {
+      dims[i] = traits::size(*in,i);
+    }
+
+    *out = PyArray_SimpleNew(2, &dims[0], num_py_type<scalar>());
+    if (!out) {
+      return false;
+    }
+    scalar* data = static_cast<scalar*>(PyArray_DATA((PyArrayObject*) *out));
+
+
+    std::vector<int> data_size(dim);
+    for (int i=0; i<dim; ++i) {
+      data_size[i] = traits::size(*in,i);
+    }
+
+    copy_data_to_numpy(data_size, data, in);
+
+/*
+
+    int lin_idx = 0;
+    std::vector<int> indices(dim);
+    if (dim==1) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        indices[0] = i;
+        data[lin_idx] = traits::element_at(*in, indices);
+        ++lin_idx;
+      }
+    } else if (dim==2) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        for (int j = 0; j < data_size[1]; ++j) {
+          indices[0] = i;
+          indices[1] = j;
+          data[lin_idx] = traits::element_at(*in, indices);
+          ++lin_idx;
+        }
+      }
+    }
+*/
+
+    return true;
+  };
+
+  template<typename S, typename T>
+  void copy_data_to_numpy(std::vector<int>& data_size, S* out, T* in) {
+    typedef CXXTypeTraits<T> traits;
+    const int dim = data_size.size();
+
+    int lin_idx = 0;
+    std::vector<int> indices(dim);
+    if (dim==1) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        indices[0] = i;
+        out[lin_idx] = traits::element_at(*in, indices);
+        ++lin_idx;
+      }
+    } else if (dim==2) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        for (int j = 0; j < data_size[1]; ++j) {
+          indices[0] = i;
+          indices[1] = j;
+          out[lin_idx] = traits::element_at(*in, indices);
+          ++lin_idx;
+        }
+      }
+    }
+  }
 
 
 
@@ -5104,19 +5384,32 @@ SWIGINTERN PyObject *SwigPyIterator_swigregister(PyObject *SWIGUNUSEDPARM(self),
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_SimdInstructionSetsInUse(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  char *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":SimdInstructionSetsInUse")) SWIG_fail;
+  result = (char *)Eigen::SimdInstructionSetsInUse();
+  resultobj = SWIG_FromCharPtr((const char *)result);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_drms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   std::vector< double,std::allocator< double > > *arg1 = 0 ;
-  std::vector< double > tempp1 ;
+  std::vector< double > temp1 ;
   PyObject * obj0 = 0 ;
   double result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:drms",&obj0)) SWIG_fail;
   {
     // In: const&
-    if (!ConvertFromNumpy<std::vector<double> >(&tempp1, obj0))
+    if (!ConvertFromNumpyToCXX<std::vector<double> >(&temp1, obj0))
     SWIG_fail;
-    arg1 = &tempp1;
+    arg1 = &temp1;
   }
   result = (double)drms((std::vector< double,std::allocator< double > > const &)*arg1);
   resultobj = SWIG_From_double(static_cast< double >(result));
@@ -5129,19 +5422,35 @@ fail:
 SWIGINTERN PyObject *_wrap_crms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   std::vector< dcomplex,std::allocator< dcomplex > > *arg1 = 0 ;
-  std::vector< std::complex< double > > tempp1 ;
+  std::vector< std::complex< double > > temp1 ;
   PyObject * obj0 = 0 ;
   dcomplex result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:crms",&obj0)) SWIG_fail;
   {
     // In: const&
-    if (!ConvertFromNumpy<std::vector<std::complex<double> > >(&tempp1, obj0))
+    if (!ConvertFromNumpyToCXX<std::vector<std::complex<double> > >(&temp1, obj0))
     SWIG_fail;
-    arg1 = &tempp1;
+    arg1 = &temp1;
   }
   result = crms((std::vector< std::complex< double >,std::allocator< std::complex< double > > > const &)*arg1);
   resultobj = SWIG_From_std_complex_Sl_double_Sg_(static_cast< std::complex<double> >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_gen_matrix(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Eigen::Matrix< double,Eigen::Dynamic,Eigen::Dynamic > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)":gen_matrix")) SWIG_fail;
+  result = gen_matrix();
+  {
+    if (!ConvertFromCXXToNumPyArray<Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic> >(&resultobj, &result))
+    SWIG_fail;
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5168,14 +5477,17 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___add__", _wrap_SwigPyIterator___add__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
+	 { (char *)"SimdInstructionSetsInUse", _wrap_SimdInstructionSetsInUse, METH_VARARGS, NULL},
 	 { (char *)"drms", _wrap_drms, METH_VARARGS, NULL},
 	 { (char *)"crms", _wrap_crms, METH_VARARGS, NULL},
+	 { (char *)"gen_matrix", _wrap_gen_matrix, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static swig_type_info _swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t = {"_p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t", "Eigen::Matrix< double,Eigen::Dynamic,Eigen::Dynamic > *|matrix_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__complexT_double_t = {"_p_std__complexT_double_t", "dcomplex *|std::complex< double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__invalid_argument = {"_p_std__invalid_argument", "std::invalid_argument *", 0, 0, (void*)0, 0};
@@ -5184,6 +5496,7 @@ static swig_type_info _swigt__p_std__vectorT_std__complexT_double_t_std__allocat
 static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t,
   &_swigt__p_char,
   &_swigt__p_std__complexT_double_t,
   &_swigt__p_std__invalid_argument,
@@ -5192,6 +5505,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_swig__SwigPyIterator,
 };
 
+static swig_cast_info _swigc__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t[] = {  {&_swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_double_t[] = {  {&_swigt__p_std__complexT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__invalid_argument[] = {  {&_swigt__p_std__invalid_argument, 0, 0, 0},{0, 0, 0, 0}};
@@ -5200,6 +5514,7 @@ static swig_cast_info _swigc__p_std__vectorT_std__complexT_double_t_std__allocat
 static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t,
   _swigc__p_char,
   _swigc__p_std__complexT_double_t,
   _swigc__p_std__invalid_argument,

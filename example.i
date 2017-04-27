@@ -3,11 +3,13 @@
 %{
 #define SWIG_FILE_WITH_INIT
 #include "example.hpp"
+#include <Eigen/Core>
 %}
 
 %include "typemaps.i"
 %include "numpy.i"
 %include "std_vector.i"
+%include <Eigen/Core>
 
 %init %{
 import_array();
@@ -17,6 +19,11 @@ import_array();
 
 %multi_array_typemaps(std::vector<double>);
 %multi_array_typemaps(std::vector<std::complex<double> >);
+%multi_array_typemaps(Eigen::MatrixBase<Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic> >);
+%multi_array_typemaps(Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic>);
+/*
+%multi_array_typemaps(Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic>);
+*/
 
 /*
 %rename(drms) rms(std::vector<double>&);

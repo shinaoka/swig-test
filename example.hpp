@@ -1,6 +1,7 @@
 #include <vector>
 //#include <alps/gf/gf.hpp>
 #include <complex>
+#include <Eigen/Core>
 
 /*
 namespace alps {
@@ -34,6 +35,15 @@ dcomplex crms(const std::vector<dcomplex>& seq);
 //std::complex<double> crms(std::complex<double>& seq, int n);
 
 //template<class T> class List {};
+//
+typedef Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic> matrix_t;
+
+inline Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic>
+gen_matrix() {
+    Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic> m(10,2);
+    m.setZero();
+    return m;
+}
 
 
 #ifdef SWIG

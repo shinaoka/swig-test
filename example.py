@@ -160,6 +160,10 @@ SwigPyIterator_swigregister = _example.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
 
 
+def SimdInstructionSetsInUse():
+    return _example.SimdInstructionSetsInUse()
+SimdInstructionSetsInUse = _example.SimdInstructionSetsInUse
+
 def drms(seq):
     return _example.drms(seq)
 drms = _example.drms
@@ -167,6 +171,10 @@ drms = _example.drms
 def crms(seq):
     return _example.crms(seq)
 crms = _example.crms
+
+def gen_matrix():
+    return _example.gen_matrix()
+gen_matrix = _example.gen_matrix
 # This file is compatible with both classic and new-style classes.
 
 

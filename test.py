@@ -14,3 +14,4 @@ import example
 
 print example.drms(np.array([0.2, 0.1]))
 print example.crms(1J*np.array([0.0, 0.1]))
+print example.gen_matrix()
