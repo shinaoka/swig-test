@@ -1,5 +1,6 @@
 #include <vector>
-#include <alps/gf/gf.hpp>
+//#include <alps/gf/gf.hpp>
+#include <complex>
 
 /*
 namespace alps {
@@ -23,7 +24,15 @@ namespace alps {
 }
 */
 
+typedef std::complex<double> dcomplex;
+
 //double rms(double* seq, int n);
+//double rms(std::vector<double>& seq, int n);
+double drms(const std::vector<double>& seq);
+dcomplex crms(const std::vector<dcomplex>& seq);
+//std::complex<double> crms(std::complex<double>* seq, int n);
+//std::complex<double> crms(std::complex<double>& seq, int n);
+
 //template<class T> class List {};
 
 
@@ -31,6 +40,6 @@ namespace alps {
 //%template(intList) List<int>;
 //%template(doubleList) List<double>;
 //%template(doubleArray) Array<double>;
-%template(LegendreGF) alps::gf::one_index_gf< std::complex<double>, alps::gf::legendre_mesh >;
-%template(OmegaGF) alps::gf::one_index_gf<std::complex<double>, alps::gf::matsubara_mesh<mesh::POSITIVE_ONLY> >;
+//%template(LegendreGF) alps::gf::one_index_gf< std::complex<double>, alps::gf::legendre_mesh >;
+//%template(OmegaGF) alps::gf::one_index_gf<std::complex<double>, alps::gf::matsubara_mesh<mesh::POSITIVE_ONLY> >;
 #endif

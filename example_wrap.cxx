@@ -3001,68 +3001,19 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 
 
 
+  #define SWIG_exception(code, msg) do { SWIG_Error(code, msg); SWIG_fail;; } while(0) 
+
+
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_alps__gf__base_mesh swig_types[0]
-#define SWIGTYPE_p_alps__gf__detail__can_have_tail_no swig_types[1]
-#define SWIGTYPE_p_alps__gf__detail__can_have_tail_yes swig_types[2]
-#define SWIGTYPE_p_alps__gf__five_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t swig_types[3]
-#define SWIGTYPE_p_alps__gf__five_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t swig_types[4]
-#define SWIGTYPE_p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t swig_types[5]
-#define SWIGTYPE_p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t swig_types[6]
-#define SWIGTYPE_p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t swig_types[7]
-#define SWIGTYPE_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t swig_types[8]
-#define SWIGTYPE_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t swig_types[9]
-#define SWIGTYPE_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t swig_types[10]
-#define SWIGTYPE_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t swig_types[11]
-#define SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__index_mesh_t swig_types[12]
-#define SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__itime_mesh_t swig_types[13]
-#define SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t swig_types[14]
-#define SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t swig_types[15]
-#define SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__power_mesh_t swig_types[16]
-#define SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t swig_types[17]
-#define SWIGTYPE_p_alps__gf__index_mesh swig_types[18]
-#define SWIGTYPE_p_alps__gf__itime_mesh swig_types[19]
-#define SWIGTYPE_p_alps__gf__legendre_mesh swig_types[20]
-#define SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t swig_types[21]
-#define SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t__index_type swig_types[22]
-#define SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t swig_types[23]
-#define SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type swig_types[24]
-#define SWIGTYPE_p_alps__gf__momentum_index_mesh swig_types[25]
-#define SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh swig_types[26]
-#define SWIGTYPE_p_alps__gf__numerical_meshT_double_3_t__index_type swig_types[27]
-#define SWIGTYPE_p_alps__gf__one_index_gfT_double_alps__gf__index_mesh_t swig_types[28]
-#define SWIGTYPE_p_alps__gf__one_index_gfT_double_alps__gf__itime_mesh_t swig_types[29]
-#define SWIGTYPE_p_alps__gf__one_index_gfT_double_alps__gf__legendre_mesh_t swig_types[30]
-#define SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t swig_types[31]
-#define SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t swig_types[32]
-#define SWIGTYPE_p_alps__gf__power_mesh swig_types[33]
-#define SWIGTYPE_p_alps__gf__real_frequency_mesh swig_types[34]
-#define SWIGTYPE_p_alps__gf__real_space_index_mesh swig_types[35]
-#define SWIGTYPE_p_alps__gf__three_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t swig_types[36]
-#define SWIGTYPE_p_alps__gf__three_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t swig_types[37]
-#define SWIGTYPE_p_alps__gf__three_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t swig_types[38]
-#define SWIGTYPE_p_alps__gf__two_index_gfT_double_alps__gf__itime_mesh_alps__gf__index_mesh_t swig_types[39]
-#define SWIGTYPE_p_alps__gf__two_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t swig_types[40]
-#define SWIGTYPE_p_alps__gf__two_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__index_mesh_t swig_types[41]
-#define SWIGTYPE_p_alps__hdf5__archive swig_types[42]
-#define SWIGTYPE_p_boost__multi_arrayT_double_1_t swig_types[43]
-#define SWIGTYPE_p_boost__multi_arrayT_double_2_t swig_types[44]
-#define SWIGTYPE_p_boost__multi_arrayT_std__complexT_double_t_1_t swig_types[45]
-#define SWIGTYPE_p_char swig_types[46]
-#define SWIGTYPE_p_container_type swig_types[47]
-#define SWIGTYPE_p_index_type swig_types[48]
-#define SWIGTYPE_p_mesh1_type swig_types[49]
-#define SWIGTYPE_p_mesh_can_have_tail swig_types[50]
-#define SWIGTYPE_p_mesh_cannot_have_tail swig_types[51]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[52]
-#define SWIGTYPE_p_std__ostream swig_types[53]
-#define SWIGTYPE_p_std__string swig_types[54]
-#define SWIGTYPE_p_std__vectorT_double_t swig_types[55]
-#define SWIGTYPE_p_std__vectorT_int_t swig_types[56]
-#define SWIGTYPE_p_value_type swig_types[57]
-static swig_type_info *swig_types[59];
-static swig_module_info swig_module = {swig_types, 58, 0, 0, 0, 0};
+#define SWIGTYPE_p_char swig_types[0]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[1]
+#define SWIGTYPE_p_std__invalid_argument swig_types[2]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[3]
+#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t swig_types[4]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[5]
+static swig_type_info *swig_types[7];
+static swig_module_info swig_module = {swig_types, 6, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3182,17 +3133,156 @@ namespace swig {
 #include <complex> 
 
 
-SWIGINTERNINLINE PyObject*
-  SWIG_From_int  (int value)
-{
-  return PyInt_FromLong((long) value);
-}
+#include <iostream>
+
+#if PY_VERSION_HEX >= 0x03020000
+# define SWIGPY_SLICE_ARG(obj) ((PyObject*) (obj))
+#else
+# define SWIGPY_SLICE_ARG(obj) ((PySliceObject*) (obj))
+#endif
 
 
-SWIGINTERNINLINE PyObject*
-  SWIG_From_bool  (bool value)
-{
-  return PyBool_FromLong(value ? 1 : 0);
+#include <typeinfo>
+#include <stdexcept>
+
+
+#if defined(__GNUC__)
+#  if __GNUC__ == 2 && __GNUC_MINOR <= 96
+#     define SWIG_STD_NOMODERN_STL
+#  endif
+#endif
+
+
+#include <string>
+
+
+#include <stddef.h>
+
+
+namespace swig {
+  struct stop_iteration {
+  };
+
+  struct SwigPyIterator {
+  private:
+    SwigPtr_PyObject _seq;
+
+  protected:
+    SwigPyIterator(PyObject *seq) : _seq(seq)
+    {
+    }
+      
+  public:
+    virtual ~SwigPyIterator() {}
+
+    // Access iterator method, required by Python
+    virtual PyObject *value() const = 0;
+
+    // Forward iterator method, required by Python
+    virtual SwigPyIterator *incr(size_t n = 1) = 0;
+    
+    // Backward iterator method, very common in C++, but not required in Python
+    virtual SwigPyIterator *decr(size_t /*n*/ = 1)
+    {
+      throw stop_iteration();
+    }
+
+    // Random access iterator methods, but not required in Python
+    virtual ptrdiff_t distance(const SwigPyIterator &/*x*/) const
+    {
+      throw std::invalid_argument("operation not supported");
+    }
+
+    virtual bool equal (const SwigPyIterator &/*x*/) const
+    {
+      throw std::invalid_argument("operation not supported");
+    }
+    
+    // C++ common/needed methods
+    virtual SwigPyIterator *copy() const = 0;
+
+    PyObject *next()     
+    {
+      SWIG_PYTHON_THREAD_BEGIN_BLOCK; // disable threads       
+      PyObject *obj = value();
+      incr();       
+      SWIG_PYTHON_THREAD_END_BLOCK; // re-enable threads
+      return obj;     
+    }
+
+    /* Make an alias for Python 3.x */
+    PyObject *__next__()
+    {
+      return next();
+    }
+
+    PyObject *previous()
+    {
+      SWIG_PYTHON_THREAD_BEGIN_BLOCK; // disable threads       
+      decr();
+      PyObject *obj = value();
+      SWIG_PYTHON_THREAD_END_BLOCK; // re-enable threads       
+      return obj;
+    }
+
+    SwigPyIterator *advance(ptrdiff_t n)
+    {
+      return  (n > 0) ?  incr(n) : decr(-n);
+    }
+      
+    bool operator == (const SwigPyIterator& x)  const
+    {
+      return equal(x);
+    }
+      
+    bool operator != (const SwigPyIterator& x) const
+    {
+      return ! operator==(x);
+    }
+      
+    SwigPyIterator& operator += (ptrdiff_t n)
+    {
+      return *advance(n);
+    }
+
+    SwigPyIterator& operator -= (ptrdiff_t n)
+    {
+      return *advance(-n);
+    }
+      
+    SwigPyIterator* operator + (ptrdiff_t n) const
+    {
+      return copy()->advance(n);
+    }
+
+    SwigPyIterator* operator - (ptrdiff_t n) const
+    {
+      return copy()->advance(-n);
+    }
+      
+    ptrdiff_t operator - (const SwigPyIterator& x) const
+    {
+      return x.distance(*this);
+    }
+      
+    static swig_type_info* descriptor() {
+      static int init = 0;
+      static swig_type_info* desc = 0;
+      if (!init) {
+	desc = SWIG_TypeQuery("swig::SwigPyIterator *");
+	init = 1;
+      }	
+      return desc;
+    }    
+  };
+
+#if defined(SWIGPYTHON_BUILTIN)
+  inline PyObject* make_output_iterator_builtin (PyObject *pyself)
+  {
+    Py_INCREF(pyself);
+    return pyself;
+  }
+#endif
 }
 
 
@@ -3242,16 +3332,6 @@ SWIG_AsVal_double (PyObject *obj, double *val)
 }
 
 
-#include <limits.h>
-#if !defined(SWIG_NO_LLONG_MAX)
-# if !defined(LLONG_MAX) && defined(__GNUC__) && defined (__LONG_LONG_MAX__)
-#   define LLONG_MAX __LONG_LONG_MAX__
-#   define LLONG_MIN (-LLONG_MAX - 1LL)
-#   define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
-# endif
-#endif
-
-
 #include <float.h>
 
 
@@ -3285,6 +3365,167 @@ SWIG_CanCastAsInteger(double *d, double min, double max) {
    }
   }
   return 0;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
+{
+#if PY_VERSION_HEX < 0x03000000
+  if (PyInt_Check(obj)) {
+    long v = PyInt_AsLong(obj);
+    if (v >= 0) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      return SWIG_OverflowError;
+    }
+  } else
+#endif
+  if (PyLong_Check(obj)) {
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      PyErr_Clear();
+      return SWIG_OverflowError;
+    }
+  }
+#ifdef SWIG_PYTHON_CAST_MODE
+  {
+    int dispatch = 0;
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_AddCast(SWIG_OK);
+    } else {
+      PyErr_Clear();
+    }
+    if (!dispatch) {
+      double d;
+      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
+      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
+	if (val) *val = (unsigned long)(d);
+	return res;
+      }
+    }
+  }
+#endif
+  return SWIG_TypeError;
+}
+
+
+#include <limits.h>
+#if !defined(SWIG_NO_LLONG_MAX)
+# if !defined(LLONG_MAX) && defined(__GNUC__) && defined (__LONG_LONG_MAX__)
+#   define LLONG_MAX __LONG_LONG_MAX__
+#   define LLONG_MIN (-LLONG_MAX - 1LL)
+#   define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
+# endif
+#endif
+
+
+#if defined(LLONG_MAX) && !defined(SWIG_LONG_LONG_AVAILABLE)
+#  define SWIG_LONG_LONG_AVAILABLE
+#endif
+
+
+#ifdef SWIG_LONG_LONG_AVAILABLE
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_long_SS_long (PyObject *obj, unsigned long long *val)
+{
+  int res = SWIG_TypeError;
+  if (PyLong_Check(obj)) {
+    unsigned long long v = PyLong_AsUnsignedLongLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      PyErr_Clear();
+      res = SWIG_OverflowError;
+    }
+  } else {
+    unsigned long v;
+    res = SWIG_AsVal_unsigned_SS_long (obj,&v);
+    if (SWIG_IsOK(res)) {
+      if (val) *val = v;
+      return res;
+    }
+  }
+#ifdef SWIG_PYTHON_CAST_MODE
+  {
+    const double mant_max = 1LL << DBL_MANT_DIG;
+    double d;
+    res = SWIG_AsVal_double (obj,&d);
+    if (SWIG_IsOK(res) && !SWIG_CanCastAsInteger(&d, 0, mant_max))
+      return SWIG_OverflowError;
+    if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, mant_max)) {
+      if (val) *val = (unsigned long long)(d);
+      return SWIG_AddCast(res);
+    }
+    res = SWIG_TypeError;
+  }
+#endif
+  return res;
+}
+#endif
+
+
+SWIGINTERNINLINE int
+SWIG_AsVal_size_t (PyObject * obj, size_t *val)
+{
+  int res = SWIG_TypeError;
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  if (sizeof(size_t) <= sizeof(unsigned long)) {
+#endif
+    unsigned long v;
+    res = SWIG_AsVal_unsigned_SS_long (obj, val ? &v : 0);
+    if (SWIG_IsOK(res) && val) *val = static_cast< size_t >(v);
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  } else if (sizeof(size_t) <= sizeof(unsigned long long)) {
+    unsigned long long v;
+    res = SWIG_AsVal_unsigned_SS_long_SS_long (obj, val ? &v : 0);
+    if (SWIG_IsOK(res) && val) *val = static_cast< size_t >(v);
+  }
+#endif
+  return res;
+}
+
+
+  #define SWIG_From_long   PyInt_FromLong 
+
+
+#ifdef SWIG_LONG_LONG_AVAILABLE
+SWIGINTERNINLINE PyObject* 
+SWIG_From_long_SS_long  (long long value)
+{
+  return ((value < LONG_MIN) || (value > LONG_MAX)) ?
+    PyLong_FromLongLong(value) : PyInt_FromLong(static_cast< long >(value));
+}
+#endif
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_ptrdiff_t  (ptrdiff_t value)
+{    
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  if (sizeof(ptrdiff_t) <= sizeof(long)) {
+#endif
+    return SWIG_From_long  (static_cast< long >(value));
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  } else {
+    /* assume sizeof(ptrdiff_t) <= sizeof(long long) */
+    return SWIG_From_long_SS_long  (static_cast< long long >(value));
+  }
+#endif
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_bool  (bool value)
+{
+  return PyBool_FromLong(value ? 1 : 0);
 }
 
 
@@ -3331,20 +3572,668 @@ SWIG_AsVal_long (PyObject *obj, long* val)
 }
 
 
+#ifdef SWIG_LONG_LONG_AVAILABLE
 SWIGINTERN int
-SWIG_AsVal_int (PyObject * obj, int *val)
+SWIG_AsVal_long_SS_long (PyObject *obj, long long *val)
 {
-  long v;
-  int res = SWIG_AsVal_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v < INT_MIN || v > INT_MAX)) {
-      return SWIG_OverflowError;
+  int res = SWIG_TypeError;
+  if (PyLong_Check(obj)) {
+    long long v = PyLong_AsLongLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_OK;
     } else {
-      if (val) *val = static_cast< int >(v);
+      PyErr_Clear();
+      res = SWIG_OverflowError;
     }
-  }  
+  } else {
+    long v;
+    res = SWIG_AsVal_long (obj,&v);
+    if (SWIG_IsOK(res)) {
+      if (val) *val = v;
+      return res;
+    }
+  }
+#ifdef SWIG_PYTHON_CAST_MODE
+  {
+    const double mant_max = 1LL << DBL_MANT_DIG;
+    const double mant_min = -mant_max;
+    double d;
+    res = SWIG_AsVal_double (obj,&d);
+    if (SWIG_IsOK(res) && !SWIG_CanCastAsInteger(&d, mant_min, mant_max))
+      return SWIG_OverflowError;
+    if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, mant_min, mant_max)) {
+      if (val) *val = (long long)(d);
+      return SWIG_AddCast(res);
+    }
+    res = SWIG_TypeError;
+  }
+#endif
   return res;
 }
+#endif
+
+
+SWIGINTERNINLINE int
+SWIG_AsVal_ptrdiff_t (PyObject * obj, ptrdiff_t *val)
+{
+  int res = SWIG_TypeError;
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  if (sizeof(ptrdiff_t) <= sizeof(long)) {
+#endif
+    long v;
+    res = SWIG_AsVal_long (obj, val ? &v : 0);
+    if (SWIG_IsOK(res) && val) *val = static_cast< ptrdiff_t >(v);
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  } else if (sizeof(ptrdiff_t) <= sizeof(long long)) {
+    long long v;
+    res = SWIG_AsVal_long_SS_long (obj, val ? &v : 0);
+    if (SWIG_IsOK(res) && val) *val = static_cast< ptrdiff_t >(v);
+  }
+#endif
+  return res;
+}
+
+
+#include <algorithm>
+
+
+#include <vector>
+
+
+#define SWIG_FILE_WITH_INIT
+#include <vector>
+
+
+#if NPY_API_VERSION < 0x00000007
+#define NPY_ARRAY_DEFAULT NPY_DEFAULT
+#define NPY_ARRAY_FARRAY  NPY_FARRAY
+#define NPY_FORTRANORDER  NPY_FORTRAN
+#endif
+
+
+/* Macros to extract array attributes.
+ */
+#if NPY_API_VERSION < 0x00000007
+#define is_array(a)            ((a) && PyArray_Check((PyArrayObject*)a))
+#define array_type(a)          (int)(PyArray_TYPE((PyArrayObject*)a))
+#define array_numdims(a)       (((PyArrayObject*)a)->nd)
+#define array_dimensions(a)    (((PyArrayObject*)a)->dimensions)
+#define array_size(a,i)        (((PyArrayObject*)a)->dimensions[i])
+#define array_strides(a)       (((PyArrayObject*)a)->strides)
+#define array_stride(a,i)      (((PyArrayObject*)a)->strides[i])
+#define array_data(a)          (((PyArrayObject*)a)->data)
+#define array_descr(a)         (((PyArrayObject*)a)->descr)
+#define array_flags(a)         (((PyArrayObject*)a)->flags)
+#define array_enableflags(a,f) (((PyArrayObject*)a)->flags) = f
+#define array_is_fortran(a)    (PyArray_ISFORTRAN((PyArrayObject*)a))
+#else
+#define is_array(a)            ((a) && PyArray_Check(a))
+#define array_type(a)          PyArray_TYPE((PyArrayObject*)a)
+#define array_numdims(a)       PyArray_NDIM((PyArrayObject*)a)
+#define array_dimensions(a)    PyArray_DIMS((PyArrayObject*)a)
+#define array_strides(a)       PyArray_STRIDES((PyArrayObject*)a)
+#define array_stride(a,i)      PyArray_STRIDE((PyArrayObject*)a,i)
+#define array_size(a,i)        PyArray_DIM((PyArrayObject*)a,i)
+#define array_data(a)          PyArray_DATA((PyArrayObject*)a)
+#define array_descr(a)         PyArray_DESCR((PyArrayObject*)a)
+#define array_flags(a)         PyArray_FLAGS((PyArrayObject*)a)
+#define array_enableflags(a,f) PyArray_ENABLEFLAGS((PyArrayObject*)a,f)
+#define array_is_fortran(a)    (PyArray_IS_F_CONTIGUOUS((PyArrayObject*)a))
+#endif
+#define array_is_contiguous(a) (PyArray_ISCONTIGUOUS((PyArrayObject*)a))
+#define array_is_native(a)     (PyArray_ISNOTSWAPPED((PyArrayObject*)a))
+
+
+  /* Given a PyObject, return a string describing its type.
+   */
+  const char* pytype_string(PyObject* py_obj)
+  {
+    if (py_obj == NULL          ) return "C NULL value";
+    if (py_obj == Py_None       ) return "Python None" ;
+    if (PyCallable_Check(py_obj)) return "callable"    ;
+    if (PyString_Check(  py_obj)) return "string"      ;
+    if (PyInt_Check(     py_obj)) return "int"         ;
+    if (PyFloat_Check(   py_obj)) return "float"       ;
+    if (PyDict_Check(    py_obj)) return "dict"        ;
+    if (PyList_Check(    py_obj)) return "list"        ;
+    if (PyTuple_Check(   py_obj)) return "tuple"       ;
+#if PY_MAJOR_VERSION < 3
+    if (PyFile_Check(    py_obj)) return "file"        ;
+    if (PyModule_Check(  py_obj)) return "module"      ;
+    if (PyInstance_Check(py_obj)) return "instance"    ;
+#endif
+
+    return "unknown type";
+  }
+
+  /* Given a NumPy typecode, return a string describing the type.
+   */
+  const char* typecode_string(int typecode)
+  {
+    static const char* type_names[25] = {"bool",
+                                         "byte",
+                                         "unsigned byte",
+                                         "short",
+                                         "unsigned short",
+                                         "int",
+                                         "unsigned int",
+                                         "long",
+                                         "unsigned long",
+                                         "long long",
+                                         "unsigned long long",
+                                         "float",
+                                         "double",
+                                         "long double",
+                                         "complex float",
+                                         "complex double",
+                                         "complex long double",
+                                         "object",
+                                         "string",
+                                         "unicode",
+                                         "void",
+                                         "ntypes",
+                                         "notype",
+                                         "char",
+                                         "unknown"};
+    return typecode < 24 ? type_names[typecode] : type_names[24];
+  }
+
+  /* Make sure input has correct numpy type.  This now just calls
+     PyArray_EquivTypenums().
+   */
+  int type_match(int actual_type,
+                 int desired_type)
+  {
+    return PyArray_EquivTypenums(actual_type, desired_type);
+  }
+
+#ifdef SWIGPY_USE_CAPSULE
+  void free_cap(PyObject * cap)
+  {
+    void* array = (void*) PyCapsule_GetPointer(cap,SWIGPY_CAPSULE_NAME);
+    if (array != NULL) free(array);
+  }
+#endif
+
+
+
+
+  /* Given a PyObject pointer, cast it to a PyArrayObject pointer if
+   * legal.  If not, set the python error string appropriately and
+   * return NULL.
+   */
+  PyArrayObject* obj_to_array_no_conversion(PyObject* input,
+                                            int        typecode)
+  {
+    PyArrayObject* ary = NULL;
+    if (is_array(input) && (typecode == NPY_NOTYPE ||
+                            PyArray_EquivTypenums(array_type(input), typecode)))
+    {
+      ary = (PyArrayObject*) input;
+    }
+    else if is_array(input)
+    {
+      const char* desired_type = typecode_string(typecode);
+      const char* actual_type  = typecode_string(array_type(input));
+      PyErr_Format(PyExc_TypeError,
+                   "Array of type '%s' required.  Array of type '%s' given",
+                   desired_type, actual_type);
+      ary = NULL;
+    }
+    else
+    {
+      const char* desired_type = typecode_string(typecode);
+      const char* actual_type  = pytype_string(input);
+      PyErr_Format(PyExc_TypeError,
+                   "Array of type '%s' required.  A '%s' was given",
+                   desired_type,
+                   actual_type);
+      ary = NULL;
+    }
+    return ary;
+  }
+
+  /* Convert the given PyObject to a NumPy array with the given
+   * typecode.  On success, return a valid PyArrayObject* with the
+   * correct type.  On failure, the python error string will be set and
+   * the routine returns NULL.
+   */
+  PyArrayObject* obj_to_array_allow_conversion(PyObject* input,
+                                               int       typecode,
+                                               int*      is_new_object)
+  {
+    PyArrayObject* ary = NULL;
+    PyObject*      py_obj;
+    if (is_array(input) && (typecode == NPY_NOTYPE ||
+                            PyArray_EquivTypenums(array_type(input),typecode)))
+    {
+      ary = (PyArrayObject*) input;
+      *is_new_object = 0;
+    }
+    else
+    {
+      py_obj = PyArray_FROMANY(input, typecode, 0, 0, NPY_ARRAY_DEFAULT);
+      /* If NULL, PyArray_FromObject will have set python error value.*/
+      ary = (PyArrayObject*) py_obj;
+      *is_new_object = 1;
+    }
+    return ary;
+  }
+
+  /* Given a PyArrayObject, check to see if it is contiguous.  If so,
+   * return the input pointer and flag it as not a new object.  If it is
+   * not contiguous, create a new PyArrayObject using the original data,
+   * flag it as a new object and return the pointer.
+   */
+  PyArrayObject* make_contiguous(PyArrayObject* ary,
+                                 int*           is_new_object,
+                                 int            min_dims,
+                                 int            max_dims)
+  {
+    PyArrayObject* result;
+    if (array_is_contiguous(ary))
+    {
+      result = ary;
+      *is_new_object = 0;
+    }
+    else
+    {
+      result = (PyArrayObject*) PyArray_ContiguousFromObject((PyObject*)ary,
+                                                              array_type(ary),
+                                                              min_dims,
+                                                              max_dims);
+      *is_new_object = 1;
+    }
+    return result;
+  }
+
+  /* Given a PyArrayObject, check to see if it is Fortran-contiguous.
+   * If so, return the input pointer, but do not flag it as not a new
+   * object.  If it is not Fortran-contiguous, create a new
+   * PyArrayObject using the original data, flag it as a new object
+   * and return the pointer.
+   */
+  PyArrayObject* make_fortran(PyArrayObject* ary,
+                              int*           is_new_object)
+  {
+    PyArrayObject* result;
+    if (array_is_fortran(ary))
+    {
+      result = ary;
+      *is_new_object = 0;
+    }
+    else
+    {
+      Py_INCREF(array_descr(ary));
+      result = (PyArrayObject*) PyArray_FromArray(ary,
+                                                  array_descr(ary),
+#if NPY_API_VERSION < 0x00000007
+                                                  NPY_FORTRANORDER);
+#else
+                                                  NPY_ARRAY_F_CONTIGUOUS);
+#endif
+      *is_new_object = 1;
+    }
+    return result;
+  }
+
+  /* Convert a given PyObject to a contiguous PyArrayObject of the
+   * specified type.  If the input object is not a contiguous
+   * PyArrayObject, a new one will be created and the new object flag
+   * will be set.
+   */
+  PyArrayObject* obj_to_array_contiguous_allow_conversion(PyObject* input,
+                                                          int       typecode,
+                                                          int*      is_new_object)
+  {
+    int is_new1 = 0;
+    int is_new2 = 0;
+    PyArrayObject* ary2;
+    PyArrayObject* ary1 = obj_to_array_allow_conversion(input,
+                                                        typecode,
+                                                        &is_new1);
+    if (ary1)
+    {
+      ary2 = make_contiguous(ary1, &is_new2, 0, 0);
+      if ( is_new1 && is_new2)
+      {
+        Py_DECREF(ary1);
+      }
+      ary1 = ary2;
+    }
+    *is_new_object = is_new1 || is_new2;
+    return ary1;
+  }
+
+  /* Convert a given PyObject to a Fortran-ordered PyArrayObject of the
+   * specified type.  If the input object is not a Fortran-ordered
+   * PyArrayObject, a new one will be created and the new object flag
+   * will be set.
+   */
+  PyArrayObject* obj_to_array_fortran_allow_conversion(PyObject* input,
+                                                       int       typecode,
+                                                       int*      is_new_object)
+  {
+    int is_new1 = 0;
+    int is_new2 = 0;
+    PyArrayObject* ary2;
+    PyArrayObject* ary1 = obj_to_array_allow_conversion(input,
+                                                        typecode,
+                                                        &is_new1);
+    if (ary1)
+    {
+      ary2 = make_fortran(ary1, &is_new2);
+      if (is_new1 && is_new2)
+      {
+        Py_DECREF(ary1);
+      }
+      ary1 = ary2;
+    }
+    *is_new_object = is_new1 || is_new2;
+    return ary1;
+  }
+
+
+  /* Test whether a python object is contiguous.  If array is
+   * contiguous, return 1.  Otherwise, set the python error string and
+   * return 0.
+   */
+  int require_contiguous(PyArrayObject* ary)
+  {
+    int contiguous = 1;
+    if (!array_is_contiguous(ary))
+    {
+      PyErr_SetString(PyExc_TypeError,
+                      "Array must be contiguous.  A non-contiguous array was given");
+      contiguous = 0;
+    }
+    return contiguous;
+  }
+
+  /* Test whether a python object is (C_ or F_) contiguous.  If array is
+   * contiguous, return 1.  Otherwise, set the python error string and
+   * return 0.
+   */
+  int require_c_or_f_contiguous(PyArrayObject* ary)
+  {
+    int contiguous = 1;
+    if (!(array_is_contiguous(ary) || array_is_fortran(ary)))
+    {
+      PyErr_SetString(PyExc_TypeError,
+                      "Array must be contiguous (C_ or F_).  A non-contiguous array was given");
+      contiguous = 0;
+    }
+    return contiguous;
+  }
+
+  /* Require that a numpy array is not byte-swapped.  If the array is
+   * not byte-swapped, return 1.  Otherwise, set the python error string
+   * and return 0.
+   */
+  int require_native(PyArrayObject* ary)
+  {
+    int native = 1;
+    if (!array_is_native(ary))
+    {
+      PyErr_SetString(PyExc_TypeError,
+                      "Array must have native byteorder.  "
+                      "A byte-swapped array was given");
+      native = 0;
+    }
+    return native;
+  }
+
+  /* Require the given PyArrayObject to have a specified number of
+   * dimensions.  If the array has the specified number of dimensions,
+   * return 1.  Otherwise, set the python error string and return 0.
+   */
+  int require_dimensions(PyArrayObject* ary,
+                         int            exact_dimensions)
+  {
+    int success = 1;
+    if (array_numdims(ary) != exact_dimensions)
+    {
+      PyErr_Format(PyExc_TypeError,
+                   "Array must have %d dimensions.  Given array has %d dimensions",
+                   exact_dimensions,
+                   array_numdims(ary));
+      success = 0;
+    }
+    return success;
+  }
+
+  /* Require the given PyArrayObject to have one of a list of specified
+   * number of dimensions.  If the array has one of the specified number
+   * of dimensions, return 1.  Otherwise, set the python error string
+   * and return 0.
+   */
+  int require_dimensions_n(PyArrayObject* ary,
+                           int*           exact_dimensions,
+                           int            n)
+  {
+    int success = 0;
+    int i;
+    char dims_str[255] = "";
+    char s[255];
+    for (i = 0; i < n && !success; i++)
+    {
+      if (array_numdims(ary) == exact_dimensions[i])
+      {
+        success = 1;
+      }
+    }
+    if (!success)
+    {
+      for (i = 0; i < n-1; i++)
+      {
+        sprintf(s, "%d, ", exact_dimensions[i]);
+        strcat(dims_str,s);
+      }
+      sprintf(s, " or %d", exact_dimensions[n-1]);
+      strcat(dims_str,s);
+      PyErr_Format(PyExc_TypeError,
+                   "Array must have %s dimensions.  Given array has %d dimensions",
+                   dims_str,
+                   array_numdims(ary));
+    }
+    return success;
+  }
+
+  /* Require the given PyArrayObject to have a specified shape.  If the
+   * array has the specified shape, return 1.  Otherwise, set the python
+   * error string and return 0.
+   */
+  int require_size(PyArrayObject* ary,
+                   npy_intp*      size,
+                   int            n)
+  {
+    int i;
+    int success = 1;
+    int len;
+    char desired_dims[255] = "[";
+    char s[255];
+    char actual_dims[255] = "[";
+    for(i=0; i < n;i++)
+    {
+      if (size[i] != -1 &&  size[i] != array_size(ary,i))
+      {
+        success = 0;
+      }
+    }
+    if (!success)
+    {
+      for (i = 0; i < n; i++)
+      {
+        if (size[i] == -1)
+        {
+          sprintf(s, "*,");
+        }
+        else
+        {
+          sprintf(s, "%ld,", (long int)size[i]);
+        }
+        strcat(desired_dims,s);
+      }
+      len = strlen(desired_dims);
+      desired_dims[len-1] = ']';
+      for (i = 0; i < n; i++)
+      {
+        sprintf(s, "%ld,", (long int)array_size(ary,i));
+        strcat(actual_dims,s);
+      }
+      len = strlen(actual_dims);
+      actual_dims[len-1] = ']';
+      PyErr_Format(PyExc_TypeError,
+                   "Array must have shape of %s.  Given array has shape of %s",
+                   desired_dims,
+                   actual_dims);
+    }
+    return success;
+  }
+
+  /* Require the given PyArrayObject to to be Fortran ordered.  If the
+   * the PyArrayObject is already Fortran ordered, do nothing.  Else,
+   * set the Fortran ordering flag and recompute the strides.
+   */
+  int require_fortran(PyArrayObject* ary)
+  {
+    int success = 1;
+    int nd = array_numdims(ary);
+    int i;
+    npy_intp * strides = array_strides(ary);
+    if (array_is_fortran(ary)) return success;
+    /* Set the Fortran ordered flag */
+    array_enableflags(ary,NPY_ARRAY_FARRAY);
+    /* Recompute the strides */
+    strides[0] = strides[nd-1];
+    for (i=1; i < nd; ++i)
+      strides[i] = strides[i-1] * array_size(ary,i-1);
+    return success;
+  }
+
+
+
+
+  template <typename T> int NumPyType() {return -1;};
+  template<> int NumPyType<double>() {return NPY_DOUBLE;};
+  template<> int NumPyType<std::complex<double> >() {return NPY_CDOUBLE;};
+  template<> int NumPyType<int>() {return NPY_INT;};
+
+  template <typename T>
+  struct CXXTypeTraits {
+    typedef double scalar;
+    static int dim();
+    static int size(const T& obj, int i);
+    static bool resize(T& obj, const std::vector<int>& sizes);
+    static void set_zero(T& obj); 
+    static scalar& element_at(T& obj, const std::vector<int>& indices);
+  };
+
+  template <typename S>
+  struct CXXTypeTraits<std::vector<S> > {
+    typedef S scalar;
+    typedef std::vector<S> obj_type;
+    static int dim() { return 1;};
+    static int size(const obj_type& obj, int i) {
+      assert(i==0);
+      return obj.size();
+    }
+    static bool resize(obj_type& obj, const std::vector<int>& sizes) {
+      assert(sizes.size()==dim());
+      obj.resize(sizes[0]);
+      return true;
+    }
+    static void set_zero(obj_type& obj) {
+      std::fill(obj.begin(), obj.end(), static_cast<S>(0.0));
+    } 
+    static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
+      assert(indices.size()==1 && indices[0] < obj.size());
+      return obj[indices[0]];
+    }
+  };
+
+
+  template <class A>
+  bool ConvertFromNumpy(A* out, PyObject* in)
+  {
+    typedef CXXTypeTraits<A> traits;
+    typedef typename traits::scalar scalar;
+
+    // Check object type
+    if (!is_array(in))
+    {
+      PyErr_SetString(PyExc_ValueError, "The given input is not known as a NumPy array or matrix.");
+      return false;
+    }
+
+    // Check data type
+    if (array_type(in) != NumPyType<scalar>())
+    {
+      PyErr_SetString(PyExc_ValueError, "Type mismatch between NumPy and C++ objects.");
+      return false;
+    }
+
+    // Check dimensions
+    if (array_numdims(in) != traits::dim())
+    {
+      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ objects.");
+      return false;
+    }
+
+    const int dim = traits::dim();
+
+    std::vector<int> data_size(dim);
+    bool resize_required = false;
+    for (int i=0; i<dim; ++i) {
+      data_size[i] = array_size(in,i);
+      resize_required = resize_required || (traits::size(*out,i) < data_size[i]);
+    }
+
+    if (resize_required) {
+      if (!traits::resize(*out, data_size)) {
+        PyErr_SetString(PyExc_ValueError, "Failed to resize C++ object.");
+        return false;
+      }
+    }
+    
+    // Extract data
+    int isNewObject = 0;
+    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(in, array_type(in), &isNewObject);
+    if (temp == NULL)
+    {
+      PyErr_SetString(PyExc_ValueError, "Impossible to convert the input into a Python array object.");
+      return false;
+    }
+
+    //FIXME: CHECK THIS
+    //traits::set_zero(*out, data_size);
+    traits::set_zero(*out);
+
+    scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
+    int lin_idx = 0;
+    std::vector<int> indices(dim);
+    if (dim==1) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        indices[0] = i;
+        traits::element_at(*out, indices) = data[lin_idx];
+        ++lin_idx;
+      }
+    } else if (dim==2) {
+      for (int i = 0; i < data_size[0]; ++i) {
+        for (int j = 0; j < data_size[1]; ++j) {
+          indices[0] = i;
+          indices[1] = j;
+          traits::element_at(*out, indices) = data[lin_idx];
+          ++lin_idx;
+        }
+      }
+    }
+
+    return true;
+  };
+
+
 
 
   #define SWIG_From_double   PyFloat_FromDouble 
@@ -3362,176 +4251,22 @@ const std::complex<double>&
   return PyComplex_FromDoubles(std::real(c), std::imag(c));
 }
 
-
-SWIGINTERN int
-SWIG_AsVal_std_complex_Sl_double_Sg_  (PyObject *o, std::complex<double>* val)
-{
-  if (PyComplex_Check(o)) {
-    if (val) *val = std::complex<double>(PyComplex_RealAsDouble(o), PyComplex_ImagAsDouble(o));
-    return SWIG_OK;
-  } else {
-    double d;    
-    int res = SWIG_AddCast(SWIG_AsVal_double (o, &d));
-    if (SWIG_IsOK(res)) {
-      if (val) *val = std::complex<double>(d, 0.0);
-      return res;
-    }
-  }
-  return SWIG_TypeError;
-}
-
 #ifdef __cplusplus
 extern "C" {
 #endif
-SWIGINTERN int Swig_var_minor_version_set(PyObject *) {
-  SWIG_Error(SWIG_AttributeError,"Variable minor_version is read-only.");
-  return 1;
-}
-
-
-SWIGINTERN PyObject *Swig_var_minor_version_get(void) {
-  PyObject *pyobj = 0;
-  
-  pyobj = SWIG_From_int(static_cast< int >(alps::gf::minor_version));
-  return pyobj;
-}
-
-
-SWIGINTERN int Swig_var_major_version_set(PyObject *) {
-  SWIG_Error(SWIG_AttributeError,"Variable major_version is read-only.");
-  return 1;
-}
-
-
-SWIGINTERN PyObject *Swig_var_major_version_get(void) {
-  PyObject *pyobj = 0;
-  
-  pyobj = SWIG_From_int(static_cast< int >(alps::gf::major_version));
-  return pyobj;
-}
-
-
-SWIGINTERN PyObject *_wrap_save_version(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_delete_SwigPyIterator(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::hdf5::archive *arg1 = 0 ;
-  std::string *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:save_version",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "save_version" "', argument " "1"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "save_version" "', argument " "1"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg1 = reinterpret_cast< alps::hdf5::archive * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "save_version" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "save_version" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  arg2 = reinterpret_cast< std::string * >(argp2);
-  alps::gf::save_version(*arg1,(std::string const &)*arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_check_version(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::hdf5::archive *arg1 = 0 ;
-  std::string *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:check_version",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "check_version" "', argument " "1"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "check_version" "', argument " "1"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg1 = reinterpret_cast< alps::hdf5::archive * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "check_version" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "check_version" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  arg2 = reinterpret_cast< std::string * >(argp2);
-  result = (bool)alps::gf::check_version(*arg1,(std::string const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_base_mesh_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::base_mesh *arg1 = (alps::gf::base_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::vector< double > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:base_mesh_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__base_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "base_mesh_points" "', argument " "1"" of type '" "alps::gf::base_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::base_mesh * >(argp1);
-  result = (std::vector< double > *) &((alps::gf::base_mesh const *)arg1)->points();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_base_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::base_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_base_mesh")) SWIG_fail;
-  result = (alps::gf::base_mesh *)new alps::gf::base_mesh();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__base_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_base_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::base_mesh *arg1 = (alps::gf::base_mesh *) 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_base_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__base_mesh, SWIG_POINTER_DISOWN |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_SwigPyIterator",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_base_mesh" "', argument " "1"" of type '" "alps::gf::base_mesh *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_SwigPyIterator" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::base_mesh * >(argp1);
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
   delete arg1;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -3540,1578 +4275,112 @@ fail:
 }
 
 
-SWIGINTERN PyObject *base_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__base_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_new_real_frequency_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_value(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_real_frequency_mesh")) SWIG_fail;
-  result = (alps::gf::real_frequency_mesh *)new alps::gf::real_frequency_mesh();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__real_frequency_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_real_frequency_mesh_extent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *arg1 = (alps::gf::real_frequency_mesh *) 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  int result;
+  PyObject *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:real_frequency_mesh_extent",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_frequency_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:SwigPyIterator_value",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "real_frequency_mesh_extent" "', argument " "1"" of type '" "alps::gf::real_frequency_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_value" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp1);
-  result = (int)((alps::gf::real_frequency_mesh const *)arg1)->extent();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_real_frequency_mesh___call__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *arg1 = (alps::gf::real_frequency_mesh *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::real_frequency_mesh > > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:real_frequency_mesh___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_frequency_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "real_frequency_mesh___call__" "', argument " "1"" of type '" "alps::gf::real_frequency_mesh const *""'"); 
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  try {
+    result = (PyObject *)((swig::SwigPyIterator const *)arg1)->value();
   }
-  arg1 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "real_frequency_mesh___call__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_frequency_mesh___call__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh::index_type""'");
-    } else {
-      alps::gf::real_frequency_mesh::index_type * temp = reinterpret_cast< alps::gf::real_frequency_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
     }
   }
-  result = (int)((alps::gf::real_frequency_mesh const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  
+  resultobj = result;
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_real_frequency_mesh_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_incr__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *arg1 = (alps::gf::real_frequency_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  size_t arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:real_frequency_mesh_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_frequency_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "real_frequency_mesh_save" "', argument " "1"" of type '" "alps::gf::real_frequency_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "real_frequency_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_frequency_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "real_frequency_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_frequency_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::real_frequency_mesh const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_real_frequency_mesh_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *arg1 = (alps::gf::real_frequency_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:real_frequency_mesh_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_frequency_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "real_frequency_mesh_load" "', argument " "1"" of type '" "alps::gf::real_frequency_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "real_frequency_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_frequency_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "real_frequency_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_frequency_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_real_frequency_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *arg1 = (alps::gf::real_frequency_mesh *) 0 ;
-  alps::gf::real_frequency_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:real_frequency_mesh___eq__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_frequency_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "real_frequency_mesh___eq__" "', argument " "1"" of type '" "alps::gf::real_frequency_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__real_frequency_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "real_frequency_mesh___eq__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_frequency_mesh___eq__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp2);
-  result = (bool)((alps::gf::real_frequency_mesh const *)arg1)->operator ==((alps::gf::real_frequency_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_real_frequency_mesh___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *arg1 = (alps::gf::real_frequency_mesh *) 0 ;
-  alps::gf::real_frequency_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:real_frequency_mesh___ne__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_frequency_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "real_frequency_mesh___ne__" "', argument " "1"" of type '" "alps::gf::real_frequency_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__real_frequency_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "real_frequency_mesh___ne__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_frequency_mesh___ne__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp2);
-  result = (bool)((alps::gf::real_frequency_mesh const *)arg1)->operator !=((alps::gf::real_frequency_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_real_frequency_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::real_frequency_mesh *arg1 = (alps::gf::real_frequency_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_real_frequency_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_frequency_mesh, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_real_frequency_mesh" "', argument " "1"" of type '" "alps::gf::real_frequency_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *real_frequency_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__real_frequency_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap___lshift____SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  std::ostream *arg1 = 0 ;
-  alps::gf::real_frequency_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::ostream *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:__lshift__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__ostream,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  arg1 = reinterpret_cast< std::ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__real_frequency_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::real_frequency_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::real_frequency_mesh * >(argp2);
-  result = (std::ostream *) &alps::gf::operator <<(*arg1,(alps::gf::real_frequency_mesh const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__ostream, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_itime_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  double arg1 ;
-  int arg2 ;
-  double val1 ;
-  int ecode1 = 0 ;
-  int val2 ;
+  size_t val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  alps::gf::itime_mesh *result = 0 ;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:new_itime_mesh",&obj0,&obj1)) SWIG_fail;
-  ecode1 = SWIG_AsVal_double(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_itime_mesh" "', argument " "1"" of type '" "double""'");
-  } 
-  arg1 = static_cast< double >(val1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_itime_mesh" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  result = (alps::gf::itime_mesh *)new alps::gf::itime_mesh(arg1,arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__itime_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh___call__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::itime_mesh > > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:itime_mesh___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator_incr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh___call__" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_incr" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__itime_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "itime_mesh___call__" "', argument " "2"" of type '" "alps::gf::itime_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "itime_mesh___call__" "', argument " "2"" of type '" "alps::gf::itime_mesh::index_type""'");
-    } else {
-      alps::gf::itime_mesh::index_type * temp = reinterpret_cast< alps::gf::itime_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SwigPyIterator_incr" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  try {
+    result = (swig::SwigPyIterator *)(arg1)->incr(arg2);
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
     }
   }
-  result = (int)((alps::gf::itime_mesh const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_itime_mesh_extent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_incr__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  int result;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:itime_mesh_extent",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:SwigPyIterator_incr",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh_extent" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_incr" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  result = (int)((alps::gf::itime_mesh const *)arg1)->extent();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  alps::gf::itime_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:itime_mesh___eq__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh___eq__" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  try {
+    result = (swig::SwigPyIterator *)(arg1)->incr();
   }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__itime_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "itime_mesh___eq__" "', argument " "2"" of type '" "alps::gf::itime_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "itime_mesh___eq__" "', argument " "2"" of type '" "alps::gf::itime_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::itime_mesh * >(argp2);
-  result = (bool)((alps::gf::itime_mesh const *)arg1)->operator ==((alps::gf::itime_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh_beta(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:itime_mesh_beta",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh_beta" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  result = (double)((alps::gf::itime_mesh const *)arg1)->beta();
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh_statistics(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::statistics::statistics_type result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:itime_mesh_statistics",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh_statistics" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  result = (alps::gf::statistics::statistics_type)((alps::gf::itime_mesh const *)arg1)->statistics();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::vector< double > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:itime_mesh_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh_points" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  result = (std::vector< double > *) &((alps::gf::itime_mesh const *)arg1)->points();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  alps::gf::itime_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:itime_mesh___ne__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh___ne__" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__itime_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "itime_mesh___ne__" "', argument " "2"" of type '" "alps::gf::itime_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "itime_mesh___ne__" "', argument " "2"" of type '" "alps::gf::itime_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::itime_mesh * >(argp2);
-  result = (bool)((alps::gf::itime_mesh const *)arg1)->operator !=((alps::gf::itime_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:itime_mesh_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh_save" "', argument " "1"" of type '" "alps::gf::itime_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "itime_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "itime_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "itime_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "itime_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::itime_mesh const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:itime_mesh_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh_load" "', argument " "1"" of type '" "alps::gf::itime_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "itime_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "itime_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "itime_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "itime_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_itime_mesh_compute_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:itime_mesh_compute_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "itime_mesh_compute_points" "', argument " "1"" of type '" "alps::gf::itime_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  (arg1)->compute_points();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_itime_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::itime_mesh *arg1 = (alps::gf::itime_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_itime_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__itime_mesh, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_itime_mesh" "', argument " "1"" of type '" "alps::gf::itime_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::itime_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *itime_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__itime_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap___lshift____SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  std::ostream *arg1 = 0 ;
-  alps::gf::itime_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::ostream *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:__lshift__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__ostream,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  arg1 = reinterpret_cast< std::ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__itime_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::itime_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::itime_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::itime_mesh * >(argp2);
-  result = (std::ostream *) &alps::gf::operator <<(*arg1,(alps::gf::itime_mesh const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__ostream, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_power_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  double arg1 ;
-  int arg2 ;
-  int arg3 ;
-  double val1 ;
-  int ecode1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  alps::gf::power_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:new_power_mesh",&obj0,&obj1,&obj2)) SWIG_fail;
-  ecode1 = SWIG_AsVal_double(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_power_mesh" "', argument " "1"" of type '" "double""'");
-  } 
-  arg1 = static_cast< double >(val1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_power_mesh" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_power_mesh" "', argument " "3"" of type '" "int""'");
-  } 
-  arg3 = static_cast< int >(val3);
-  result = (alps::gf::power_mesh *)new alps::gf::power_mesh(arg1,arg2,arg3);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__power_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh___call__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::power_mesh > > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:power_mesh___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh___call__" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__power_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "power_mesh___call__" "', argument " "2"" of type '" "alps::gf::power_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "power_mesh___call__" "', argument " "2"" of type '" "alps::gf::power_mesh::index_type""'");
-    } else {
-      alps::gf::power_mesh::index_type * temp = reinterpret_cast< alps::gf::power_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
     }
   }
-  result = (int)((alps::gf::power_mesh const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_extent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_extent",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_extent" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  result = (int)((alps::gf::power_mesh const *)arg1)->extent();
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_power_mesh_power(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_power",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_power" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  result = (int)((alps::gf::power_mesh const *)arg1)->power();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_uniform(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_uniform",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_uniform" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  result = (int)((alps::gf::power_mesh const *)arg1)->uniform();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  alps::gf::power_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:power_mesh___eq__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh___eq__" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__power_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "power_mesh___eq__" "', argument " "2"" of type '" "alps::gf::power_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "power_mesh___eq__" "', argument " "2"" of type '" "alps::gf::power_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::power_mesh * >(argp2);
-  result = (bool)((alps::gf::power_mesh const *)arg1)->operator ==((alps::gf::power_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_beta(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_beta",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_beta" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  result = (double)((alps::gf::power_mesh const *)arg1)->beta();
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_statistics(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::statistics::statistics_type result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_statistics",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_statistics" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  result = (alps::gf::statistics::statistics_type)((alps::gf::power_mesh const *)arg1)->statistics();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::vector< double > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_points" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  result = (std::vector< double > *) &((alps::gf::power_mesh const *)arg1)->points();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_weights(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::vector< double > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_weights",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_weights" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  result = (std::vector< double > *) &((alps::gf::power_mesh const *)arg1)->weights();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  alps::gf::power_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:power_mesh___ne__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh___ne__" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__power_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "power_mesh___ne__" "', argument " "2"" of type '" "alps::gf::power_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "power_mesh___ne__" "', argument " "2"" of type '" "alps::gf::power_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::power_mesh * >(argp2);
-  result = (bool)((alps::gf::power_mesh const *)arg1)->operator !=((alps::gf::power_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:power_mesh_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_save" "', argument " "1"" of type '" "alps::gf::power_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "power_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "power_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "power_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "power_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::power_mesh const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:power_mesh_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_load" "', argument " "1"" of type '" "alps::gf::power_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "power_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "power_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "power_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "power_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_compute_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_compute_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_compute_points" "', argument " "1"" of type '" "alps::gf::power_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  (arg1)->compute_points();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_power_mesh_compute_weights(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:power_mesh_compute_weights",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "power_mesh_compute_weights" "', argument " "1"" of type '" "alps::gf::power_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  (arg1)->compute_weights();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_power_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::power_mesh *arg1 = (alps::gf::power_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_power_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__power_mesh, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_power_mesh" "', argument " "1"" of type '" "alps::gf::power_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::power_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *power_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__power_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap___lshift____SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  std::ostream *arg1 = 0 ;
-  alps::gf::power_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::ostream *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:__lshift__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__ostream,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  arg1 = reinterpret_cast< std::ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__power_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::power_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::power_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::power_mesh * >(argp2);
-  result = (std::ostream *) &alps::gf::operator <<(*arg1,(alps::gf::power_mesh const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__ostream, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh_extent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:momentum_realspace_index_mesh_extent",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh_extent" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  result = (int)((alps::gf::momentum_realspace_index_mesh const *)arg1)->extent();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh_dimension(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:momentum_realspace_index_mesh_dimension",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh_dimension" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  result = (int)((alps::gf::momentum_realspace_index_mesh const *)arg1)->dimension();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh_kind(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:momentum_realspace_index_mesh_kind",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh_kind" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  result = (std::string *) &((alps::gf::momentum_realspace_index_mesh const *)arg1)->kind();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__string, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  alps::gf::momentum_realspace_index_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:momentum_realspace_index_mesh___eq__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh___eq__" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "momentum_realspace_index_mesh___eq__" "', argument " "2"" of type '" "alps::gf::momentum_realspace_index_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "momentum_realspace_index_mesh___eq__" "', argument " "2"" of type '" "alps::gf::momentum_realspace_index_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp2);
-  result = (bool)((alps::gf::momentum_realspace_index_mesh const *)arg1)->operator ==((alps::gf::momentum_realspace_index_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  alps::gf::momentum_realspace_index_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:momentum_realspace_index_mesh___ne__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh___ne__" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "momentum_realspace_index_mesh___ne__" "', argument " "2"" of type '" "alps::gf::momentum_realspace_index_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "momentum_realspace_index_mesh___ne__" "', argument " "2"" of type '" "alps::gf::momentum_realspace_index_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp2);
-  result = (bool)((alps::gf::momentum_realspace_index_mesh const *)arg1)->operator !=((alps::gf::momentum_realspace_index_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::momentum_realspace_index_mesh::container_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:momentum_realspace_index_mesh_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh_points" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  result = (alps::gf::momentum_realspace_index_mesh::container_type *) &((alps::gf::momentum_realspace_index_mesh const *)arg1)->points();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_boost__multi_arrayT_double_2_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:momentum_realspace_index_mesh_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh_save" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "momentum_realspace_index_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "momentum_realspace_index_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "momentum_realspace_index_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "momentum_realspace_index_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::momentum_realspace_index_mesh const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_momentum_realspace_index_mesh_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:momentum_realspace_index_mesh_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_realspace_index_mesh_load" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "momentum_realspace_index_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "momentum_realspace_index_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "momentum_realspace_index_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "momentum_realspace_index_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_momentum_realspace_index_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh *arg1 = (alps::gf::momentum_realspace_index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_momentum_realspace_index_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_momentum_realspace_index_mesh" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *momentum_realspace_index_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap___lshift____SWIG_9(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  std::ostream *arg1 = 0 ;
-  alps::gf::momentum_realspace_index_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::ostream *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:__lshift__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__ostream,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  arg1 = reinterpret_cast< std::ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::momentum_realspace_index_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::momentum_realspace_index_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh * >(argp2);
-  result = (std::ostream *) &alps::gf::operator <<(*arg1,(alps::gf::momentum_realspace_index_mesh const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__ostream, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_momentum_index_mesh__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  int arg1 ;
-  int arg2 ;
-  int val1 ;
-  int ecode1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::momentum_index_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:new_momentum_index_mesh",&obj0,&obj1)) SWIG_fail;
-  ecode1 = SWIG_AsVal_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_momentum_index_mesh" "', argument " "1"" of type '" "int""'");
-  } 
-  arg1 = static_cast< int >(val1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_momentum_index_mesh" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  result = (alps::gf::momentum_index_mesh *)new alps::gf::momentum_index_mesh(arg1,arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__momentum_index_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_momentum_index_mesh__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh::container_type *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::momentum_index_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:new_momentum_index_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__multi_arrayT_double_2_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_momentum_index_mesh" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh::container_type const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_momentum_index_mesh" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh::container_type const &""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh::container_type * >(argp1);
-  result = (alps::gf::momentum_index_mesh *)new alps::gf::momentum_index_mesh((alps::gf::momentum_realspace_index_mesh::container_type const &)*arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__momentum_index_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_momentum_index_mesh(PyObject *self, PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_incr(PyObject *self, PyObject *args) {
   Py_ssize_t argc;
   PyObject *argv[3] = {
     0
@@ -5125,162 +4394,112 @@ SWIGINTERN PyObject *_wrap_new_momentum_index_mesh(PyObject *self, PyObject *arg
   }
   if (argc == 1) {
     int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_boost__multi_arrayT_double_2_t, 0);
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_swig__SwigPyIterator, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_new_momentum_index_mesh__SWIG_1(self, args);
+      return _wrap_SwigPyIterator_incr__SWIG_1(self, args);
     }
   }
   if (argc == 2) {
     int _v;
-    {
-      int res = SWIG_AsVal_int(argv[0], NULL);
-      _v = SWIG_CheckState(res);
-    }
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_swig__SwigPyIterator, 0);
+    _v = SWIG_CheckState(res);
     if (_v) {
       {
-        int res = SWIG_AsVal_int(argv[1], NULL);
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
         _v = SWIG_CheckState(res);
       }
       if (_v) {
-        return _wrap_new_momentum_index_mesh__SWIG_0(self, args);
+        return _wrap_SwigPyIterator_incr__SWIG_0(self, args);
       }
     }
   }
   
 fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_momentum_index_mesh'.\n"
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'SwigPyIterator_incr'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    alps::gf::momentum_index_mesh::momentum_index_mesh(int,int)\n"
-    "    alps::gf::momentum_index_mesh::momentum_index_mesh(alps::gf::momentum_realspace_index_mesh::container_type const &)\n");
+    "    swig::SwigPyIterator::incr(size_t)\n"
+    "    swig::SwigPyIterator::incr()\n");
   return 0;
 }
 
 
-SWIGINTERN PyObject *_wrap_momentum_index_mesh___call__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_decr__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::momentum_index_mesh *arg1 = (alps::gf::momentum_index_mesh *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::momentum_index_mesh > > arg2 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  size_t arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:momentum_index_mesh___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "momentum_index_mesh___call__" "', argument " "1"" of type '" "alps::gf::momentum_index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_index_mesh * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "momentum_index_mesh___call__" "', argument " "2"" of type '" "alps::gf::momentum_index_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "momentum_index_mesh___call__" "', argument " "2"" of type '" "alps::gf::momentum_index_mesh::index_type""'");
-    } else {
-      alps::gf::momentum_index_mesh::index_type * temp = reinterpret_cast< alps::gf::momentum_index_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  result = (int)((alps::gf::momentum_index_mesh const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_momentum_index_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::momentum_index_mesh *arg1 = (alps::gf::momentum_index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_momentum_index_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__momentum_index_mesh, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_momentum_index_mesh" "', argument " "1"" of type '" "alps::gf::momentum_index_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::momentum_index_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *momentum_index_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__momentum_index_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_new_real_space_index_mesh__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  int arg1 ;
-  int arg2 ;
-  int val1 ;
-  int ecode1 = 0 ;
-  int val2 ;
+  size_t val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  alps::gf::real_space_index_mesh *result = 0 ;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:new_real_space_index_mesh",&obj0,&obj1)) SWIG_fail;
-  ecode1 = SWIG_AsVal_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_real_space_index_mesh" "', argument " "1"" of type '" "int""'");
-  } 
-  arg1 = static_cast< int >(val1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator_decr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_decr" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
+  }
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_real_space_index_mesh" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SwigPyIterator_decr" "', argument " "2"" of type '" "size_t""'");
   } 
-  arg2 = static_cast< int >(val2);
-  result = (alps::gf::real_space_index_mesh *)new alps::gf::real_space_index_mesh(arg1,arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__real_space_index_mesh, SWIG_POINTER_NEW |  0 );
+  arg2 = static_cast< size_t >(val2);
+  try {
+    result = (swig::SwigPyIterator *)(arg1)->decr(arg2);
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_new_real_space_index_mesh__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_decr__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::momentum_realspace_index_mesh::container_type *arg1 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  alps::gf::real_space_index_mesh *result = 0 ;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:new_real_space_index_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__multi_arrayT_double_2_t,  0  | 0);
+  if (!PyArg_ParseTuple(args,(char *)"O:SwigPyIterator_decr",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_real_space_index_mesh" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh::container_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_decr" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_real_space_index_mesh" "', argument " "1"" of type '" "alps::gf::momentum_realspace_index_mesh::container_type const &""'"); 
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  try {
+    result = (swig::SwigPyIterator *)(arg1)->decr();
   }
-  arg1 = reinterpret_cast< alps::gf::momentum_realspace_index_mesh::container_type * >(argp1);
-  result = (alps::gf::real_space_index_mesh *)new alps::gf::real_space_index_mesh((alps::gf::momentum_realspace_index_mesh::container_type const &)*arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__real_space_index_mesh, SWIG_POINTER_NEW |  0 );
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_new_real_space_index_mesh(PyObject *self, PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_decr(PyObject *self, PyObject *args) {
   Py_ssize_t argc;
   PyObject *argv[3] = {
     0
@@ -5294,214 +4513,82 @@ SWIGINTERN PyObject *_wrap_new_real_space_index_mesh(PyObject *self, PyObject *a
   }
   if (argc == 1) {
     int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_boost__multi_arrayT_double_2_t, 0);
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_swig__SwigPyIterator, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_new_real_space_index_mesh__SWIG_1(self, args);
+      return _wrap_SwigPyIterator_decr__SWIG_1(self, args);
     }
   }
   if (argc == 2) {
     int _v;
-    {
-      int res = SWIG_AsVal_int(argv[0], NULL);
-      _v = SWIG_CheckState(res);
-    }
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_swig__SwigPyIterator, 0);
+    _v = SWIG_CheckState(res);
     if (_v) {
       {
-        int res = SWIG_AsVal_int(argv[1], NULL);
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
         _v = SWIG_CheckState(res);
       }
       if (_v) {
-        return _wrap_new_real_space_index_mesh__SWIG_0(self, args);
+        return _wrap_SwigPyIterator_decr__SWIG_0(self, args);
       }
     }
   }
   
 fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_real_space_index_mesh'.\n"
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'SwigPyIterator_decr'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    alps::gf::real_space_index_mesh::real_space_index_mesh(int,int)\n"
-    "    alps::gf::real_space_index_mesh::real_space_index_mesh(alps::gf::momentum_realspace_index_mesh::container_type const &)\n");
+    "    swig::SwigPyIterator::decr(size_t)\n"
+    "    swig::SwigPyIterator::decr()\n");
   return 0;
 }
 
 
-SWIGINTERN PyObject *_wrap_real_space_index_mesh___call__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_distance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::real_space_index_mesh *arg1 = (alps::gf::real_space_index_mesh *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::momentum_index_mesh > > arg2 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  swig::SwigPyIterator *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
+  void *argp2 = 0 ;
   int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  int result;
+  ptrdiff_t result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:real_space_index_mesh___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_space_index_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator_distance",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "real_space_index_mesh___call__" "', argument " "1"" of type '" "alps::gf::real_space_index_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_distance" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::real_space_index_mesh * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "real_space_index_mesh___call__" "', argument " "2"" of type '" "alps::gf::real_space_index_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "real_space_index_mesh___call__" "', argument " "2"" of type '" "alps::gf::real_space_index_mesh::index_type""'");
-    } else {
-      alps::gf::real_space_index_mesh::index_type * temp = reinterpret_cast< alps::gf::real_space_index_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_swig__SwigPyIterator,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SwigPyIterator_distance" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
-  result = (int)((alps::gf::real_space_index_mesh const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_real_space_index_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::real_space_index_mesh *arg1 = (alps::gf::real_space_index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SwigPyIterator_distance" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
+  }
+  arg2 = reinterpret_cast< swig::SwigPyIterator * >(argp2);
+  try {
+    result = ((swig::SwigPyIterator const *)arg1)->distance((swig::SwigPyIterator const &)*arg2);
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_Python_Raise(SWIG_NewPointerObj((new std::invalid_argument(static_cast< const std::invalid_argument& >(_e))),SWIGTYPE_p_std__invalid_argument,SWIG_POINTER_OWN), "std::invalid_argument", SWIGTYPE_p_std__invalid_argument); SWIG_fail;
+  }
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_real_space_index_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__real_space_index_mesh, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_real_space_index_mesh" "', argument " "1"" of type '" "alps::gf::real_space_index_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::real_space_index_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_From_ptrdiff_t(static_cast< ptrdiff_t >(result));
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *real_space_index_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__real_space_index_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_new_index_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_equal(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  int arg1 ;
-  int val1 ;
-  int ecode1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::index_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:new_index_mesh",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_index_mesh" "', argument " "1"" of type '" "int""'");
-  } 
-  arg1 = static_cast< int >(val1);
-  result = (alps::gf::index_mesh *)new alps::gf::index_mesh(arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__index_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_index_mesh_extent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:index_mesh_extent",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh_extent" "', argument " "1"" of type '" "alps::gf::index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  result = (int)((alps::gf::index_mesh const *)arg1)->extent();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_index_mesh___call__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::index_mesh > > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:index_mesh___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh___call__" "', argument " "1"" of type '" "alps::gf::index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__index_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "index_mesh___call__" "', argument " "2"" of type '" "alps::gf::index_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "index_mesh___call__" "', argument " "2"" of type '" "alps::gf::index_mesh::index_type""'");
-    } else {
-      alps::gf::index_mesh::index_type * temp = reinterpret_cast< alps::gf::index_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  result = (int)((alps::gf::index_mesh const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_index_mesh_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::vector< int > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:index_mesh_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh_points" "', argument " "1"" of type '" "alps::gf::index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  result = (std::vector< int > *) &((alps::gf::index_mesh const *)arg1)->points();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_int_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_index_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
-  alps::gf::index_mesh *arg2 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  swig::SwigPyIterator *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -5510,21 +4597,27 @@ SWIGINTERN PyObject *_wrap_index_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), PyO
   PyObject * obj1 = 0 ;
   bool result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:index_mesh___eq__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator_equal",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh___eq__" "', argument " "1"" of type '" "alps::gf::index_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_equal" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__index_mesh,  0  | 0);
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_swig__SwigPyIterator,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "index_mesh___eq__" "', argument " "2"" of type '" "alps::gf::index_mesh const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SwigPyIterator_equal" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "index_mesh___eq__" "', argument " "2"" of type '" "alps::gf::index_mesh const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SwigPyIterator_equal" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
-  arg2 = reinterpret_cast< alps::gf::index_mesh * >(argp2);
-  result = (bool)((alps::gf::index_mesh const *)arg1)->operator ==((alps::gf::index_mesh const &)*arg2);
+  arg2 = reinterpret_cast< swig::SwigPyIterator * >(argp2);
+  try {
+    result = (bool)((swig::SwigPyIterator const *)arg1)->equal((swig::SwigPyIterator const &)*arg2);
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_Python_Raise(SWIG_NewPointerObj((new std::invalid_argument(static_cast< const std::invalid_argument& >(_e))),SWIGTYPE_p_std__invalid_argument,SWIG_POINTER_OWN), "std::invalid_argument", SWIGTYPE_p_std__invalid_argument); SWIG_fail;
+  }
+  
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -5532,462 +4625,169 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_index_mesh___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_copy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
-  alps::gf::index_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:index_mesh___ne__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh___ne__" "', argument " "1"" of type '" "alps::gf::index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__index_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "index_mesh___ne__" "', argument " "2"" of type '" "alps::gf::index_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "index_mesh___ne__" "', argument " "2"" of type '" "alps::gf::index_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::index_mesh * >(argp2);
-  result = (bool)((alps::gf::index_mesh const *)arg1)->operator !=((alps::gf::index_mesh const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_index_mesh_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:index_mesh_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh_save" "', argument " "1"" of type '" "alps::gf::index_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "index_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "index_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "index_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "index_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::index_mesh const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_index_mesh_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:index_mesh_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh_load" "', argument " "1"" of type '" "alps::gf::index_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "index_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "index_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "index_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "index_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_index_mesh_compute_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:index_mesh_compute_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:SwigPyIterator_copy",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "index_mesh_compute_points" "', argument " "1"" of type '" "alps::gf::index_mesh *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_copy" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  (arg1)->compute_points();
-  resultobj = SWIG_Py_Void();
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  result = (swig::SwigPyIterator *)((swig::SwigPyIterator const *)arg1)->copy();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_delete_index_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_next(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::index_mesh *arg1 = (alps::gf::index_mesh *) 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_index_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__index_mesh, SWIG_POINTER_DISOWN |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:SwigPyIterator_next",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_index_mesh" "', argument " "1"" of type '" "alps::gf::index_mesh *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_next" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::index_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  try {
+    result = (PyObject *)(arg1)->next();
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = result;
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *index_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__index_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap___lshift____SWIG_10(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator___next__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::ostream *arg1 = 0 ;
-  alps::gf::index_mesh *arg2 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::ostream *result = 0 ;
+  PyObject *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:__lshift__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__ostream,  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:SwigPyIterator___next__",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___next__" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  try {
+    result = (PyObject *)(arg1)->__next__();
   }
-  arg1 = reinterpret_cast< std::ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__index_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::index_mesh const &""'"); 
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
   }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::index_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::index_mesh * >(argp2);
-  result = (std::ostream *) &alps::gf::operator <<(*arg1,(alps::gf::index_mesh const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__ostream, 0 |  0 );
+  
+  resultobj = result;
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_new_legendre_mesh__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_previous(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::statistics::statistics_type arg1 ;
-  int val1 ;
-  int ecode1 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  alps::gf::legendre_mesh *result = 0 ;
+  PyObject *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:new_legendre_mesh",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_legendre_mesh" "', argument " "1"" of type '" "alps::gf::statistics::statistics_type""'");
-  } 
-  arg1 = static_cast< alps::gf::statistics::statistics_type >(val1);
-  result = (alps::gf::legendre_mesh *)new alps::gf::legendre_mesh(arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__legendre_mesh, SWIG_POINTER_NEW |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:SwigPyIterator_previous",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_previous" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
+  }
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  try {
+    result = (PyObject *)(arg1)->previous();
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = result;
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_new_legendre_mesh__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator_advance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_legendre_mesh")) SWIG_fail;
-  result = (alps::gf::legendre_mesh *)new alps::gf::legendre_mesh();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__legendre_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_legendre_mesh__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  double arg1 ;
-  int arg2 ;
-  alps::gf::statistics::statistics_type arg3 ;
-  double val1 ;
-  int ecode1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  alps::gf::legendre_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:new_legendre_mesh",&obj0,&obj1,&obj2)) SWIG_fail;
-  ecode1 = SWIG_AsVal_double(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_legendre_mesh" "', argument " "1"" of type '" "double""'");
-  } 
-  arg1 = static_cast< double >(val1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_legendre_mesh" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_legendre_mesh" "', argument " "3"" of type '" "alps::gf::statistics::statistics_type""'");
-  } 
-  arg3 = static_cast< alps::gf::statistics::statistics_type >(val3);
-  result = (alps::gf::legendre_mesh *)new alps::gf::legendre_mesh(arg1,arg2,arg3);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__legendre_mesh, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_legendre_mesh__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  double arg1 ;
-  int arg2 ;
-  double val1 ;
-  int ecode1 = 0 ;
-  int val2 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  ptrdiff_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  alps::gf::legendre_mesh *result = 0 ;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:new_legendre_mesh",&obj0,&obj1)) SWIG_fail;
-  ecode1 = SWIG_AsVal_double(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_legendre_mesh" "', argument " "1"" of type '" "double""'");
-  } 
-  arg1 = static_cast< double >(val1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator_advance",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator_advance" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
+  }
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_legendre_mesh" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SwigPyIterator_advance" "', argument " "2"" of type '" "ptrdiff_t""'");
   } 
-  arg2 = static_cast< int >(val2);
-  result = (alps::gf::legendre_mesh *)new alps::gf::legendre_mesh(arg1,arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__legendre_mesh, SWIG_POINTER_NEW |  0 );
+  arg2 = static_cast< ptrdiff_t >(val2);
+  try {
+    result = (swig::SwigPyIterator *)(arg1)->advance(arg2);
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_new_legendre_mesh(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[4] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 0) {
-    return _wrap_new_legendre_mesh__SWIG_1(self, args);
-  }
-  if (argc == 1) {
-    int _v;
-    {
-      int res = SWIG_AsVal_int(argv[0], NULL);
-      _v = SWIG_CheckState(res);
-    }
-    if (_v) {
-      return _wrap_new_legendre_mesh__SWIG_0(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    {
-      int res = SWIG_AsVal_double(argv[0], NULL);
-      _v = SWIG_CheckState(res);
-    }
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_new_legendre_mesh__SWIG_3(self, args);
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    {
-      int res = SWIG_AsVal_double(argv[0], NULL);
-      _v = SWIG_CheckState(res);
-    }
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_int(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          return _wrap_new_legendre_mesh__SWIG_2(self, args);
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_legendre_mesh'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    alps::gf::legendre_mesh::legendre_mesh(alps::gf::statistics::statistics_type)\n"
-    "    alps::gf::legendre_mesh::legendre_mesh()\n"
-    "    alps::gf::legendre_mesh::legendre_mesh(double,int,alps::gf::statistics::statistics_type)\n"
-    "    alps::gf::legendre_mesh::legendre_mesh(double,int)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_legendre_mesh_extent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:legendre_mesh_extent",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_extent" "', argument " "1"" of type '" "alps::gf::legendre_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  result = (int)((alps::gf::legendre_mesh const *)arg1)->extent();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_legendre_mesh___call__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::legendre_mesh > > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:legendre_mesh___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh___call__" "', argument " "1"" of type '" "alps::gf::legendre_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "legendre_mesh___call__" "', argument " "2"" of type '" "alps::gf::legendre_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh___call__" "', argument " "2"" of type '" "alps::gf::legendre_mesh::index_type""'");
-    } else {
-      alps::gf::legendre_mesh::index_type * temp = reinterpret_cast< alps::gf::legendre_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  result = (int)((alps::gf::legendre_mesh const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_legendre_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  alps::gf::legendre_mesh *arg2 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  swig::SwigPyIterator *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -5996,21 +4796,21 @@ SWIGINTERN PyObject *_wrap_legendre_mesh___eq__(PyObject *SWIGUNUSEDPARM(self), 
   PyObject * obj1 = 0 ;
   bool result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:legendre_mesh___eq__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator___eq__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh___eq__" "', argument " "1"" of type '" "alps::gf::legendre_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___eq__" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__legendre_mesh,  0  | 0);
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_swig__SwigPyIterator,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "legendre_mesh___eq__" "', argument " "2"" of type '" "alps::gf::legendre_mesh const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SwigPyIterator___eq__" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh___eq__" "', argument " "2"" of type '" "alps::gf::legendre_mesh const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SwigPyIterator___eq__" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
-  arg2 = reinterpret_cast< alps::gf::legendre_mesh * >(argp2);
-  result = (bool)((alps::gf::legendre_mesh const *)arg1)->operator ==((alps::gf::legendre_mesh const &)*arg2);
+  arg2 = reinterpret_cast< swig::SwigPyIterator * >(argp2);
+  result = (bool)((swig::SwigPyIterator const *)arg1)->operator ==((swig::SwigPyIterator const &)*arg2);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -6018,10 +4818,10 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_legendre_mesh___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  alps::gf::legendre_mesh *arg2 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  swig::SwigPyIterator *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -6030,21 +4830,21 @@ SWIGINTERN PyObject *_wrap_legendre_mesh___ne__(PyObject *SWIGUNUSEDPARM(self), 
   PyObject * obj1 = 0 ;
   bool result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:legendre_mesh___ne__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator___ne__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh___ne__" "', argument " "1"" of type '" "alps::gf::legendre_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___ne__" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__legendre_mesh,  0  | 0);
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_swig__SwigPyIterator,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "legendre_mesh___ne__" "', argument " "2"" of type '" "alps::gf::legendre_mesh const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SwigPyIterator___ne__" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh___ne__" "', argument " "2"" of type '" "alps::gf::legendre_mesh const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SwigPyIterator___ne__" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
-  arg2 = reinterpret_cast< alps::gf::legendre_mesh * >(argp2);
-  result = (bool)((alps::gf::legendre_mesh const *)arg1)->operator !=((alps::gf::legendre_mesh const &)*arg2);
+  arg2 = reinterpret_cast< swig::SwigPyIterator * >(argp2);
+  result = (bool)((swig::SwigPyIterator const *)arg1)->operator !=((swig::SwigPyIterator const &)*arg2);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -6052,281 +4852,205 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_legendre_mesh_beta(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator___iadd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  ptrdiff_t arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
-  double result;
+  PyObject * obj1 = 0 ;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:legendre_mesh_beta",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator___iadd__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_beta" "', argument " "1"" of type '" "alps::gf::legendre_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___iadd__" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  result = (double)((alps::gf::legendre_mesh const *)arg1)->beta();
-  resultobj = SWIG_From_double(static_cast< double >(result));
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SwigPyIterator___iadd__" "', argument " "2"" of type '" "ptrdiff_t""'");
+  } 
+  arg2 = static_cast< ptrdiff_t >(val2);
+  try {
+    result = (swig::SwigPyIterator *) &(arg1)->operator +=(arg2);
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_legendre_mesh_statistics(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator___isub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  ptrdiff_t arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
-  alps::gf::statistics::statistics_type result;
+  PyObject * obj1 = 0 ;
+  swig::SwigPyIterator *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:legendre_mesh_statistics",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator___isub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_statistics" "', argument " "1"" of type '" "alps::gf::legendre_mesh const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___isub__" "', argument " "1"" of type '" "swig::SwigPyIterator *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  result = (alps::gf::statistics::statistics_type)((alps::gf::legendre_mesh const *)arg1)->statistics();
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SwigPyIterator___isub__" "', argument " "2"" of type '" "ptrdiff_t""'");
+  } 
+  arg2 = static_cast< ptrdiff_t >(val2);
+  try {
+    result = (swig::SwigPyIterator *) &(arg1)->operator -=(arg2);
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_legendre_mesh_swap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator___add__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  alps::gf::legendre_mesh *arg2 = 0 ;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  ptrdiff_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  swig::SwigPyIterator *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator___add__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___add__" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
+  }
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SwigPyIterator___add__" "', argument " "2"" of type '" "ptrdiff_t""'");
+  } 
+  arg2 = static_cast< ptrdiff_t >(val2);
+  try {
+    result = (swig::SwigPyIterator *)((swig::SwigPyIterator const *)arg1)->operator +(arg2);
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SwigPyIterator___sub____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  ptrdiff_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  swig::SwigPyIterator *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator___sub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___sub__" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
+  }
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SwigPyIterator___sub__" "', argument " "2"" of type '" "ptrdiff_t""'");
+  } 
+  arg2 = static_cast< ptrdiff_t >(val2);
+  try {
+    result = (swig::SwigPyIterator *)((swig::SwigPyIterator const *)arg1)->operator -(arg2);
+  }
+  catch(swig::stop_iteration &_e) {
+    {
+      (void)_e;
+      SWIG_SetErrorObj(PyExc_StopIteration, SWIG_Py_Void());
+      SWIG_fail;
+    }
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SwigPyIterator___sub____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  swig::SwigPyIterator *arg1 = (swig::SwigPyIterator *) 0 ;
+  swig::SwigPyIterator *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
+  ptrdiff_t result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:legendre_mesh_swap",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:SwigPyIterator___sub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_swig__SwigPyIterator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_swap" "', argument " "1"" of type '" "alps::gf::legendre_mesh *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SwigPyIterator___sub__" "', argument " "1"" of type '" "swig::SwigPyIterator const *""'"); 
   }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__legendre_mesh,  0 );
+  arg1 = reinterpret_cast< swig::SwigPyIterator * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_swig__SwigPyIterator,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "legendre_mesh_swap" "', argument " "2"" of type '" "alps::gf::legendre_mesh &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SwigPyIterator___sub__" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh_swap" "', argument " "2"" of type '" "alps::gf::legendre_mesh &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SwigPyIterator___sub__" "', argument " "2"" of type '" "swig::SwigPyIterator const &""'"); 
   }
-  arg2 = reinterpret_cast< alps::gf::legendre_mesh * >(argp2);
-  (arg1)->swap(*arg2);
-  resultobj = SWIG_Py_Void();
+  arg2 = reinterpret_cast< swig::SwigPyIterator * >(argp2);
+  result = ((swig::SwigPyIterator const *)arg1)->operator -((swig::SwigPyIterator const &)*arg2);
+  resultobj = SWIG_From_ptrdiff_t(static_cast< ptrdiff_t >(result));
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_legendre_mesh_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:legendre_mesh_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_save" "', argument " "1"" of type '" "alps::gf::legendre_mesh const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "legendre_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "legendre_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::legendre_mesh const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_legendre_mesh_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:legendre_mesh_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_load" "', argument " "1"" of type '" "alps::gf::legendre_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "legendre_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "legendre_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "legendre_mesh_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_legendre_mesh_check_range(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:legendre_mesh_check_range",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_check_range" "', argument " "1"" of type '" "alps::gf::legendre_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  (arg1)->check_range();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_legendre_mesh_compute_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:legendre_mesh_compute_points",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "legendre_mesh_compute_points" "', argument " "1"" of type '" "alps::gf::legendre_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  (arg1)->compute_points();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_legendre_mesh(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = (alps::gf::legendre_mesh *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_legendre_mesh",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__legendre_mesh, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_legendre_mesh" "', argument " "1"" of type '" "alps::gf::legendre_mesh *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *legendre_mesh_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__legendre_mesh, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap___lshift____SWIG_11(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  std::ostream *arg1 = 0 ;
-  alps::gf::legendre_mesh *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::ostream *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:__lshift__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__ostream,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  arg1 = reinterpret_cast< std::ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__legendre_mesh,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::legendre_mesh const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "2"" of type '" "alps::gf::legendre_mesh const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::legendre_mesh * >(argp2);
-  result = (std::ostream *) &alps::gf::operator <<(*arg1,(alps::gf::legendre_mesh const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__ostream, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap___lshift__(PyObject *self, PyObject *args) {
+SWIGINTERN PyObject *_wrap_SwigPyIterator___sub__(PyObject *self, PyObject *args) {
   Py_ssize_t argc;
   PyObject *argv[3] = {
     0
@@ -6341,78 +5065,28 @@ SWIGINTERN PyObject *_wrap___lshift__(PyObject *self, PyObject *args) {
   if (argc == 2) {
     int _v;
     void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__ostream, 0);
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_swig__SwigPyIterator, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__real_frequency_mesh, 0);
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_swig__SwigPyIterator, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___lshift____SWIG_5(self, args);
+        return _wrap_SwigPyIterator___sub____SWIG_1(self, args);
       }
     }
   }
   if (argc == 2) {
     int _v;
     void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__ostream, 0);
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_swig__SwigPyIterator, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__itime_mesh, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap___lshift____SWIG_7(self, args);
+      {
+        int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
       }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__ostream, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__power_mesh, 0);
-      _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___lshift____SWIG_8(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__ostream, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__momentum_realspace_index_mesh, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap___lshift____SWIG_9(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__ostream, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__index_mesh, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap___lshift____SWIG_10(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__ostream, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__legendre_mesh, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap___lshift____SWIG_11(self, args);
+        return _wrap_SwigPyIterator___sub____SWIG_0(self, args);
       }
     }
   }
@@ -6423,435 +5097,28 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_can_have_tail_yes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::detail::can_have_tail_yes *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_can_have_tail_yes")) SWIG_fail;
-  result = (alps::gf::detail::can_have_tail_yes *)new alps::gf::detail::can_have_tail_yes();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__detail__can_have_tail_yes, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_can_have_tail_yes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::detail::can_have_tail_yes *arg1 = (alps::gf::detail::can_have_tail_yes *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_can_have_tail_yes",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__detail__can_have_tail_yes, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_can_have_tail_yes" "', argument " "1"" of type '" "alps::gf::detail::can_have_tail_yes *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::detail::can_have_tail_yes * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *can_have_tail_yes_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *SwigPyIterator_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__detail__can_have_tail_yes, SWIG_NewClientData(obj));
+  SWIG_TypeNewClientData(SWIGTYPE_p_swig__SwigPyIterator, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_new_can_have_tail_no(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_drms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::detail::can_have_tail_no *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_can_have_tail_no")) SWIG_fail;
-  result = (alps::gf::detail::can_have_tail_no *)new alps::gf::detail::can_have_tail_no();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__detail__can_have_tail_no, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_can_have_tail_no(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::detail::can_have_tail_no *arg1 = (alps::gf::detail::can_have_tail_no *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_can_have_tail_no",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__detail__can_have_tail_no, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_can_have_tail_no" "', argument " "1"" of type '" "alps::gf::detail::can_have_tail_no *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::detail::can_have_tail_no * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *can_have_tail_no_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__detail__can_have_tail_no, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap___lshift__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  std::ostream *arg1 = 0 ;
-  boost::multi_array< double,1 > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::ostream *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:__lshift__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__ostream,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "1"" of type '" "std::ostream &""'"); 
-  }
-  arg1 = reinterpret_cast< std::ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_boost__multi_arrayT_double_1_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lshift__" "', argument " "2"" of type '" "boost::multi_array< double,1 > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lshift__" "', argument " "2"" of type '" "boost::multi_array< double,1 > const &""'"); 
-  }
-  arg2 = reinterpret_cast< boost::multi_array< double,1 > * >(argp2);
-  result = (std::ostream *) &alps::gf::detail::operator <<(*arg1,(boost::multi_array< double,1 > const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__ostream, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_LegendreGF__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:new_LegendreGF",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_alps__gf__legendre_mesh,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_LegendreGF" "', argument " "1"" of type '" "alps::gf::legendre_mesh const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_LegendreGF" "', argument " "1"" of type '" "alps::gf::legendre_mesh const &""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *)new alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >((alps::gf::legendre_mesh const &)*arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_LegendreGF__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::legendre_mesh *arg1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:new_LegendreGF",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_alps__gf__legendre_mesh,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_LegendreGF" "', argument " "1"" of type '" "alps::gf::legendre_mesh const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_LegendreGF" "', argument " "1"" of type '" "alps::gf::legendre_mesh const &""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::legendre_mesh * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_boost__multi_arrayT_std__complexT_double_t_1_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_LegendreGF" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_LegendreGF" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type * >(argp2);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *)new alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >((alps::gf::legendre_mesh const &)*arg1,(alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_LegendreGF(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_alps__gf__legendre_mesh, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_LegendreGF__SWIG_0(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_alps__gf__legendre_mesh, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_boost__multi_arrayT_std__complexT_double_t_1_t, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_new_LegendreGF__SWIG_1(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_LegendreGF'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::one_index_gf(alps::gf::legendre_mesh const &)\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::one_index_gf(alps::gf::legendre_mesh const &,alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type const &)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF_data(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:LegendreGF_data",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF_data" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type *) &((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *)arg1)->data();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_boost__multi_arrayT_std__complexT_double_t_1_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF_mesh1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::legendre_mesh *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:LegendreGF_mesh1",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF_mesh1" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  result = (alps::gf::legendre_mesh *) &((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *)arg1)->mesh1();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__legendre_mesh, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF___call____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::legendre_mesh > > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LegendreGF___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF___call__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LegendreGF___call__" "', argument " "2"" of type '" "alps::gf::legendre_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF___call__" "', argument " "2"" of type '" "alps::gf::legendre_mesh::index_type""'");
-    } else {
-      alps::gf::legendre_mesh::index_type * temp = reinterpret_cast< alps::gf::legendre_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type *) &((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_std_complex_Sl_double_Sg_(static_cast< std::complex<double> >(*result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF___call____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  SwigValueWrapper< alps::gf::generic_index< alps::gf::legendre_mesh > > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LegendreGF___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF___call__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LegendreGF___call__" "', argument " "2"" of type '" "alps::gf::legendre_mesh::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF___call__" "', argument " "2"" of type '" "alps::gf::legendre_mesh::index_type""'");
-    } else {
-      alps::gf::legendre_mesh::index_type * temp = reinterpret_cast< alps::gf::legendre_mesh::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type *) &(arg1)->operator ()(arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__complexT_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF___call__(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_LegendreGF___call____SWIG_1(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_LegendreGF___call____SWIG_0(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'LegendreGF___call__'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::operator ()(alps::gf::legendre_mesh::index_type) const\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::operator ()(alps::gf::legendre_mesh::index_type)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF_initialize(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:LegendreGF_initialize",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF_initialize" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  (arg1)->initialize();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF_norm(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double > tempp1 ;
   PyObject * obj0 = 0 ;
   double result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:LegendreGF_norm",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF_norm" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *""'"); 
+  if (!PyArg_ParseTuple(args,(char *)"O:drms",&obj0)) SWIG_fail;
+  {
+    // In: const&
+    if (!ConvertFromNumpy<std::vector<double> >(&tempp1, obj0))
+    SWIG_fail;
+    arg1 = &tempp1;
   }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  result = (double)((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *)arg1)->norm();
+  result = (double)drms((std::vector< double,std::allocator< double > > const &)*arg1);
   resultobj = SWIG_From_double(static_cast< double >(result));
   return resultobj;
 fail:
@@ -6859,1255 +5126,86 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_LegendreGF___iadd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_crms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
+  std::vector< dcomplex,std::allocator< dcomplex > > *arg1 = 0 ;
+  std::vector< std::complex< double > > tempp1 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *result = 0 ;
+  dcomplex result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:LegendreGF___iadd__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF___iadd__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LegendreGF___iadd__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF___iadd__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp2);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) &(arg1)->operator +=((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF___isub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LegendreGF___isub__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF___isub__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LegendreGF___isub__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF___isub__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp2);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) &(arg1)->operator -=((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF___imul__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type temp2 ;
-  std::complex< double > val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LegendreGF___imul__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF___imul__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  ecode2 = SWIG_AsVal_std_complex_Sl_double_Sg_(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LegendreGF___imul__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type""'");
-  } 
-  temp2 = static_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type >(val2);
-  arg2 = &temp2;
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) &(arg1)->operator *=((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF___itruediv__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type temp2 ;
-  std::complex< double > val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LegendreGF___itruediv__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF___itruediv__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  ecode2 = SWIG_AsVal_std_complex_Sl_double_Sg_(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LegendreGF___itruediv__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type""'");
-  } 
-  temp2 = static_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type >(val2);
-  arg2 = &temp2;
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) &(arg1)->operator /=((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF___neg__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:LegendreGF___neg__",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF___neg__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  result = (arg1)->operator -();
-  resultobj = SWIG_NewPointerObj((new alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >(static_cast< const alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >& >(result))), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:LegendreGF_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF_save" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LegendreGF_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "LegendreGF_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LegendreGF_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:LegendreGF_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LegendreGF_load" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LegendreGF_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "LegendreGF_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LegendreGF_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_LegendreGF(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_LegendreGF",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_LegendreGF" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *LegendreGF_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_new_OmegaGF__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:new_OmegaGF",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_OmegaGF" "', argument " "1"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_OmegaGF" "', argument " "1"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > * >(argp1);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *)new alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >((alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &)*arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_OmegaGF__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > *arg1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:new_OmegaGF",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_OmegaGF" "', argument " "1"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_OmegaGF" "', argument " "1"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_boost__multi_arrayT_std__complexT_double_t_1_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_OmegaGF" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_OmegaGF" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type * >(argp2);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *)new alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >((alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &)*arg1,(alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_OmegaGF(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_OmegaGF__SWIG_0(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_boost__multi_arrayT_std__complexT_double_t_1_t, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_new_OmegaGF__SWIG_1(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_OmegaGF'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::one_index_gf(alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &)\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::one_index_gf(alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > const &,alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type const &)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF_data(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:OmegaGF_data",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF_data" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type *) &((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *)arg1)->data();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_boost__multi_arrayT_std__complexT_double_t_1_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF_mesh1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:OmegaGF_mesh1",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF_mesh1" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  result = (alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > *) &((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *)arg1)->mesh1();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF___call____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  SwigValueWrapper< alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:OmegaGF___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF___call__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
+  if (!PyArg_ParseTuple(args,(char *)"O:crms",&obj0)) SWIG_fail;
   {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "OmegaGF___call__" "', argument " "2"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF___call__" "', argument " "2"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type""'");
-    } else {
-      alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type * temp = reinterpret_cast< alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
+    // In: const&
+    if (!ConvertFromNumpy<std::vector<std::complex<double> > >(&tempp1, obj0))
+    SWIG_fail;
+    arg1 = &tempp1;
   }
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type *) &((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *)arg1)->operator ()(arg2);
-  resultobj = SWIG_From_std_complex_Sl_double_Sg_(static_cast< std::complex<double> >(*result));
+  result = crms((std::vector< std::complex< double >,std::allocator< std::complex< double > > > const &)*arg1);
+  resultobj = SWIG_From_std_complex_Sl_double_Sg_(static_cast< std::complex<double> >(result));
   return resultobj;
 fail:
   return NULL;
 }
 
-
-SWIGINTERN PyObject *_wrap_OmegaGF___call____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  SwigValueWrapper< alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:OmegaGF___call__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF___call__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "OmegaGF___call__" "', argument " "2"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF___call__" "', argument " "2"" of type '" "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type""'");
-    } else {
-      alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type * temp = reinterpret_cast< alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type *) &(arg1)->operator ()(arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__complexT_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF___call__(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_OmegaGF___call____SWIG_1(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_OmegaGF___call____SWIG_0(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'OmegaGF___call__'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::operator ()(alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type) const\n"
-    "    alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::operator ()(alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF_initialize(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:OmegaGF_initialize",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF_initialize" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  (arg1)->initialize();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF_norm(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:OmegaGF_norm",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF_norm" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  result = (double)((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *)arg1)->norm();
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF___iadd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:OmegaGF___iadd__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF___iadd__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "OmegaGF___iadd__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF___iadd__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp2);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) &(arg1)->operator +=((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF___isub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:OmegaGF___isub__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF___isub__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "OmegaGF___isub__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF___isub__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp2);
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) &(arg1)->operator -=((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF___imul__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type temp2 ;
-  std::complex< double > val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:OmegaGF___imul__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF___imul__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  ecode2 = SWIG_AsVal_std_complex_Sl_double_Sg_(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "OmegaGF___imul__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type""'");
-  } 
-  temp2 = static_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type >(val2);
-  arg2 = &temp2;
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) &(arg1)->operator *=((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF___itruediv__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type temp2 ;
-  std::complex< double > val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:OmegaGF___itruediv__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF___itruediv__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  ecode2 = SWIG_AsVal_std_complex_Sl_double_Sg_(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "OmegaGF___itruediv__" "', argument " "2"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type""'");
-  } 
-  temp2 = static_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type >(val2);
-  arg2 = &temp2;
-  result = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) &(arg1)->operator /=((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF___neg__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:OmegaGF___neg__",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF___neg__" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  result = (arg1)->operator -();
-  resultobj = SWIG_NewPointerObj((new alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >(static_cast< const alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >& >(result))), SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF_save(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:OmegaGF_save",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF_save" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "OmegaGF_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF_save" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "OmegaGF_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF_save" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  ((alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > const *)arg1)->save(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_OmegaGF_load(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  alps::hdf5::archive *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:OmegaGF_load",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "OmegaGF_load" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_alps__hdf5__archive,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "OmegaGF_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF_load" "', argument " "2"" of type '" "alps::hdf5::archive &""'"); 
-  }
-  arg2 = reinterpret_cast< alps::hdf5::archive * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "OmegaGF_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "OmegaGF_load" "', argument " "3"" of type '" "std::string const &""'"); 
-  }
-  arg3 = reinterpret_cast< std::string * >(argp3);
-  (arg1)->load(*arg2,(std::string const &)*arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_OmegaGF(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *arg1 = (alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_OmegaGF",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_OmegaGF" "', argument " "1"" of type '" "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *""'"); 
-  }
-  arg1 = reinterpret_cast< alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *OmegaGF_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
-	 { (char *)"save_version", _wrap_save_version, METH_VARARGS, NULL},
-	 { (char *)"check_version", _wrap_check_version, METH_VARARGS, NULL},
-	 { (char *)"base_mesh_points", _wrap_base_mesh_points, METH_VARARGS, NULL},
-	 { (char *)"new_base_mesh", _wrap_new_base_mesh, METH_VARARGS, NULL},
-	 { (char *)"delete_base_mesh", _wrap_delete_base_mesh, METH_VARARGS, NULL},
-	 { (char *)"base_mesh_swigregister", base_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_real_frequency_mesh", _wrap_new_real_frequency_mesh, METH_VARARGS, NULL},
-	 { (char *)"real_frequency_mesh_extent", _wrap_real_frequency_mesh_extent, METH_VARARGS, NULL},
-	 { (char *)"real_frequency_mesh___call__", _wrap_real_frequency_mesh___call__, METH_VARARGS, NULL},
-	 { (char *)"real_frequency_mesh_save", _wrap_real_frequency_mesh_save, METH_VARARGS, NULL},
-	 { (char *)"real_frequency_mesh_load", _wrap_real_frequency_mesh_load, METH_VARARGS, NULL},
-	 { (char *)"real_frequency_mesh___eq__", _wrap_real_frequency_mesh___eq__, METH_VARARGS, NULL},
-	 { (char *)"real_frequency_mesh___ne__", _wrap_real_frequency_mesh___ne__, METH_VARARGS, NULL},
-	 { (char *)"delete_real_frequency_mesh", _wrap_delete_real_frequency_mesh, METH_VARARGS, NULL},
-	 { (char *)"real_frequency_mesh_swigregister", real_frequency_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_itime_mesh", _wrap_new_itime_mesh, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh___call__", _wrap_itime_mesh___call__, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_extent", _wrap_itime_mesh_extent, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh___eq__", _wrap_itime_mesh___eq__, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_beta", _wrap_itime_mesh_beta, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_statistics", _wrap_itime_mesh_statistics, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_points", _wrap_itime_mesh_points, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh___ne__", _wrap_itime_mesh___ne__, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_save", _wrap_itime_mesh_save, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_load", _wrap_itime_mesh_load, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_compute_points", _wrap_itime_mesh_compute_points, METH_VARARGS, NULL},
-	 { (char *)"delete_itime_mesh", _wrap_delete_itime_mesh, METH_VARARGS, NULL},
-	 { (char *)"itime_mesh_swigregister", itime_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_power_mesh", _wrap_new_power_mesh, METH_VARARGS, NULL},
-	 { (char *)"power_mesh___call__", _wrap_power_mesh___call__, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_extent", _wrap_power_mesh_extent, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_power", _wrap_power_mesh_power, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_uniform", _wrap_power_mesh_uniform, METH_VARARGS, NULL},
-	 { (char *)"power_mesh___eq__", _wrap_power_mesh___eq__, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_beta", _wrap_power_mesh_beta, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_statistics", _wrap_power_mesh_statistics, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_points", _wrap_power_mesh_points, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_weights", _wrap_power_mesh_weights, METH_VARARGS, NULL},
-	 { (char *)"power_mesh___ne__", _wrap_power_mesh___ne__, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_save", _wrap_power_mesh_save, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_load", _wrap_power_mesh_load, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_compute_points", _wrap_power_mesh_compute_points, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_compute_weights", _wrap_power_mesh_compute_weights, METH_VARARGS, NULL},
-	 { (char *)"delete_power_mesh", _wrap_delete_power_mesh, METH_VARARGS, NULL},
-	 { (char *)"power_mesh_swigregister", power_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh_extent", _wrap_momentum_realspace_index_mesh_extent, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh_dimension", _wrap_momentum_realspace_index_mesh_dimension, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh_kind", _wrap_momentum_realspace_index_mesh_kind, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh___eq__", _wrap_momentum_realspace_index_mesh___eq__, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh___ne__", _wrap_momentum_realspace_index_mesh___ne__, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh_points", _wrap_momentum_realspace_index_mesh_points, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh_save", _wrap_momentum_realspace_index_mesh_save, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh_load", _wrap_momentum_realspace_index_mesh_load, METH_VARARGS, NULL},
-	 { (char *)"delete_momentum_realspace_index_mesh", _wrap_delete_momentum_realspace_index_mesh, METH_VARARGS, NULL},
-	 { (char *)"momentum_realspace_index_mesh_swigregister", momentum_realspace_index_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_momentum_index_mesh", _wrap_new_momentum_index_mesh, METH_VARARGS, NULL},
-	 { (char *)"momentum_index_mesh___call__", _wrap_momentum_index_mesh___call__, METH_VARARGS, NULL},
-	 { (char *)"delete_momentum_index_mesh", _wrap_delete_momentum_index_mesh, METH_VARARGS, NULL},
-	 { (char *)"momentum_index_mesh_swigregister", momentum_index_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_real_space_index_mesh", _wrap_new_real_space_index_mesh, METH_VARARGS, NULL},
-	 { (char *)"real_space_index_mesh___call__", _wrap_real_space_index_mesh___call__, METH_VARARGS, NULL},
-	 { (char *)"delete_real_space_index_mesh", _wrap_delete_real_space_index_mesh, METH_VARARGS, NULL},
-	 { (char *)"real_space_index_mesh_swigregister", real_space_index_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_index_mesh", _wrap_new_index_mesh, METH_VARARGS, NULL},
-	 { (char *)"index_mesh_extent", _wrap_index_mesh_extent, METH_VARARGS, NULL},
-	 { (char *)"index_mesh___call__", _wrap_index_mesh___call__, METH_VARARGS, NULL},
-	 { (char *)"index_mesh_points", _wrap_index_mesh_points, METH_VARARGS, NULL},
-	 { (char *)"index_mesh___eq__", _wrap_index_mesh___eq__, METH_VARARGS, NULL},
-	 { (char *)"index_mesh___ne__", _wrap_index_mesh___ne__, METH_VARARGS, NULL},
-	 { (char *)"index_mesh_save", _wrap_index_mesh_save, METH_VARARGS, NULL},
-	 { (char *)"index_mesh_load", _wrap_index_mesh_load, METH_VARARGS, NULL},
-	 { (char *)"index_mesh_compute_points", _wrap_index_mesh_compute_points, METH_VARARGS, NULL},
-	 { (char *)"delete_index_mesh", _wrap_delete_index_mesh, METH_VARARGS, NULL},
-	 { (char *)"index_mesh_swigregister", index_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_legendre_mesh", _wrap_new_legendre_mesh, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_extent", _wrap_legendre_mesh_extent, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh___call__", _wrap_legendre_mesh___call__, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh___eq__", _wrap_legendre_mesh___eq__, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh___ne__", _wrap_legendre_mesh___ne__, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_beta", _wrap_legendre_mesh_beta, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_statistics", _wrap_legendre_mesh_statistics, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_swap", _wrap_legendre_mesh_swap, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_save", _wrap_legendre_mesh_save, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_load", _wrap_legendre_mesh_load, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_check_range", _wrap_legendre_mesh_check_range, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_compute_points", _wrap_legendre_mesh_compute_points, METH_VARARGS, NULL},
-	 { (char *)"delete_legendre_mesh", _wrap_delete_legendre_mesh, METH_VARARGS, NULL},
-	 { (char *)"legendre_mesh_swigregister", legendre_mesh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"__lshift__", _wrap___lshift__, METH_VARARGS, NULL},
-	 { (char *)"new_can_have_tail_yes", _wrap_new_can_have_tail_yes, METH_VARARGS, NULL},
-	 { (char *)"delete_can_have_tail_yes", _wrap_delete_can_have_tail_yes, METH_VARARGS, NULL},
-	 { (char *)"can_have_tail_yes_swigregister", can_have_tail_yes_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_can_have_tail_no", _wrap_new_can_have_tail_no, METH_VARARGS, NULL},
-	 { (char *)"delete_can_have_tail_no", _wrap_delete_can_have_tail_no, METH_VARARGS, NULL},
-	 { (char *)"can_have_tail_no_swigregister", can_have_tail_no_swigregister, METH_VARARGS, NULL},
-	 { (char *)"__lshift__", _wrap___lshift__, METH_VARARGS, NULL},
-	 { (char *)"new_LegendreGF", _wrap_new_LegendreGF, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF_data", _wrap_LegendreGF_data, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF_mesh1", _wrap_LegendreGF_mesh1, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF___call__", _wrap_LegendreGF___call__, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF_initialize", _wrap_LegendreGF_initialize, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF_norm", _wrap_LegendreGF_norm, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF___iadd__", _wrap_LegendreGF___iadd__, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF___isub__", _wrap_LegendreGF___isub__, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF___imul__", _wrap_LegendreGF___imul__, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF___itruediv__", _wrap_LegendreGF___itruediv__, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF___neg__", _wrap_LegendreGF___neg__, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF_save", _wrap_LegendreGF_save, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF_load", _wrap_LegendreGF_load, METH_VARARGS, NULL},
-	 { (char *)"delete_LegendreGF", _wrap_delete_LegendreGF, METH_VARARGS, NULL},
-	 { (char *)"LegendreGF_swigregister", LegendreGF_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_OmegaGF", _wrap_new_OmegaGF, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF_data", _wrap_OmegaGF_data, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF_mesh1", _wrap_OmegaGF_mesh1, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF___call__", _wrap_OmegaGF___call__, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF_initialize", _wrap_OmegaGF_initialize, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF_norm", _wrap_OmegaGF_norm, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF___iadd__", _wrap_OmegaGF___iadd__, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF___isub__", _wrap_OmegaGF___isub__, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF___imul__", _wrap_OmegaGF___imul__, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF___itruediv__", _wrap_OmegaGF___itruediv__, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF___neg__", _wrap_OmegaGF___neg__, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF_save", _wrap_OmegaGF_save, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF_load", _wrap_OmegaGF_load, METH_VARARGS, NULL},
-	 { (char *)"delete_OmegaGF", _wrap_delete_OmegaGF, METH_VARARGS, NULL},
-	 { (char *)"OmegaGF_swigregister", OmegaGF_swigregister, METH_VARARGS, NULL},
+	 { (char *)"delete_SwigPyIterator", _wrap_delete_SwigPyIterator, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_value", _wrap_SwigPyIterator_value, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_incr", _wrap_SwigPyIterator_incr, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_decr", _wrap_SwigPyIterator_decr, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_distance", _wrap_SwigPyIterator_distance, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_equal", _wrap_SwigPyIterator_equal, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_copy", _wrap_SwigPyIterator_copy, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_next", _wrap_SwigPyIterator_next, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator___next__", _wrap_SwigPyIterator___next__, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_previous", _wrap_SwigPyIterator_previous, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_advance", _wrap_SwigPyIterator_advance, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator___eq__", _wrap_SwigPyIterator___eq__, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator___ne__", _wrap_SwigPyIterator___ne__, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator___iadd__", _wrap_SwigPyIterator___iadd__, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator___isub__", _wrap_SwigPyIterator___isub__, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator___add__", _wrap_SwigPyIterator___add__, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
+	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
+	 { (char *)"drms", _wrap_drms, METH_VARARGS, NULL},
+	 { (char *)"crms", _wrap_crms, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
-static void *_p_alps__gf__real_frequency_meshTo_p_alps__gf__base_mesh(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((alps::gf::base_mesh *)  ((alps::gf::real_frequency_mesh *) x));
-}
-static void *_p_alps__gf__legendre_meshTo_p_alps__gf__base_mesh(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((alps::gf::base_mesh *)  ((alps::gf::legendre_mesh *) x));
-}
-static void *_p_alps__gf__momentum_index_meshTo_p_alps__gf__momentum_realspace_index_mesh(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((alps::gf::momentum_realspace_index_mesh *)  ((alps::gf::momentum_index_mesh *) x));
-}
-static void *_p_alps__gf__real_space_index_meshTo_p_alps__gf__momentum_realspace_index_mesh(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((alps::gf::momentum_realspace_index_mesh *)  ((alps::gf::real_space_index_mesh *) x));
-}
-static swig_type_info _swigt__p_alps__gf__base_mesh = {"_p_alps__gf__base_mesh", "alps::gf::base_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__detail__can_have_tail_no = {"_p_alps__gf__detail__can_have_tail_no", "alps::gf::detail::can_have_tail_no *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__detail__can_have_tail_yes = {"_p_alps__gf__detail__can_have_tail_yes", "alps::gf::detail::can_have_tail_yes *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__five_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__five_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t", "alps::gf::five_index_gf< double,itime_mesh,real_space_index_mesh,real_space_index_mesh,index_mesh,index_mesh > *|alps::gf::five_index_gf< double,alps::gf::itime_mesh,alps::gf::real_space_index_mesh,alps::gf::real_space_index_mesh,alps::gf::index_mesh,alps::gf::index_mesh > *|alps::gf::itime_r1_r2_sigma1_sigma2_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__five_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__five_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t", "alps::gf::five_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,alps::gf::real_space_index_mesh,alps::gf::real_space_index_mesh,alps::gf::index_mesh,alps::gf::index_mesh > *|alps::gf::five_index_gf< std::complex< double >,matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,real_space_index_mesh,real_space_index_mesh,index_mesh,index_mesh > *|alps::gf::omega_r1_r2_sigma1_sigma2_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t", "alps::gf::four_index_gf< double,alps::gf::itime_mesh,alps::gf::momentum_index_mesh,alps::gf::index_mesh,alps::gf::index_mesh > *|alps::gf::four_index_gf< double,itime_mesh,momentum_index_mesh,index_mesh,index_mesh > *|alps::gf::itime_k_sigma1_sigma2_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t", "alps::gf::four_index_gf< double,alps::gf::itime_mesh,alps::gf::momentum_index_mesh,alps::gf::momentum_index_mesh,alps::gf::index_mesh > *|alps::gf::four_index_gf< double,itime_mesh,momentum_index_mesh,momentum_index_mesh,index_mesh > *|alps::gf::itime_k1_k2_sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t", "alps::gf::four_index_gf< double,itime_mesh,real_space_index_mesh,real_space_index_mesh,index_mesh > *|alps::gf::four_index_gf< double,alps::gf::itime_mesh,alps::gf::real_space_index_mesh,alps::gf::real_space_index_mesh,alps::gf::index_mesh > *|alps::gf::itime_r1_r2_sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t", "alps::gf::four_index_gf< std::complex< double >,alps::gf::itime_mesh,alps::gf::real_space_index_mesh,alps::gf::real_space_index_mesh,alps::gf::index_mesh > *|alps::gf::itime_r1_r2_sigma_complex_gf *|alps::gf::four_index_gf< std::complex< double >,itime_mesh,real_space_index_mesh,real_space_index_mesh,index_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t", "alps::gf::four_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,alps::gf::momentum_index_mesh,alps::gf::index_mesh,alps::gf::index_mesh > *|alps::gf::four_index_gf< std::complex< double >,matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,momentum_index_mesh,index_mesh,index_mesh > *|alps::gf::omega_k_sigma1_sigma2_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t", "alps::gf::four_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,alps::gf::momentum_index_mesh,alps::gf::momentum_index_mesh,alps::gf::index_mesh > *|alps::gf::four_index_gf< std::complex< double >,matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,momentum_index_mesh,momentum_index_mesh,index_mesh > *|alps::gf::omega_k1_k2_sigma_gf *|alps::gf::matsubara_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t", "alps::gf::four_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,alps::gf::real_space_index_mesh,alps::gf::real_space_index_mesh,alps::gf::index_mesh > *|alps::gf::four_index_gf< std::complex< double >,matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,real_space_index_mesh,real_space_index_mesh,index_mesh > *|alps::gf::omega_r1_r2_sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__generic_indexT_alps__gf__index_mesh_t = {"_p_alps__gf__generic_indexT_alps__gf__index_mesh_t", "alps::gf::index_mesh::index_type *|alps::gf::index *|alps::gf::generic_index< alps::gf::index_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__generic_indexT_alps__gf__itime_mesh_t = {"_p_alps__gf__generic_indexT_alps__gf__itime_mesh_t", "alps::gf::itime_mesh::index_type *|alps::gf::itime_index *|alps::gf::generic_index< alps::gf::itime_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t = {"_p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t", "alps::gf::legendre_mesh::index_type *|alps::gf::legendre_index *|alps::gf::generic_index< alps::gf::legendre_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t = {"_p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t", "alps::gf::momentum_index_mesh::index_type *|alps::gf::real_space_index_mesh::index_type *|alps::gf::momentum_index *|alps::gf::real_space_index *|alps::gf::generic_index< alps::gf::momentum_index_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__generic_indexT_alps__gf__power_mesh_t = {"_p_alps__gf__generic_indexT_alps__gf__power_mesh_t", "alps::gf::power_mesh::index_type *|alps::gf::generic_index< alps::gf::power_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t = {"_p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t", "alps::gf::real_frequency_mesh::index_type *|alps::gf::real_freq_index *|alps::gf::generic_index< alps::gf::real_frequency_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__index_mesh = {"_p_alps__gf__index_mesh", "alps::gf::index_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__itime_mesh = {"_p_alps__gf__itime_mesh", "alps::gf::itime_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__legendre_mesh = {"_p_alps__gf__legendre_mesh", "alps::gf::legendre_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t = {"_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t", "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_NEGATIVE > *|alps::gf::matsubara_pn_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t__index_type = {"_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t__index_type", "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_NEGATIVE >::index_type *|alps::gf::matsubara_pn_index *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t = {"_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t", "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > *|alps::gf::matsubara_positive_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type = {"_p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type", "alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >::index_type *|alps::gf::matsubara_index *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__momentum_index_mesh = {"_p_alps__gf__momentum_index_mesh", "alps::gf::momentum_index_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__momentum_realspace_index_mesh = {"_p_alps__gf__momentum_realspace_index_mesh", "alps::gf::momentum_realspace_index_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__numerical_meshT_double_3_t__index_type = {"_p_alps__gf__numerical_meshT_double_3_t__index_type", "alps::gf::numerical_mesh< double,3 >::index_type *|alps::gf::numerical_mesh_index *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__one_index_gfT_double_alps__gf__index_mesh_t = {"_p_alps__gf__one_index_gfT_double_alps__gf__index_mesh_t", "alps::gf::one_index_gf< double,alps::gf::index_mesh > *|alps::gf::one_index_gf< double,index_mesh > *|alps::gf::sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__one_index_gfT_double_alps__gf__itime_mesh_t = {"_p_alps__gf__one_index_gfT_double_alps__gf__itime_mesh_t", "alps::gf::one_index_gf< double,alps::gf::itime_mesh > *|alps::gf::one_index_gf< double,itime_mesh > *|alps::gf::itime_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__one_index_gfT_double_alps__gf__legendre_mesh_t = {"_p_alps__gf__one_index_gfT_double_alps__gf__legendre_mesh_t", "alps::gf::legendre_gf *|alps::gf::one_index_gf< double,legendre_mesh > *|alps::gf::one_index_gf< double,alps::gf::legendre_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t = {"_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t", "alps::gf::one_index_gf< std::complex< double >,legendre_mesh > *|alps::gf::complex_legendre_gf *|alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t = {"_p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t", "alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *|alps::gf::omega_gf *|alps::gf::one_index_gf< std::complex< double >,matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__power_mesh = {"_p_alps__gf__power_mesh", "alps::gf::power_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__real_frequency_mesh = {"_p_alps__gf__real_frequency_mesh", "alps::gf::real_frequency_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__real_space_index_mesh = {"_p_alps__gf__real_space_index_mesh", "alps::gf::real_space_index_mesh *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__three_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__three_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t", "alps::gf::three_index_gf< double,alps::gf::itime_mesh,alps::gf::momentum_index_mesh,alps::gf::index_mesh > *|alps::gf::three_index_gf< double,itime_mesh,momentum_index_mesh,index_mesh > *|alps::gf::itime_k_sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__three_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__three_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t", "alps::gf::three_index_gf< double,momentum_index_mesh,index_mesh,index_mesh > *|alps::gf::three_index_gf< double,alps::gf::momentum_index_mesh,alps::gf::index_mesh,alps::gf::index_mesh > *|alps::gf::k_sigma1_sigma2_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__three_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__three_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t", "alps::gf::three_index_gf< std::complex< double >,matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,momentum_index_mesh,index_mesh > *|alps::gf::three_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,alps::gf::momentum_index_mesh,alps::gf::index_mesh > *|alps::gf::omega_k_sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__two_index_gfT_double_alps__gf__itime_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__two_index_gfT_double_alps__gf__itime_mesh_alps__gf__index_mesh_t", "alps::gf::two_index_gf< double,itime_mesh,index_mesh > *|alps::gf::two_index_gf< double,alps::gf::itime_mesh,alps::gf::index_mesh > *|alps::gf::itime_sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__two_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t = {"_p_alps__gf__two_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t", "alps::gf::two_index_gf< double,momentum_index_mesh,index_mesh > *|alps::gf::two_index_gf< double,alps::gf::momentum_index_mesh,alps::gf::index_mesh > *|alps::gf::k_sigma_gf *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__gf__two_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__index_mesh_t = {"_p_alps__gf__two_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__index_mesh_t", "alps::gf::two_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,alps::gf::index_mesh > *|alps::gf::omega_sigma_gf *|alps::gf::two_index_gf< std::complex< double >,matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY >,index_mesh > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_alps__hdf5__archive = {"_p_alps__hdf5__archive", "alps::hdf5::archive *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_boost__multi_arrayT_double_1_t = {"_p_boost__multi_arrayT_double_1_t", "boost::multi_array< double,1 > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_boost__multi_arrayT_double_2_t = {"_p_boost__multi_arrayT_double_2_t", "boost::multi_array< double,2 > *|alps::gf::momentum_realspace_index_mesh::container_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_boost__multi_arrayT_std__complexT_double_t_1_t = {"_p_boost__multi_arrayT_std__complexT_double_t_1_t", "boost::multi_array< std::complex< double >,1 > *|alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::container_type *|alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::container_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_container_type = {"_p_container_type", "container_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_index_type = {"_p_index_type", "index_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_mesh1_type = {"_p_mesh1_type", "mesh1_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_mesh_can_have_tail = {"_p_mesh_can_have_tail", "mesh_can_have_tail *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_mesh_cannot_have_tail = {"_p_mesh_cannot_have_tail", "mesh_cannot_have_tail *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__complexT_double_t = {"_p_std__complexT_double_t", "alps::gf::one_index_gf< std::complex< double >,alps::gf::legendre_mesh >::value_type *|alps::gf::one_index_gf< std::complex< double >,alps::gf::matsubara_mesh< alps::gf::mesh::POSITIVE_ONLY > >::value_type *|std::complex< double > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__ostream = {"_p_std__ostream", "std::ostream *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_double_t = {"_p_std__vectorT_double_t", "std::vector< double > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_int_t = {"_p_std__vectorT_int_t", "std::vector< int > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__complexT_double_t = {"_p_std__complexT_double_t", "dcomplex *|std::complex< double > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__invalid_argument = {"_p_std__invalid_argument", "std::invalid_argument *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_double_std__allocatorT_double_t_t = {"_p_std__vectorT_double_std__allocatorT_double_t_t", "std::vector< double,std::allocator< double > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t = {"_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t", "std::vector< dcomplex,std::allocator< dcomplex > > *|std::vector< std::complex< double >,std::allocator< std::complex< double > > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
-  &_swigt__p_alps__gf__base_mesh,
-  &_swigt__p_alps__gf__detail__can_have_tail_no,
-  &_swigt__p_alps__gf__detail__can_have_tail_yes,
-  &_swigt__p_alps__gf__five_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__five_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__generic_indexT_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__generic_indexT_alps__gf__itime_mesh_t,
-  &_swigt__p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t,
-  &_swigt__p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t,
-  &_swigt__p_alps__gf__generic_indexT_alps__gf__power_mesh_t,
-  &_swigt__p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t,
-  &_swigt__p_alps__gf__index_mesh,
-  &_swigt__p_alps__gf__itime_mesh,
-  &_swigt__p_alps__gf__legendre_mesh,
-  &_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t,
-  &_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t__index_type,
-  &_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t,
-  &_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type,
-  &_swigt__p_alps__gf__momentum_index_mesh,
-  &_swigt__p_alps__gf__momentum_realspace_index_mesh,
-  &_swigt__p_alps__gf__numerical_meshT_double_3_t__index_type,
-  &_swigt__p_alps__gf__one_index_gfT_double_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__one_index_gfT_double_alps__gf__itime_mesh_t,
-  &_swigt__p_alps__gf__one_index_gfT_double_alps__gf__legendre_mesh_t,
-  &_swigt__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t,
-  &_swigt__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t,
-  &_swigt__p_alps__gf__power_mesh,
-  &_swigt__p_alps__gf__real_frequency_mesh,
-  &_swigt__p_alps__gf__real_space_index_mesh,
-  &_swigt__p_alps__gf__three_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__three_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__three_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__two_index_gfT_double_alps__gf__itime_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__two_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  &_swigt__p_alps__gf__two_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__index_mesh_t,
-  &_swigt__p_alps__hdf5__archive,
-  &_swigt__p_boost__multi_arrayT_double_1_t,
-  &_swigt__p_boost__multi_arrayT_double_2_t,
-  &_swigt__p_boost__multi_arrayT_std__complexT_double_t_1_t,
   &_swigt__p_char,
-  &_swigt__p_container_type,
-  &_swigt__p_index_type,
-  &_swigt__p_mesh1_type,
-  &_swigt__p_mesh_can_have_tail,
-  &_swigt__p_mesh_cannot_have_tail,
   &_swigt__p_std__complexT_double_t,
-  &_swigt__p_std__ostream,
-  &_swigt__p_std__string,
-  &_swigt__p_std__vectorT_double_t,
-  &_swigt__p_std__vectorT_int_t,
-  &_swigt__p_value_type,
+  &_swigt__p_std__invalid_argument,
+  &_swigt__p_std__vectorT_double_std__allocatorT_double_t_t,
+  &_swigt__p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t,
+  &_swigt__p_swig__SwigPyIterator,
 };
 
-static swig_cast_info _swigc__p_alps__gf__base_mesh[] = {  {&_swigt__p_alps__gf__real_frequency_mesh, _p_alps__gf__real_frequency_meshTo_p_alps__gf__base_mesh, 0, 0},  {&_swigt__p_alps__gf__base_mesh, 0, 0, 0},  {&_swigt__p_alps__gf__legendre_mesh, _p_alps__gf__legendre_meshTo_p_alps__gf__base_mesh, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__detail__can_have_tail_no[] = {  {&_swigt__p_alps__gf__detail__can_have_tail_no, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__detail__can_have_tail_yes[] = {  {&_swigt__p_alps__gf__detail__can_have_tail_yes, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__five_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__five_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__five_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__five_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__generic_indexT_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__generic_indexT_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__generic_indexT_alps__gf__itime_mesh_t[] = {  {&_swigt__p_alps__gf__generic_indexT_alps__gf__itime_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t[] = {  {&_swigt__p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t[] = {  {&_swigt__p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__generic_indexT_alps__gf__power_mesh_t[] = {  {&_swigt__p_alps__gf__generic_indexT_alps__gf__power_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t[] = {  {&_swigt__p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__index_mesh[] = {  {&_swigt__p_alps__gf__index_mesh, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__itime_mesh[] = {  {&_swigt__p_alps__gf__itime_mesh, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__legendre_mesh[] = {  {&_swigt__p_alps__gf__legendre_mesh, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t[] = {  {&_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t__index_type[] = {  {&_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t__index_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t[] = {  {&_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type[] = {  {&_swigt__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__momentum_index_mesh[] = {  {&_swigt__p_alps__gf__momentum_index_mesh, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__momentum_realspace_index_mesh[] = {  {&_swigt__p_alps__gf__momentum_realspace_index_mesh, 0, 0, 0},  {&_swigt__p_alps__gf__momentum_index_mesh, _p_alps__gf__momentum_index_meshTo_p_alps__gf__momentum_realspace_index_mesh, 0, 0},  {&_swigt__p_alps__gf__real_space_index_mesh, _p_alps__gf__real_space_index_meshTo_p_alps__gf__momentum_realspace_index_mesh, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__numerical_meshT_double_3_t__index_type[] = {  {&_swigt__p_alps__gf__numerical_meshT_double_3_t__index_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__one_index_gfT_double_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__one_index_gfT_double_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__one_index_gfT_double_alps__gf__itime_mesh_t[] = {  {&_swigt__p_alps__gf__one_index_gfT_double_alps__gf__itime_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__one_index_gfT_double_alps__gf__legendre_mesh_t[] = {  {&_swigt__p_alps__gf__one_index_gfT_double_alps__gf__legendre_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t[] = {  {&_swigt__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t[] = {  {&_swigt__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__power_mesh[] = {  {&_swigt__p_alps__gf__power_mesh, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__real_frequency_mesh[] = {  {&_swigt__p_alps__gf__real_frequency_mesh, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__real_space_index_mesh[] = {  {&_swigt__p_alps__gf__real_space_index_mesh, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__three_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__three_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__three_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__three_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__three_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__three_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__two_index_gfT_double_alps__gf__itime_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__two_index_gfT_double_alps__gf__itime_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__two_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__two_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__gf__two_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__index_mesh_t[] = {  {&_swigt__p_alps__gf__two_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__index_mesh_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_alps__hdf5__archive[] = {  {&_swigt__p_alps__hdf5__archive, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_boost__multi_arrayT_double_1_t[] = {  {&_swigt__p_boost__multi_arrayT_double_1_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_boost__multi_arrayT_double_2_t[] = {  {&_swigt__p_boost__multi_arrayT_double_2_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_boost__multi_arrayT_std__complexT_double_t_1_t[] = {  {&_swigt__p_boost__multi_arrayT_std__complexT_double_t_1_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_container_type[] = {  {&_swigt__p_container_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_index_type[] = {  {&_swigt__p_index_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_mesh1_type[] = {  {&_swigt__p_mesh1_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_mesh_can_have_tail[] = {  {&_swigt__p_mesh_can_have_tail, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_mesh_cannot_have_tail[] = {  {&_swigt__p_mesh_cannot_have_tail, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_double_t[] = {  {&_swigt__p_std__complexT_double_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__ostream[] = {  {&_swigt__p_std__ostream, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_double_t[] = {  {&_swigt__p_std__vectorT_double_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_int_t[] = {  {&_swigt__p_std__vectorT_int_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__invalid_argument[] = {  {&_swigt__p_std__invalid_argument, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_double_std__allocatorT_double_t_t[] = {  {&_swigt__p_std__vectorT_double_std__allocatorT_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t[] = {  {&_swigt__p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
-  _swigc__p_alps__gf__base_mesh,
-  _swigc__p_alps__gf__detail__can_have_tail_no,
-  _swigc__p_alps__gf__detail__can_have_tail_yes,
-  _swigc__p_alps__gf__five_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__five_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__four_index_gfT_double_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__itime_mesh_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__four_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__real_space_index_mesh_alps__gf__real_space_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__generic_indexT_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__generic_indexT_alps__gf__itime_mesh_t,
-  _swigc__p_alps__gf__generic_indexT_alps__gf__legendre_mesh_t,
-  _swigc__p_alps__gf__generic_indexT_alps__gf__momentum_index_mesh_t,
-  _swigc__p_alps__gf__generic_indexT_alps__gf__power_mesh_t,
-  _swigc__p_alps__gf__generic_indexT_alps__gf__real_frequency_mesh_t,
-  _swigc__p_alps__gf__index_mesh,
-  _swigc__p_alps__gf__itime_mesh,
-  _swigc__p_alps__gf__legendre_mesh,
-  _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t,
-  _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_NEGATIVE_t__index_type,
-  _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t,
-  _swigc__p_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t__index_type,
-  _swigc__p_alps__gf__momentum_index_mesh,
-  _swigc__p_alps__gf__momentum_realspace_index_mesh,
-  _swigc__p_alps__gf__numerical_meshT_double_3_t__index_type,
-  _swigc__p_alps__gf__one_index_gfT_double_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__one_index_gfT_double_alps__gf__itime_mesh_t,
-  _swigc__p_alps__gf__one_index_gfT_double_alps__gf__legendre_mesh_t,
-  _swigc__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__legendre_mesh_t,
-  _swigc__p_alps__gf__one_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_t,
-  _swigc__p_alps__gf__power_mesh,
-  _swigc__p_alps__gf__real_frequency_mesh,
-  _swigc__p_alps__gf__real_space_index_mesh,
-  _swigc__p_alps__gf__three_index_gfT_double_alps__gf__itime_mesh_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__three_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__three_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__two_index_gfT_double_alps__gf__itime_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__two_index_gfT_double_alps__gf__momentum_index_mesh_alps__gf__index_mesh_t,
-  _swigc__p_alps__gf__two_index_gfT_std__complexT_double_t_alps__gf__matsubara_meshT_alps__gf__mesh__POSITIVE_ONLY_t_alps__gf__index_mesh_t,
-  _swigc__p_alps__hdf5__archive,
-  _swigc__p_boost__multi_arrayT_double_1_t,
-  _swigc__p_boost__multi_arrayT_double_2_t,
-  _swigc__p_boost__multi_arrayT_std__complexT_double_t_1_t,
   _swigc__p_char,
-  _swigc__p_container_type,
-  _swigc__p_index_type,
-  _swigc__p_mesh1_type,
-  _swigc__p_mesh_can_have_tail,
-  _swigc__p_mesh_cannot_have_tail,
   _swigc__p_std__complexT_double_t,
-  _swigc__p_std__ostream,
-  _swigc__p_std__string,
-  _swigc__p_std__vectorT_double_t,
-  _swigc__p_std__vectorT_int_t,
-  _swigc__p_value_type,
+  _swigc__p_std__invalid_argument,
+  _swigc__p_std__vectorT_double_std__allocatorT_double_t_t,
+  _swigc__p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t,
+  _swigc__p_swig__SwigPyIterator,
 };
 
 
@@ -8801,13 +5899,9 @@ SWIG_init(void) {
   
   import_array();
   
-  PyDict_SetItemString(md,(char *)"cvar", SWIG_globals());
-  SWIG_addvarlink(SWIG_globals(),(char *)"minor_version",Swig_var_minor_version_get, Swig_var_minor_version_set);
-  SWIG_addvarlink(SWIG_globals(),(char *)"major_version",Swig_var_major_version_get, Swig_var_major_version_set);
-  SWIG_Python_SetConstant(d, "BOSONIC",SWIG_From_int(static_cast< int >(alps::gf::statistics::BOSONIC)));
-  SWIG_Python_SetConstant(d, "FERMIONIC",SWIG_From_int(static_cast< int >(alps::gf::statistics::FERMIONIC)));
-  SWIG_Python_SetConstant(d, "POSITIVE_NEGATIVE",SWIG_From_int(static_cast< int >(alps::gf::mesh::POSITIVE_NEGATIVE)));
-  SWIG_Python_SetConstant(d, "POSITIVE_ONLY",SWIG_From_int(static_cast< int >(alps::gf::mesh::POSITIVE_ONLY)));
+  
+  import_array();
+  
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

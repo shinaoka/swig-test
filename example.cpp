@@ -22,9 +22,31 @@
 //}
 
 //double rms(double* seq, int n) {
-    //double sum = 0.0;
-    //for (int i = 0; i < n; ++i) {
-        //sum += seq[i];
-    //}
-    //return sum;
-//}
+//double rms(std::vector<double>& seq, int n) {
+double drms(const std::vector<double>& seq) {
+    int n = seq.size();
+    double sum = 0.0;
+    for (int i = 0; i < n; ++i) {
+        sum += seq[i];
+    }
+    return sum;
+}
+
+dcomplex crms(const std::vector<dcomplex>& seq) {
+    int n = seq.size();
+    dcomplex sum = 0.0;
+    for (int i = 0; i < n; ++i) {
+        sum += seq[i];
+    }
+    return sum;
+}
+
+/*
+std::complex<double> crms(std::complex<double>& seq, int n) {
+    std::complex<double> sum = 0.0;
+    for (int i = 0; i < n; ++i) {
+        sum += seq[i];
+    }
+    return sum;
+}
+*/
