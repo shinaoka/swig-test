@@ -175,6 +175,10 @@ crms = _example.crms
 def gen_matrix():
     return _example.gen_matrix()
 gen_matrix = _example.gen_matrix
+
+def read_array(arg1):
+    return _example.read_array(arg1)
+read_array = _example.read_array
 # This file is compatible with both classic and new-style classes.
 
 

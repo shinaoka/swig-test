@@ -1,7 +1,9 @@
 #include <vector>
+#include <iostream>
 //#include <alps/gf/gf.hpp>
 #include <complex>
 #include <Eigen/Core>
+#include <boost/multi_array.hpp>
 
 /*
 namespace alps {
@@ -47,6 +49,11 @@ gen_matrix() {
     }
     return m;
 }
+
+inline void read_array(const boost::multi_array<double,4,std::allocator<double> >& in) {
+  std::cout << "Reterning " << in[1][0][0][0] << std::endl;
+}
+
 
 
 #ifdef SWIG

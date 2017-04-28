@@ -1,7 +1,6 @@
 %{
 #define SWIG_FILE_WITH_INIT
 #include <vector>
-#include "Eigen/Core"
 %}
 
 %include "typemaps.i"
@@ -53,6 +52,10 @@
   };
 
   /** Support for Eigen::Matrix */
+  namespace Eigen {
+    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols>
+        class Matrix;
+  }
   template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
   struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
     typedef S scalar;
@@ -93,27 +96,46 @@
     }
   };
 
+  /** Support for Eigen::Tensor */
+
   /** Support for boost::multi_array */
-  template <typename S, std::size_t NumDims>
-  struct CXXTypeTraits<boost::multi_array<S,NumDims> > {
+  namespace boost {
+    template<typename T, std::size_t NumDims, typename Allocator> class multi_array;
+    template<typename T, std::size_t N> class array;
+  }
+  template <typename S, std::size_t NumDims,typename Allocator>
+  struct CXXTypeTraits<boost::multi_array<S,NumDims,Allocator> > {
     typedef S scalar;
-    typedef boost::multi_array<S,NumDims> obj_type;
+    typedef boost::multi_array<S,NumDims,Allocator> obj_type;
     static const int dim = NumDims;
     static int size(const obj_type& obj, int i) {
       assert(i<dim);
-      obj.shape()[i];
+      return obj.shape()[i];
     }
     static bool resize(obj_type& obj, const std::vector<int>& sizes) {
       assert(sizes.size()==dim);
-      obj.resize(****);
+      boost::array<int,dim> extents;
+      for (int i=0; i<dim; ++i) {
+        extents[i] = sizes[i];
+      }
+      obj.resize(extents);
       return true;
     }
     static void set_zero(obj_type& obj) {
       std::fill(obj.origin(), obj.origin()+obj.num_elements(), static_cast<scalar>(0.0));
     } 
     static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
-      assert(indices.size()==2);
-      return obj(indices[0], indices[1]);
+      std::cout << indices[0] << " " ;
+      std::cout << indices[1] << " " ;
+      std::cout << indices[2] << " " ;
+      std::cout << indices[3] << std::endl;
+      assert(indices.size()==dim);
+      //FIXME: DO NOT COPY
+      boost::array<int,dim> extents;
+      for (int i=0; i<dim; ++i) {
+        extents[i] = indices[i];
+      }
+      return obj(extents);
     }
   };
 

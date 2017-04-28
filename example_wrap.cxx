@@ -3007,14 +3007,15 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t swig_types[0]
-#define SWIGTYPE_p_char swig_types[1]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[2]
-#define SWIGTYPE_p_std__invalid_argument swig_types[3]
-#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[4]
-#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t swig_types[5]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[6]
-static swig_type_info *swig_types[8];
-static swig_module_info swig_module = {swig_types, 7, 0, 0, 0, 0};
+#define SWIGTYPE_p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t swig_types[1]
+#define SWIGTYPE_p_char swig_types[2]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[3]
+#define SWIGTYPE_p_std__invalid_argument swig_types[4]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[5]
+#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t swig_types[6]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[7]
+static swig_type_info *swig_types[9];
+static swig_module_info swig_module = {swig_types, 8, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3122,6 +3123,7 @@ namespace swig {
 #define SWIG_FILE_WITH_INIT
 #include "example.hpp"
 #include <Eigen/Core>
+#include <boost/multi_array.hpp>
 
 
 #ifndef SWIG_FILE_WITH_INIT
@@ -3694,7 +3696,6 @@ SWIG_FromCharPtr(const char *cptr)
 
 #define SWIG_FILE_WITH_INIT
 #include <vector>
-#include "Eigen/Core"
 
 
 #if NPY_API_VERSION < 0x00000007
@@ -4182,16 +4183,6 @@ SWIG_FromCharPtr(const char *cptr)
     static scalar& element_at(OBJ& obj, const std::vector<int>& indices);
   };
 
-  template<int DIM, typename S, typename T>
-  struct copy_data_to_numpy_helper {
-    static void invoke(std::vector<int>& data_size, S* out, T* in);
-  };
-
-  template<int DIM, typename S, typename T>
-  struct copy_data_from_numpy_helper {
-    static void invoke(std::vector<int>& data_size, S* in, T* out);
-  };
-
   template <typename S>
   struct CXXTypeTraits<std::vector<S> > {
     typedef S scalar;
@@ -4215,7 +4206,11 @@ SWIG_FromCharPtr(const char *cptr)
     }
   };
 
-  //template <typename Derived>
+  /** Support for Eigen::Matrix */
+  namespace Eigen {
+    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols>
+        class Matrix;
+  }
   template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
   struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
     typedef S scalar;
@@ -4254,6 +4249,59 @@ SWIG_FromCharPtr(const char *cptr)
       assert(indices.size()==2);
       return obj(indices[0], indices[1]);
     }
+  };
+
+  /** Support for Eigen::Tensor */
+
+  /** Support for boost::multi_array */
+  namespace boost {
+    template<typename T, std::size_t NumDims, typename Allocator> class multi_array;
+    template<typename T, std::size_t N> class array;
+  }
+  template <typename S, std::size_t NumDims,typename Allocator>
+  struct CXXTypeTraits<boost::multi_array<S,NumDims,Allocator> > {
+    typedef S scalar;
+    typedef boost::multi_array<S,NumDims,Allocator> obj_type;
+    static const int dim = NumDims;
+    static int size(const obj_type& obj, int i) {
+      assert(i<dim);
+      return obj.shape()[i];
+    }
+    static bool resize(obj_type& obj, const std::vector<int>& sizes) {
+      assert(sizes.size()==dim);
+      boost::array<int,dim> extents;
+      for (int i=0; i<dim; ++i) {
+        extents[i] = sizes[i];
+      }
+      obj.resize(extents);
+      return true;
+    }
+    static void set_zero(obj_type& obj) {
+      std::fill(obj.origin(), obj.origin()+obj.num_elements(), static_cast<scalar>(0.0));
+    } 
+    static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
+      std::cout << indices[0] << " " ;
+      std::cout << indices[1] << " " ;
+      std::cout << indices[2] << " " ;
+      std::cout << indices[3] << std::endl;
+      assert(indices.size()==dim);
+      //FIXME: DO NOT COPY
+      boost::array<int,dim> extents;
+      for (int i=0; i<dim; ++i) {
+        extents[i] = indices[i];
+      }
+      return obj(extents);
+    }
+  };
+
+  template<int DIM, typename S, typename T>
+  struct copy_data_to_numpy_helper {
+    static void invoke(std::vector<int>& data_size, S* out, T* in);
+  };
+
+  template<int DIM, typename S, typename T>
+  struct copy_data_from_numpy_helper {
+    static void invoke(std::vector<int>& data_size, S* in, T* out);
   };
 
   template <class A>
@@ -4312,27 +4360,6 @@ SWIG_FromCharPtr(const char *cptr)
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
 
     copy_data_from_numpy_helper<dim,scalar,A>::invoke(data_size, data, out);
-
-/*
-    int lin_idx = 0;
-    std::vector<int> indices(dim);
-    if (dim==1) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        indices[0] = i;
-        traits::element_at(*out, indices) = data[lin_idx];
-        ++lin_idx;
-      }
-    } else if (dim==2) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        for (int j = 0; j < data_size[1]; ++j) {
-          indices[0] = i;
-          indices[1] = j;
-          traits::element_at(*out, indices) = data[lin_idx];
-          ++lin_idx;
-        }
-      }
-    }
-*/
 
     return true;
   };
@@ -5744,6 +5771,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_read_array(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  boost::multi_array< double,4,std::allocator< double > > *arg1 = 0 ;
+  boost::multi_array< double,4,std::allocator< double > > temp1 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:read_array",&obj0)) SWIG_fail;
+  {
+    // In: const&
+    if (!ConvertFromNumpyToCXX<boost::multi_array<double,4,std::allocator<double> > >(&temp1, obj0))
+    SWIG_fail;
+    arg1 = &temp1;
+  }
+  read_array((boost::multi_array< double,4,std::allocator< double > > const &)*arg1);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"delete_SwigPyIterator", _wrap_delete_SwigPyIterator, METH_VARARGS, NULL},
@@ -5768,6 +5816,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"drms", _wrap_drms, METH_VARARGS, NULL},
 	 { (char *)"crms", _wrap_crms, METH_VARARGS, NULL},
 	 { (char *)"gen_matrix", _wrap_gen_matrix, METH_VARARGS, NULL},
+	 { (char *)"read_array", _wrap_read_array, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -5775,6 +5824,7 @@ static PyMethodDef SwigMethods[] = {
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t = {"_p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t", "Eigen::Matrix< double,Eigen::Dynamic,Eigen::Dynamic > *|matrix_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t = {"_p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t", "boost::multi_array< double,4,std::allocator< double > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__complexT_double_t = {"_p_std__complexT_double_t", "dcomplex *|std::complex< double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__invalid_argument = {"_p_std__invalid_argument", "std::invalid_argument *", 0, 0, (void*)0, 0};
@@ -5784,6 +5834,7 @@ static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t,
+  &_swigt__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t,
   &_swigt__p_char,
   &_swigt__p_std__complexT_double_t,
   &_swigt__p_std__invalid_argument,
@@ -5793,6 +5844,7 @@ static swig_type_info *swig_type_initial[] = {
 };
 
 static swig_cast_info _swigc__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t[] = {  {&_swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t[] = {  {&_swigt__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_double_t[] = {  {&_swigt__p_std__complexT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__invalid_argument[] = {  {&_swigt__p_std__invalid_argument, 0, 0, 0},{0, 0, 0, 0}};
@@ -5802,6 +5854,7 @@ static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__Sw
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t,
+  _swigc__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t,
   _swigc__p_char,
   _swigc__p_std__complexT_double_t,
   _swigc__p_std__invalid_argument,
