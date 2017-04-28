@@ -4252,6 +4252,41 @@ SWIG_FromCharPtr(const char *cptr)
   };
 
   /** Support for Eigen::Tensor */
+  namespace Eigen {
+    template<typename Scalar_, int NumIndices_, int Options_, typename IndexType_> class Tensor;
+    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols> class Array;
+  }
+  template<typename Scalar_, int NumIndices_, int Options_, typename IndexType_> 
+  struct CXXTypeTraits<Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_> > {
+    typedef Scalar_ scalar;
+    typedef Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_> obj_type;
+    static const int dim = NumIndices_;
+    static int size(const obj_type& obj, int i) {
+      assert(i<NumIndices_);
+      return obj.dimension(i);
+    }
+    static bool resize(obj_type& obj, const std::vector<int>& sizes) {
+      assert(sizes.size()==dim);
+      Eigen::array<int,dim> sizes_tmp;
+      for (int i=0; i<dim; ++i) {
+        sizes_tmp[i] = sizes[i];
+      }
+      obj.resize(sizes_tmp);
+      return true;
+    }
+    static void set_zero(obj_type& obj) {
+      obj.setZero();
+    } 
+    static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
+      assert(indices.size()==dim);
+      //FIXME: DO NOT COPY
+      Eigen::array<long,dim> indices_tmp;
+      for (int i=0; i<dim; ++i) {
+        indices_tmp[i] = indices[i];
+      }
+      return obj(indices_tmp);
+    }
+  };
 
   /** Support for boost::multi_array */
   namespace boost {
@@ -4280,17 +4315,13 @@ SWIG_FromCharPtr(const char *cptr)
       std::fill(obj.origin(), obj.origin()+obj.num_elements(), static_cast<scalar>(0.0));
     } 
     static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
-      std::cout << indices[0] << " " ;
-      std::cout << indices[1] << " " ;
-      std::cout << indices[2] << " " ;
-      std::cout << indices[3] << std::endl;
       assert(indices.size()==dim);
       //FIXME: DO NOT COPY
-      boost::array<int,dim> extents;
+      boost::array<int,dim> indices_tmp;
       for (int i=0; i<dim; ++i) {
-        extents[i] = indices[i];
+        indices_tmp[i] = indices[i];
       }
-      return obj(extents);
+      return obj(indices_tmp);
     }
   };
 
@@ -4399,7 +4430,6 @@ SWIG_FromCharPtr(const char *cptr)
     for (int i=0; i<dim; ++i) {
       data_size[i] = array_size(out,i);
       size_mismatch = size_mismatch || (traits::size(*in,i) != data_size[i]);
-      std::cout << " debug " << i << " " << traits::size(*in,i) << " " << data_size[i] << std::endl;
     }
     if (size_mismatch) {
       PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ object (return argument).");
@@ -4434,7 +4464,7 @@ SWIG_FromCharPtr(const char *cptr)
       dims[i] = traits::size(*in,i);
     }
 
-    *out = PyArray_SimpleNew(2, &dims[0], num_py_type<scalar>());
+    *out = PyArray_SimpleNew(dim, &dims[0], num_py_type<scalar>());
     if (!out) {
       return false;
     }
@@ -5792,6 +5822,22 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_gen_eigen_tensor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Eigen::Tensor< double,4 > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)":gen_eigen_tensor")) SWIG_fail;
+  result = gen_eigen_tensor();
+  {
+    if (!ConvertFromCXXToNumPyArray<Eigen::Tensor<double,4> >(&resultobj, &result))
+    SWIG_fail;
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"delete_SwigPyIterator", _wrap_delete_SwigPyIterator, METH_VARARGS, NULL},
@@ -5817,6 +5863,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"crms", _wrap_crms, METH_VARARGS, NULL},
 	 { (char *)"gen_matrix", _wrap_gen_matrix, METH_VARARGS, NULL},
 	 { (char *)"read_array", _wrap_read_array, METH_VARARGS, NULL},
+	 { (char *)"gen_eigen_tensor", _wrap_gen_eigen_tensor, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

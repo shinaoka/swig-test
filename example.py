@@ -179,6 +179,10 @@ gen_matrix = _example.gen_matrix
 def read_array(arg1):
     return _example.read_array(arg1)
 read_array = _example.read_array
+
+def gen_eigen_tensor():
+    return _example.gen_eigen_tensor()
+gen_eigen_tensor = _example.gen_eigen_tensor
 # This file is compatible with both classic and new-style classes.
 
 

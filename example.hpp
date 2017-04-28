@@ -3,6 +3,7 @@
 //#include <alps/gf/gf.hpp>
 #include <complex>
 #include <Eigen/Core>
+#include <Eigen/CXX11/Tensor>
 #include <boost/multi_array.hpp>
 
 /*
@@ -51,9 +52,16 @@ gen_matrix() {
 }
 
 inline void read_array(const boost::multi_array<double,4,std::allocator<double> >& in) {
-  std::cout << "Reterning " << in[1][0][0][0] << std::endl;
 }
 
+inline Eigen::Tensor<double,4> gen_eigen_tensor() {
+    Eigen::Tensor<double,4> tmp(4,4,4,4);
+    tmp.setConstant(1.0);
+    for (int i=0; i<4; ++i) {
+        tmp(i,0,0,0) = i;
+    }
+    return tmp;
+}
 
 
 #ifdef SWIG
