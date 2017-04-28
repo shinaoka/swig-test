@@ -42,6 +42,9 @@ inline Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic>
 gen_matrix() {
     Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic> m(10,2);
     m.setZero();
+    for (int i=0; i<m.rows(); ++i) {
+        m(i,0) = i;
+    }
     return m;
 }
 

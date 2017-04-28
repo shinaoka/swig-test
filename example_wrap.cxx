@@ -4175,34 +4175,34 @@ SWIG_FromCharPtr(const char *cptr)
   template <typename OBJ>
   struct CXXTypeTraits {
     typedef double scalar;
-    static int dim();
+    static const int dim;
     static int size(const OBJ& obj, int i);
     static bool resize(OBJ& obj, const std::vector<int>& sizes);
     static void set_zero(OBJ& obj); 
     static scalar& element_at(OBJ& obj, const std::vector<int>& indices);
   };
 
-  template<typename S, typename T>
-  void copy_data_to_numpy(std::vector<int>& data_size, S* out, T* in);
-
-/*
-  template <typename OBJ>
-  struct element_at {
-    static typename CXXTypeTraits<OBJ>::scalar& at(OBJ& obj, const std::vector<int>& indices);
+  template<int DIM, typename S, typename T>
+  struct copy_data_to_numpy_helper {
+    static void invoke(std::vector<int>& data_size, S* out, T* in);
   };
-*/
+
+  template<int DIM, typename S, typename T>
+  struct copy_data_from_numpy_helper {
+    static void invoke(std::vector<int>& data_size, S* in, T* out);
+  };
 
   template <typename S>
   struct CXXTypeTraits<std::vector<S> > {
     typedef S scalar;
     typedef std::vector<S> obj_type;
-    static int dim() { return 1;};
+    static const int dim = 1;
     static int size(const obj_type& obj, int i) {
       assert(i==0);
       return obj.size();
     }
     static bool resize(obj_type& obj, const std::vector<int>& sizes) {
-      assert(sizes.size()==dim());
+      assert(sizes.size()==dim);
       obj.resize(sizes[0]);
       return true;
     }
@@ -4215,25 +4215,12 @@ SWIG_FromCharPtr(const char *cptr)
     }
   };
 
-/*
-  template <typename S>
-  struct element_at<std::vector<S> > {
-    typedef std::vector<S> OBJ;
-    static S& at(OBJ& obj, const std::vector<int>& indices) {
-      assert(indices.size()==1 && indices[0] < obj.size());
-      return obj[indices[0]];
-    }
-  };
-*/
-
   //template <typename Derived>
   template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
   struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
     typedef S scalar;
     typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> obj_type;
-    static int dim() {
-      return 2;
-    };
+    static const int dim = 2;
     static int size(const obj_type& obj, int i) {
       assert(i<=1);
       if (i==0) {
@@ -4243,7 +4230,7 @@ SWIG_FromCharPtr(const char *cptr)
       }
     }
     static bool resize(obj_type& obj, const std::vector<int>& sizes) {
-      assert(sizes.size()==dim());
+      assert(sizes.size()==dim);
       bool dynamic_row = RowsAtCompileTime == Eigen::Dynamic;
       bool dynamic_col = ColsAtCompileTime == Eigen::Dynamic;
       if (dynamic_row && dynamic_col) {
@@ -4269,24 +4256,12 @@ SWIG_FromCharPtr(const char *cptr)
     }
   };
 
-/*
-  template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
-  struct element_at<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
-    typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> OBJ;
-    static S& at(OBJ& obj, const std::vector<int>& indices) {
-      assert(indices.size()==1 && indices[0] < obj.size());
-      return obj[indices[0]];
-    }
-  };
-*/
-
-
   template <class A>
   bool ConvertFromNumpyToCXX(A* out, PyObject* in)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
-    const int dim = traits::dim();
+    const int dim = traits::dim;
 
     // Check object type
     if (!is_array(in))
@@ -4303,7 +4278,7 @@ SWIG_FromCharPtr(const char *cptr)
     }
 
     // Check dimensions
-    if (array_numdims(in) != traits::dim())
+    if (array_numdims(in) != traits::dim)
     {
       PyErr_SetString(PyExc_ValueError, "Dimension mismatch between numpy and C++ objects.");
       return false;
@@ -4336,6 +4311,9 @@ SWIG_FromCharPtr(const char *cptr)
 
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
 
+    copy_data_from_numpy_helper<dim,scalar,A>::invoke(data_size, data, out);
+
+/*
     int lin_idx = 0;
     std::vector<int> indices(dim);
     if (dim==1) {
@@ -4354,6 +4332,7 @@ SWIG_FromCharPtr(const char *cptr)
         }
       }
     }
+*/
 
     return true;
   };
@@ -4364,7 +4343,7 @@ SWIG_FromCharPtr(const char *cptr)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
-    const int dim = traits::dim();
+    const int dim = traits::dim;
 
     // Check object type
     if (!is_array(out))
@@ -4381,7 +4360,7 @@ SWIG_FromCharPtr(const char *cptr)
     }
 
     // Check dimensions
-    if (array_numdims(out) != traits::dim())
+    if (array_numdims(out) != traits::dim)
     {
       PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ objects.");
       return false;
@@ -4411,28 +4390,7 @@ SWIG_FromCharPtr(const char *cptr)
 
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
 
-    copy_data_to_numpy(data_size, data, in);
-
-/*
-    int lin_idx = 0;
-    std::vector<int> indices(dim);
-    if (dim==1) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        indices[0] = i;
-        data[lin_idx] = traits::element_at(*in, indices);
-        ++lin_idx;
-      }
-    } else if (dim==2) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        for (int j = 0; j < data_size[1]; ++j) {
-          indices[0] = i;
-          indices[1] = j;
-          data[lin_idx] = traits::element_at(*in, indices);
-          ++lin_idx;
-        }
-      }
-    }
-*/
+    copy_data_to_numpy_helper<dim,scalar,A>::invoke(data_size, data, in);
 
     return true;
   };
@@ -4442,7 +4400,7 @@ SWIG_FromCharPtr(const char *cptr)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
-    const int dim = traits::dim();
+    const int dim = traits::dim;
 
     std::vector<npy_intp> dims(dim);
     for (int i=0; i<dim; ++i) {
@@ -4461,58 +4419,387 @@ SWIG_FromCharPtr(const char *cptr)
       data_size[i] = traits::size(*in,i);
     }
 
-    copy_data_to_numpy(data_size, data, in);
-
-/*
-
-    int lin_idx = 0;
-    std::vector<int> indices(dim);
-    if (dim==1) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        indices[0] = i;
-        data[lin_idx] = traits::element_at(*in, indices);
-        ++lin_idx;
-      }
-    } else if (dim==2) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        for (int j = 0; j < data_size[1]; ++j) {
-          indices[0] = i;
-          indices[1] = j;
-          data[lin_idx] = traits::element_at(*in, indices);
-          ++lin_idx;
-        }
-      }
-    }
-*/
+    copy_data_to_numpy_helper<dim,scalar,A>::invoke(data_size, data, in);
 
     return true;
   };
 
-  template<typename S, typename T>
-  void copy_data_to_numpy(std::vector<int>& data_size, S* out, T* in) {
-    typedef CXXTypeTraits<T> traits;
-    const int dim = data_size.size();
+  template<typename S, typename T> 
+  struct copy_data_to_numpy_helper<1,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* out, T* in) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 1; 
 
-    int lin_idx = 0;
-    std::vector<int> indices(dim);
-    if (dim==1) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        indices[0] = i;
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
         out[lin_idx] = traits::element_at(*in, indices);
         ++lin_idx;
       }
-    } else if (dim==2) {
-      for (int i = 0; i < data_size[0]; ++i) {
-        for (int j = 0; j < data_size[1]; ++j) {
-          indices[0] = i;
-          indices[1] = j;
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_to_numpy_helper<2,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* out, T* in) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 2; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
           out[lin_idx] = traits::element_at(*in, indices);
           ++lin_idx;
         }
       }
-    }
-  }
 
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_to_numpy_helper<3,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* out, T* in) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 3; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            out[lin_idx] = traits::element_at(*in, indices);
+            ++lin_idx;
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_to_numpy_helper<4,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* out, T* in) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 4; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              out[lin_idx] = traits::element_at(*in, indices);
+              ++lin_idx;
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_to_numpy_helper<5,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* out, T* in) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 5; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              for (int i4= 0; i4< data_size[4]; ++i4) { 
+                indices[4] = i4;
+                out[lin_idx] = traits::element_at(*in, indices);
+                ++lin_idx;
+              }
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_to_numpy_helper<6,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* out, T* in) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 6; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              for (int i4= 0; i4< data_size[4]; ++i4) { 
+                indices[4] = i4;
+                for (int i5= 0; i5< data_size[5]; ++i5) { 
+                  indices[5] = i5;
+                  out[lin_idx] = traits::element_at(*in, indices);
+                  ++lin_idx;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_to_numpy_helper<7,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* out, T* in) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 7; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              for (int i4= 0; i4< data_size[4]; ++i4) { 
+                indices[4] = i4;
+                for (int i5= 0; i5< data_size[5]; ++i5) { 
+                  indices[5] = i5;
+                  for (int i6= 0; i6< data_size[6]; ++i6) { 
+                    indices[6] = i6;
+                    out[lin_idx] = traits::element_at(*in, indices);
+                    ++lin_idx;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
+  template<typename S, typename T> 
+  struct copy_data_from_numpy_helper<1,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* in, T* out) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 1; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        traits::element_at(*out, indices) = in[lin_idx];
+        ++lin_idx;
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_from_numpy_helper<2,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* in, T* out) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 2; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          traits::element_at(*out, indices) = in[lin_idx];
+          ++lin_idx;
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_from_numpy_helper<3,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* in, T* out) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 3; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            traits::element_at(*out, indices) = in[lin_idx];
+            ++lin_idx;
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_from_numpy_helper<4,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* in, T* out) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 4; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              traits::element_at(*out, indices) = in[lin_idx];
+              ++lin_idx;
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_from_numpy_helper<5,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* in, T* out) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 5; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              for (int i4= 0; i4< data_size[4]; ++i4) { 
+                indices[4] = i4;
+                traits::element_at(*out, indices) = in[lin_idx];
+                ++lin_idx;
+              }
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_from_numpy_helper<6,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* in, T* out) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 6; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              for (int i4= 0; i4< data_size[4]; ++i4) { 
+                indices[4] = i4;
+                for (int i5= 0; i5< data_size[5]; ++i5) { 
+                  indices[5] = i5;
+                  traits::element_at(*out, indices) = in[lin_idx];
+                  ++lin_idx;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
+
+  template<typename S, typename T> 
+  struct copy_data_from_numpy_helper<7,S,T> { 
+    static void invoke(std::vector<int>& data_size, S* in, T* out) { 
+      typedef CXXTypeTraits<T> traits; 
+      const int dim = 7; 
+
+      int lin_idx = 0; 
+      std::vector<int> indices(dim);
+      for (int i0= 0; i0< data_size[0]; ++i0) { 
+        indices[0] = i0;
+        for (int i1= 0; i1< data_size[1]; ++i1) { 
+          indices[1] = i1;
+          for (int i2= 0; i2< data_size[2]; ++i2) { 
+            indices[2] = i2;
+            for (int i3= 0; i3< data_size[3]; ++i3) { 
+              indices[3] = i3;
+              for (int i4= 0; i4< data_size[4]; ++i4) { 
+                indices[4] = i4;
+                for (int i5= 0; i5< data_size[5]; ++i5) { 
+                  indices[5] = i5;
+                  for (int i6= 0; i6< data_size[6]; ++i6) { 
+                    indices[6] = i6;
+                    traits::element_at(*out, indices) = in[lin_idx];
+                    ++lin_idx;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    } 
+  };
+    
 
 
 
