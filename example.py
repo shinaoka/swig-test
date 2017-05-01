@@ -183,6 +183,10 @@ read_array = _example.read_array
 def gen_eigen_tensor():
     return _example.gen_eigen_tensor()
 gen_eigen_tensor = _example.gen_eigen_tensor
+
+def read_write_array(arg1):
+    return _example.read_write_array(arg1)
+read_write_array = _example.read_write_array
 # This file is compatible with both classic and new-style classes.
 
 

@@ -26,6 +26,8 @@ import_array();
 %multi_array_typemaps(Eigen::MatrixBase<Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic> >);
 %multi_array_typemaps(Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic>);
 %multi_array_typemaps(boost::multi_array<double,4,std::allocator<double> >);
+
+%multi_array_typemaps(Eigen::Tensor<double,2>);
 %multi_array_typemaps(Eigen::Tensor<double,4>);
 /*
 %multi_array_typemaps(Eigen::Tensor<double,Eigen::Dynamic,Eigen::Dynamic>);

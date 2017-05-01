@@ -51,15 +51,18 @@
     }
   };
 
+#ifdef EIGEN_WORLD_VERSION
   /** Support for Eigen::Matrix */
+  /*
   namespace Eigen {
-    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols>
-        class Matrix;
+    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols> class Matrix;
+    const int Dynamic;
   }
-  template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
-  struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
+  */
+  template <typename S, int RowsAtCompileTime, int ColsAtCompileTime, int Options, int MaxRows, int MaxCols>
+  struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime,Options,MaxRows,MaxCols> > {
     typedef S scalar;
-    typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> obj_type;
+    typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime,Options,MaxRows,MaxCols> obj_type;
     static const int dim = 2;
     static int size(const obj_type& obj, int i) {
       assert(i<=1);
@@ -96,11 +99,14 @@
     }
   };
 
+#ifdef EIGEN_CXX11_TENSOR_TENSOR_H
   /** Support for Eigen::Tensor */
+  /*
   namespace Eigen {
     template<typename Scalar_, int NumIndices_, int Options_, typename IndexType_> class Tensor;
-    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols> class Array;
+    template<class T, std::size_t N> class array;
   }
+  */
   template<typename Scalar_, int NumIndices_, int Options_, typename IndexType_> 
   struct CXXTypeTraits<Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_> > {
     typedef Scalar_ scalar;
@@ -112,26 +118,32 @@
     }
     static bool resize(obj_type& obj, const std::vector<int>& sizes) {
       assert(sizes.size()==dim);
-      Eigen::array<int,dim> sizes_tmp;
+      Eigen::array<Eigen::Index,dim> sizes_tmp;
       for (int i=0; i<dim; ++i) {
         sizes_tmp[i] = sizes[i];
       }
-      obj.resize(sizes_tmp);
+      //obj.resize(sizes_tmp);
+      //Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_> tmp(sizes_tmp);
+      obj = Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_>(sizes_tmp);
       return true;
     }
     static void set_zero(obj_type& obj) {
+      //std::cout << "Called set zero " << obj.dimension(0) << std::endl;
+      //std::cout << "Called set zero " << obj.dimension(1) << std::endl;
       obj.setZero();
     } 
     static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
       assert(indices.size()==dim);
       //FIXME: DO NOT COPY
-      Eigen::array<long,dim> indices_tmp;
+      Eigen::array<Eigen::Index,dim> indices_tmp;
       for (int i=0; i<dim; ++i) {
         indices_tmp[i] = indices[i];
       }
       return obj(indices_tmp);
     }
   };
+#endif /* EIGEN_CXX11_TENSOR_TENSOR_H */
+#endif /* EIGEN_WORLD_VERSION */
 
   /** Support for boost::multi_array */
   namespace boost {
@@ -190,21 +202,21 @@
     // Check object type
     if (!is_array(in))
     {
-      PyErr_SetString(PyExc_ValueError, "Input is not as a numpy array or matrix.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Input is not as a numpy array or matrix.");
       return false;
     }
 
     // Check data type
     if (array_type(in) != num_py_type<scalar>())
     {
-      PyErr_SetString(PyExc_ValueError, "Type mismatch between numpy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Type mismatch between numpy and C++ objects.");
       return false;
     }
 
     // Check dimensions
     if (array_numdims(in) != traits::dim)
     {
-      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between numpy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Dimension mismatch between numpy and C++ objects.");
       return false;
     }
 
@@ -217,7 +229,7 @@
 
     if (resize_required) {
       if (!traits::resize(*out, data_size)) {
-        PyErr_SetString(PyExc_ValueError, "Failed to resize C++ object.");
+        PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Failed to resize C++ object.");
         return false;
       }
     }
@@ -227,7 +239,7 @@
     PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(in, array_type(in), &isNewObject);
     if (temp == NULL)
     {
-      PyErr_SetString(PyExc_ValueError, "Impossible to convert the input into a Python array object.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Impossible to convert the input into a Python array object.");
       return false;
     }
 
@@ -242,57 +254,68 @@
 
   // Copy elements in C++ object into an existing numpy object
   template <class A>
-  bool CopyFromCXXToNumPyArray(PyObject* out, A* in)
+  bool CopyFromCXXToNumPyArray(PyObject** out, A* in)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
     const int dim = traits::dim;
 
     // Check object type
-    if (!is_array(out))
+    if (!is_array(*out))
     {
-      PyErr_SetString(PyExc_ValueError, "The given input is not known as a NumPy array or matrix.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: The given input is not known as a NumPy array or matrix.");
       return false;
     }
 
     // Check data type
-    if (array_type(out) != num_py_type<scalar>())
+    if (array_type(*out) != num_py_type<scalar>())
     {
-      PyErr_SetString(PyExc_ValueError, "Type mismatch between NumPy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Type mismatch between NumPy and C++ objects.");
       return false;
     }
 
     // Check dimensions
-    if (array_numdims(out) != traits::dim)
+    if (array_numdims(*out) != traits::dim)
     {
-      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Dimension mismatch between NumPy and C++ objects.");
       return false;
     }
 
     // Check sizes
     std::vector<int> data_size(dim);
+    std::vector<long> data_size_cxx(dim);
     bool size_mismatch = false;
     for (int i=0; i<dim; ++i) {
-      data_size[i] = array_size(out,i);
-      size_mismatch = size_mismatch || (traits::size(*in,i) != data_size[i]);
-    }
-    if (size_mismatch) {
-      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ object (return argument).");
-      return false;
+      data_size_cxx[i] = data_size[i] = traits::size(*in,i);
+      size_mismatch = size_mismatch || (traits::size(*in,i) != array_size(*out,i));
     }
 
     // Extract data
     int isNewObject = 0;
-    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(out, array_type(out), &isNewObject);
-    //CORRECT?
+    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(*out, array_type(*out), &isNewObject);
+    if (size_mismatch) {
+      PyArray_Dims pydims;
+
+      std::vector<npy_intp> dims_tmp(dim);
+      for (int i=0; i<dim; ++i) {
+        dims_tmp[i] = static_cast<npy_intp>(data_size[i]);
+      }
+      pydims.len = dim;
+      pydims.ptr = &dims_tmp[0];
+
+      int refcheck = 1;//correct?
+      PyArray_Resize(temp, &pydims, refcheck, NPY_CORDER);
+    }
     if (temp == NULL || isNewObject != 0) {
-      PyErr_SetString(PyExc_ValueError, "Impossible to convert the input into a Python array object.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Impossible to convert the input into a Python array object.");
       return false;
     }
 
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
 
     copy_data_to_numpy_helper<dim,scalar,A>::invoke(data_size, data, in);
+
+    *out = (PyObject*) temp;//correct?
 
     return true;
   };
@@ -332,7 +355,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 1; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -350,12 +373,13 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 2; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
         for (int i1= 0; i1< data_size[1]; ++i1) { 
           indices[1] = i1;
+          std::cout << "coppying " << out[lin_idx] << " from " <<  traits::element_at(*in, indices) << std::endl;
           out[lin_idx] = traits::element_at(*in, indices);
           ++lin_idx;
         }
@@ -371,7 +395,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 3; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -395,7 +419,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 4; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -422,7 +446,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 5; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -452,7 +476,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 6; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -485,7 +509,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 7; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -520,7 +544,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 1; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -538,7 +562,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 2; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -559,7 +583,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 3; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -583,7 +607,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 4; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -610,7 +634,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 5; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -640,7 +664,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 6; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -673,7 +697,7 @@
       typedef CXXTypeTraits<T> traits; 
       const int dim = 7; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -706,7 +730,7 @@
 %}
 
 %define %multi_array_typemaps(CLASS...)
-// In: (nothing: no constness)
+// In: pass by value
 %typemap(in, fragment="Array_Fragments") CLASS (CLASS temp)
 {
   if (!ConvertFromNumpyToCXX<CLASS >(&temp, $input))
@@ -723,10 +747,27 @@
   $1 = &temp;
 }
 
-// Out: (nothing: no constness)
+// In: &
+%typemap(in, fragment="Array_Fragments") CLASS & (CLASS temp)
+{
+  // In: &
+  if (!ConvertFromNumpyToCXX<CLASS >(&temp, $input))
+    SWIG_fail;
+  $1 = &temp;
+}
+
+// Out: return a value
 %typemap(out, fragment="Array_Fragments") CLASS
 {
   if (!ConvertFromCXXToNumPyArray<CLASS >(&$result, &$1))
+    SWIG_fail;
+}
+
+// Argout: & (for returning values to in-out arguments)
+%typemap(argout, fragment="Array_Fragments") CLASS &
+{
+  // Argout: &
+  if (!CopyFromCXXToNumPyArray<CLASS >(&$input, $1))
     SWIG_fail;
 }
 

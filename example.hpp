@@ -63,6 +63,13 @@ inline Eigen::Tensor<double,4> gen_eigen_tensor() {
     return tmp;
 }
 
+inline void read_write_array(Eigen::Tensor<double,2>& in) {
+    in = Eigen::Tensor<double,2>(2,2);
+    in.setZero();
+    std::cout << "in " <<  in(0,0) << std::endl;
+    in(0,0) = 1000;
+}
+
 
 #ifdef SWIG
 //%template(intList) List<int>;

@@ -15,9 +15,15 @@ import example
 #print example.drms(np.array([0.2, 0.1]))
 #print example.crms(1J*np.array([0.0, 0.1]))
 #print example.gen_matrix()
-a = example.gen_eigen_tensor()
-print a
+#a = example.gen_eigen_tensor()
+#print a
 
-a = np.zeros((4,4,4,4), dtype=float)
-a[1,0,0,0] = 1.0
-example.read_array(a)
+#a = np.zeros((4,4,4,4), dtype=float)
+#a[1,0,0,0] = 1.0
+#example.read_array(a)
+
+a = np.zeros((1,1), dtype=float)
+a[0,0] = -1.0
+print(a.shape)
+example.read_write_array(a)
+print(a)

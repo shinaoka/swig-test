@@ -3007,15 +3007,16 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t swig_types[0]
-#define SWIGTYPE_p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t swig_types[1]
-#define SWIGTYPE_p_char swig_types[2]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[3]
-#define SWIGTYPE_p_std__invalid_argument swig_types[4]
-#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[5]
-#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t swig_types[6]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[7]
-static swig_type_info *swig_types[9];
-static swig_module_info swig_module = {swig_types, 8, 0, 0, 0, 0};
+#define SWIGTYPE_p_Eigen__TensorT_double_2_t swig_types[1]
+#define SWIGTYPE_p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t swig_types[2]
+#define SWIGTYPE_p_char swig_types[3]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[4]
+#define SWIGTYPE_p_std__invalid_argument swig_types[5]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[6]
+#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_std__allocatorT_std__complexT_double_t_t_t swig_types[7]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[8]
+static swig_type_info *swig_types[10];
+static swig_module_info swig_module = {swig_types, 9, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -4206,15 +4207,18 @@ SWIG_FromCharPtr(const char *cptr)
     }
   };
 
+#ifdef EIGEN_WORLD_VERSION
   /** Support for Eigen::Matrix */
+  /*
   namespace Eigen {
-    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols>
-        class Matrix;
+    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols> class Matrix;
+    const int Dynamic;
   }
-  template <typename S, int RowsAtCompileTime, int ColsAtCompileTime>
-  struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> > {
+  */
+  template <typename S, int RowsAtCompileTime, int ColsAtCompileTime, int Options, int MaxRows, int MaxCols>
+  struct CXXTypeTraits<Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime,Options,MaxRows,MaxCols> > {
     typedef S scalar;
-    typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime> obj_type;
+    typedef Eigen::Matrix<S,RowsAtCompileTime,ColsAtCompileTime,Options,MaxRows,MaxCols> obj_type;
     static const int dim = 2;
     static int size(const obj_type& obj, int i) {
       assert(i<=1);
@@ -4251,11 +4255,14 @@ SWIG_FromCharPtr(const char *cptr)
     }
   };
 
+#ifdef EIGEN_CXX11_TENSOR_TENSOR_H
   /** Support for Eigen::Tensor */
+  /*
   namespace Eigen {
     template<typename Scalar_, int NumIndices_, int Options_, typename IndexType_> class Tensor;
-    template<typename _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols> class Array;
+    template<class T, std::size_t N> class array;
   }
+  */
   template<typename Scalar_, int NumIndices_, int Options_, typename IndexType_> 
   struct CXXTypeTraits<Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_> > {
     typedef Scalar_ scalar;
@@ -4267,26 +4274,32 @@ SWIG_FromCharPtr(const char *cptr)
     }
     static bool resize(obj_type& obj, const std::vector<int>& sizes) {
       assert(sizes.size()==dim);
-      Eigen::array<int,dim> sizes_tmp;
+      Eigen::array<Eigen::Index,dim> sizes_tmp;
       for (int i=0; i<dim; ++i) {
         sizes_tmp[i] = sizes[i];
       }
-      obj.resize(sizes_tmp);
+      //obj.resize(sizes_tmp);
+      //Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_> tmp(sizes_tmp);
+      obj = Eigen::Tensor<Scalar_,NumIndices_,Options_,IndexType_>(sizes_tmp);
       return true;
     }
     static void set_zero(obj_type& obj) {
+      //std::cout << "Called set zero " << obj.dimension(0) << std::endl;
+      //std::cout << "Called set zero " << obj.dimension(1) << std::endl;
       obj.setZero();
     } 
     static scalar& element_at(obj_type& obj, const std::vector<int>& indices) {
       assert(indices.size()==dim);
       //FIXME: DO NOT COPY
-      Eigen::array<long,dim> indices_tmp;
+      Eigen::array<Eigen::Index,dim> indices_tmp;
       for (int i=0; i<dim; ++i) {
         indices_tmp[i] = indices[i];
       }
       return obj(indices_tmp);
     }
   };
+#endif /* EIGEN_CXX11_TENSOR_TENSOR_H */
+#endif /* EIGEN_WORLD_VERSION */
 
   /** Support for boost::multi_array */
   namespace boost {
@@ -4345,21 +4358,21 @@ SWIG_FromCharPtr(const char *cptr)
     // Check object type
     if (!is_array(in))
     {
-      PyErr_SetString(PyExc_ValueError, "Input is not as a numpy array or matrix.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Input is not as a numpy array or matrix.");
       return false;
     }
 
     // Check data type
     if (array_type(in) != num_py_type<scalar>())
     {
-      PyErr_SetString(PyExc_ValueError, "Type mismatch between numpy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Type mismatch between numpy and C++ objects.");
       return false;
     }
 
     // Check dimensions
     if (array_numdims(in) != traits::dim)
     {
-      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between numpy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Dimension mismatch between numpy and C++ objects.");
       return false;
     }
 
@@ -4372,7 +4385,7 @@ SWIG_FromCharPtr(const char *cptr)
 
     if (resize_required) {
       if (!traits::resize(*out, data_size)) {
-        PyErr_SetString(PyExc_ValueError, "Failed to resize C++ object.");
+        PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Failed to resize C++ object.");
         return false;
       }
     }
@@ -4382,7 +4395,7 @@ SWIG_FromCharPtr(const char *cptr)
     PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(in, array_type(in), &isNewObject);
     if (temp == NULL)
     {
-      PyErr_SetString(PyExc_ValueError, "Impossible to convert the input into a Python array object.");
+      PyErr_SetString(PyExc_ValueError, "ConvertFromNumpyToCXX: Impossible to convert the input into a Python array object.");
       return false;
     }
 
@@ -4397,57 +4410,68 @@ SWIG_FromCharPtr(const char *cptr)
 
   // Copy elements in C++ object into an existing numpy object
   template <class A>
-  bool CopyFromCXXToNumPyArray(PyObject* out, A* in)
+  bool CopyFromCXXToNumPyArray(PyObject** out, A* in)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
     const int dim = traits::dim;
 
     // Check object type
-    if (!is_array(out))
+    if (!is_array(*out))
     {
-      PyErr_SetString(PyExc_ValueError, "The given input is not known as a NumPy array or matrix.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: The given input is not known as a NumPy array or matrix.");
       return false;
     }
 
     // Check data type
-    if (array_type(out) != num_py_type<scalar>())
+    if (array_type(*out) != num_py_type<scalar>())
     {
-      PyErr_SetString(PyExc_ValueError, "Type mismatch between NumPy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Type mismatch between NumPy and C++ objects.");
       return false;
     }
 
     // Check dimensions
-    if (array_numdims(out) != traits::dim)
+    if (array_numdims(*out) != traits::dim)
     {
-      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ objects.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Dimension mismatch between NumPy and C++ objects.");
       return false;
     }
 
     // Check sizes
     std::vector<int> data_size(dim);
+    std::vector<long> data_size_cxx(dim);
     bool size_mismatch = false;
     for (int i=0; i<dim; ++i) {
-      data_size[i] = array_size(out,i);
-      size_mismatch = size_mismatch || (traits::size(*in,i) != data_size[i]);
-    }
-    if (size_mismatch) {
-      PyErr_SetString(PyExc_ValueError, "Dimension mismatch between NumPy and C++ object (return argument).");
-      return false;
+      data_size_cxx[i] = data_size[i] = traits::size(*in,i);
+      size_mismatch = size_mismatch || (traits::size(*in,i) != array_size(*out,i));
     }
 
     // Extract data
     int isNewObject = 0;
-    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(out, array_type(out), &isNewObject);
-    //CORRECT?
+    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(*out, array_type(*out), &isNewObject);
+    if (size_mismatch) {
+      PyArray_Dims pydims;
+
+      std::vector<npy_intp> dims_tmp(dim);
+      for (int i=0; i<dim; ++i) {
+        dims_tmp[i] = static_cast<npy_intp>(data_size[i]);
+      }
+      pydims.len = dim;
+      pydims.ptr = &dims_tmp[0];
+
+      int refcheck = 1;//correct?
+      PyArray_Resize(temp, &pydims, refcheck, NPY_CORDER);
+    }
     if (temp == NULL || isNewObject != 0) {
-      PyErr_SetString(PyExc_ValueError, "Impossible to convert the input into a Python array object.");
+      PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Impossible to convert the input into a Python array object.");
       return false;
     }
 
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
 
     copy_data_to_numpy_helper<dim,scalar,A>::invoke(data_size, data, in);
+
+    *out = (PyObject*) temp;//correct?
 
     return true;
   };
@@ -4487,7 +4511,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 1; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4505,12 +4529,13 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 2; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
         for (int i1= 0; i1< data_size[1]; ++i1) { 
           indices[1] = i1;
+          std::cout << "coppying " << out[lin_idx] << " from " <<  traits::element_at(*in, indices) << std::endl;
           out[lin_idx] = traits::element_at(*in, indices);
           ++lin_idx;
         }
@@ -4526,7 +4551,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 3; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4550,7 +4575,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 4; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4577,7 +4602,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 5; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4607,7 +4632,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 6; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4640,7 +4665,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 7; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4675,7 +4700,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 1; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4693,7 +4718,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 2; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4714,7 +4739,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 3; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4738,7 +4763,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 4; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4765,7 +4790,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 5; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4795,7 +4820,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 6; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -4828,7 +4853,7 @@ SWIG_FromCharPtr(const char *cptr)
       typedef CXXTypeTraits<T> traits; 
       const int dim = 7; 
 
-      int lin_idx = 0; 
+      long lin_idx = 0; 
       std::vector<int> indices(dim);
       for (int i0= 0; i0< data_size[0]; ++i0) { 
         indices[0] = i0;
@@ -5757,6 +5782,11 @@ SWIGINTERN PyObject *_wrap_drms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) 
   }
   result = (double)drms((std::vector< double,std::allocator< double > > const &)*arg1);
   resultobj = SWIG_From_double(static_cast< double >(result));
+  {
+    // Argout: &
+    if (!CopyFromCXXToNumPyArray<std::vector<double> >(&obj0, arg1))
+    SWIG_fail;
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5779,6 +5809,11 @@ SWIGINTERN PyObject *_wrap_crms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) 
   }
   result = crms((std::vector< std::complex< double >,std::allocator< std::complex< double > > > const &)*arg1);
   resultobj = SWIG_From_std_complex_Sl_double_Sg_(static_cast< std::complex<double> >(result));
+  {
+    // Argout: &
+    if (!CopyFromCXXToNumPyArray<std::vector<std::complex<double> > >(&obj0, arg1))
+    SWIG_fail;
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5816,6 +5851,11 @@ SWIGINTERN PyObject *_wrap_read_array(PyObject *SWIGUNUSEDPARM(self), PyObject *
   }
   read_array((boost::multi_array< double,4,std::allocator< double > > const &)*arg1);
   resultobj = SWIG_Py_Void();
+  {
+    // Argout: &
+    if (!CopyFromCXXToNumPyArray<boost::multi_array<double,4,std::allocator<double> > >(&obj0, arg1))
+    SWIG_fail;
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5830,6 +5870,32 @@ SWIGINTERN PyObject *_wrap_gen_eigen_tensor(PyObject *SWIGUNUSEDPARM(self), PyOb
   result = gen_eigen_tensor();
   {
     if (!ConvertFromCXXToNumPyArray<Eigen::Tensor<double,4> >(&resultobj, &result))
+    SWIG_fail;
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_read_write_array(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Eigen::Tensor< double,2 > *arg1 = 0 ;
+  Eigen::Tensor< double,2 > temp1 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:read_write_array",&obj0)) SWIG_fail;
+  {
+    // In: &
+    if (!ConvertFromNumpyToCXX<Eigen::Tensor<double,2> >(&temp1, obj0))
+    SWIG_fail;
+    arg1 = &temp1;
+  }
+  read_write_array(*arg1);
+  resultobj = SWIG_Py_Void();
+  {
+    // Argout: &
+    if (!CopyFromCXXToNumPyArray<Eigen::Tensor<double,2> >(&obj0, arg1))
     SWIG_fail;
   }
   return resultobj;
@@ -5864,6 +5930,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"gen_matrix", _wrap_gen_matrix, METH_VARARGS, NULL},
 	 { (char *)"read_array", _wrap_read_array, METH_VARARGS, NULL},
 	 { (char *)"gen_eigen_tensor", _wrap_gen_eigen_tensor, METH_VARARGS, NULL},
+	 { (char *)"read_write_array", _wrap_read_write_array, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -5871,6 +5938,7 @@ static PyMethodDef SwigMethods[] = {
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t = {"_p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t", "Eigen::Matrix< double,Eigen::Dynamic,Eigen::Dynamic > *|matrix_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Eigen__TensorT_double_2_t = {"_p_Eigen__TensorT_double_2_t", "Eigen::Tensor< double,2 > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t = {"_p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t", "boost::multi_array< double,4,std::allocator< double > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__complexT_double_t = {"_p_std__complexT_double_t", "dcomplex *|std::complex< double > *", 0, 0, (void*)0, 0};
@@ -5881,6 +5949,7 @@ static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t,
+  &_swigt__p_Eigen__TensorT_double_2_t,
   &_swigt__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t,
   &_swigt__p_char,
   &_swigt__p_std__complexT_double_t,
@@ -5891,6 +5960,7 @@ static swig_type_info *swig_type_initial[] = {
 };
 
 static swig_cast_info _swigc__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t[] = {  {&_swigt__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Eigen__TensorT_double_2_t[] = {  {&_swigt__p_Eigen__TensorT_double_2_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t[] = {  {&_swigt__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_double_t[] = {  {&_swigt__p_std__complexT_double_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -5901,6 +5971,7 @@ static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__Sw
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Eigen__MatrixT_double_Eigen__Dynamic_Eigen__Dynamic_t,
+  _swigc__p_Eigen__TensorT_double_2_t,
   _swigc__p_boost__multi_arrayT_double_4_std__allocatorT_double_t_t,
   _swigc__p_char,
   _swigc__p_std__complexT_double_t,
