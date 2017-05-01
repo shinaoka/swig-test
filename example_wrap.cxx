@@ -4410,28 +4410,28 @@ SWIG_FromCharPtr(const char *cptr)
 
   // Copy elements in C++ object into an existing numpy object
   template <class A>
-  bool CopyFromCXXToNumPyArray(PyObject** out, A* in)
+  bool CopyFromCXXToNumPyArray(PyObject* out, A* in)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
     const int dim = traits::dim;
 
     // Check object type
-    if (!is_array(*out))
+    if (!is_array(out))
     {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: The given input is not known as a NumPy array or matrix.");
       return false;
     }
 
     // Check data type
-    if (array_type(*out) != num_py_type<scalar>())
+    if (array_type(out) != num_py_type<scalar>())
     {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Type mismatch between NumPy and C++ objects.");
       return false;
     }
 
     // Check dimensions
-    if (array_numdims(*out) != traits::dim)
+    if (array_numdims(out) != traits::dim)
     {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Dimension mismatch between NumPy and C++ objects.");
       return false;
@@ -4443,12 +4443,12 @@ SWIG_FromCharPtr(const char *cptr)
     bool size_mismatch = false;
     for (int i=0; i<dim; ++i) {
       data_size_cxx[i] = data_size[i] = traits::size(*in,i);
-      size_mismatch = size_mismatch || (traits::size(*in,i) != array_size(*out,i));
+      size_mismatch = size_mismatch || (traits::size(*in,i) != array_size(out,i));
     }
 
     // Extract data
     int isNewObject = 0;
-    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(*out, array_type(*out), &isNewObject);
+    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(out, array_type(out), &isNewObject);
     if (size_mismatch) {
       PyArray_Dims pydims;
 
@@ -4459,8 +4459,13 @@ SWIG_FromCharPtr(const char *cptr)
       pydims.len = dim;
       pydims.ptr = &dims_tmp[0];
 
-      int refcheck = 1;//correct?
-      PyArray_Resize(temp, &pydims, refcheck, NPY_CORDER);
+      int refcheck = 0;//correct?
+      PyObject* ret = PyArray_Resize(temp, &pydims, refcheck, NPY_CORDER);
+      if (ret == NULL) {
+        PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Resize of numpy array failed.");
+        return false;
+      }
+      Py_DECREF(ret);
     }
     if (temp == NULL || isNewObject != 0) {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Impossible to convert the input into a Python array object.");
@@ -4470,8 +4475,6 @@ SWIG_FromCharPtr(const char *cptr)
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
 
     copy_data_to_numpy_helper<dim,scalar,A>::invoke(data_size, data, in);
-
-    *out = (PyObject*) temp;//correct?
 
     return true;
   };
@@ -4535,7 +4538,6 @@ SWIG_FromCharPtr(const char *cptr)
         indices[0] = i0;
         for (int i1= 0; i1< data_size[1]; ++i1) { 
           indices[1] = i1;
-          std::cout << "coppying " << out[lin_idx] << " from " <<  traits::element_at(*in, indices) << std::endl;
           out[lin_idx] = traits::element_at(*in, indices);
           ++lin_idx;
         }
@@ -5784,7 +5786,7 @@ SWIGINTERN PyObject *_wrap_drms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) 
   resultobj = SWIG_From_double(static_cast< double >(result));
   {
     // Argout: &
-    if (!CopyFromCXXToNumPyArray<std::vector<double> >(&obj0, arg1))
+    if (!CopyFromCXXToNumPyArray<std::vector<double> >(obj0, arg1))
     SWIG_fail;
   }
   return resultobj;
@@ -5811,7 +5813,7 @@ SWIGINTERN PyObject *_wrap_crms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) 
   resultobj = SWIG_From_std_complex_Sl_double_Sg_(static_cast< std::complex<double> >(result));
   {
     // Argout: &
-    if (!CopyFromCXXToNumPyArray<std::vector<std::complex<double> > >(&obj0, arg1))
+    if (!CopyFromCXXToNumPyArray<std::vector<std::complex<double> > >(obj0, arg1))
     SWIG_fail;
   }
   return resultobj;
@@ -5853,7 +5855,7 @@ SWIGINTERN PyObject *_wrap_read_array(PyObject *SWIGUNUSEDPARM(self), PyObject *
   resultobj = SWIG_Py_Void();
   {
     // Argout: &
-    if (!CopyFromCXXToNumPyArray<boost::multi_array<double,4,std::allocator<double> > >(&obj0, arg1))
+    if (!CopyFromCXXToNumPyArray<boost::multi_array<double,4,std::allocator<double> > >(obj0, arg1))
     SWIG_fail;
   }
   return resultobj;
@@ -5895,7 +5897,7 @@ SWIGINTERN PyObject *_wrap_read_write_array(PyObject *SWIGUNUSEDPARM(self), PyOb
   resultobj = SWIG_Py_Void();
   {
     // Argout: &
-    if (!CopyFromCXXToNumPyArray<Eigen::Tensor<double,2> >(&obj0, arg1))
+    if (!CopyFromCXXToNumPyArray<Eigen::Tensor<double,2> >(obj0, arg1))
     SWIG_fail;
   }
   return resultobj;

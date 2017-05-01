@@ -254,28 +254,28 @@
 
   // Copy elements in C++ object into an existing numpy object
   template <class A>
-  bool CopyFromCXXToNumPyArray(PyObject** out, A* in)
+  bool CopyFromCXXToNumPyArray(PyObject* out, A* in)
   {
     typedef CXXTypeTraits<A> traits;
     typedef typename traits::scalar scalar;
     const int dim = traits::dim;
 
     // Check object type
-    if (!is_array(*out))
+    if (!is_array(out))
     {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: The given input is not known as a NumPy array or matrix.");
       return false;
     }
 
     // Check data type
-    if (array_type(*out) != num_py_type<scalar>())
+    if (array_type(out) != num_py_type<scalar>())
     {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Type mismatch between NumPy and C++ objects.");
       return false;
     }
 
     // Check dimensions
-    if (array_numdims(*out) != traits::dim)
+    if (array_numdims(out) != traits::dim)
     {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Dimension mismatch between NumPy and C++ objects.");
       return false;
@@ -287,12 +287,12 @@
     bool size_mismatch = false;
     for (int i=0; i<dim; ++i) {
       data_size_cxx[i] = data_size[i] = traits::size(*in,i);
-      size_mismatch = size_mismatch || (traits::size(*in,i) != array_size(*out,i));
+      size_mismatch = size_mismatch || (traits::size(*in,i) != array_size(out,i));
     }
 
     // Extract data
     int isNewObject = 0;
-    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(*out, array_type(*out), &isNewObject);
+    PyArrayObject* temp = obj_to_array_contiguous_allow_conversion(out, array_type(out), &isNewObject);
     if (size_mismatch) {
       PyArray_Dims pydims;
 
@@ -303,8 +303,13 @@
       pydims.len = dim;
       pydims.ptr = &dims_tmp[0];
 
-      int refcheck = 1;//correct?
-      PyArray_Resize(temp, &pydims, refcheck, NPY_CORDER);
+      int refcheck = 0;//correct?
+      PyObject* ret = PyArray_Resize(temp, &pydims, refcheck, NPY_CORDER);
+      if (ret == NULL) {
+        PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Resize of numpy array failed.");
+        return false;
+      }
+      Py_DECREF(ret);
     }
     if (temp == NULL || isNewObject != 0) {
       PyErr_SetString(PyExc_ValueError, "CopyFromCXXToNumPyArray: Impossible to convert the input into a Python array object.");
@@ -314,8 +319,6 @@
     scalar* data = static_cast<scalar*>(PyArray_DATA(temp));
 
     copy_data_to_numpy_helper<dim,scalar,A>::invoke(data_size, data, in);
-
-    *out = (PyObject*) temp;//correct?
 
     return true;
   };
@@ -379,7 +382,6 @@
         indices[0] = i0;
         for (int i1= 0; i1< data_size[1]; ++i1) { 
           indices[1] = i1;
-          std::cout << "coppying " << out[lin_idx] << " from " <<  traits::element_at(*in, indices) << std::endl;
           out[lin_idx] = traits::element_at(*in, indices);
           ++lin_idx;
         }
@@ -767,7 +769,7 @@
 %typemap(argout, fragment="Array_Fragments") CLASS &
 {
   // Argout: &
-  if (!CopyFromCXXToNumPyArray<CLASS >(&$input, $1))
+  if (!CopyFromCXXToNumPyArray<CLASS >($input, $1))
     SWIG_fail;
 }
 
