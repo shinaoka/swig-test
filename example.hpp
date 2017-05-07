@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 #include <iostream>
 //#include <alps/gf/gf.hpp>
@@ -5,6 +7,8 @@
 #include <Eigen/Core>
 #include <Eigen/CXX11/Tensor>
 #include <boost/multi_array.hpp>
+
+#include "example_B.hpp"
 
 /* */
 
@@ -23,6 +27,16 @@ gen_matrix() {
         m(i,0) = i;
     }
     return m;
+}
+
+inline void process_B(const B& b) {
+    //do nothing
+}
+
+template<typename T>
+void process_tB(const tB<T>& b) {
+    //do nothing
+    std::cout << "process_tB" << std::endl;
 }
 
 inline void read_array(const boost::multi_array<double,4,std::allocator<double> >& in) {

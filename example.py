@@ -176,6 +176,10 @@ def gen_matrix():
     return _example.gen_matrix()
 gen_matrix = _example.gen_matrix
 
+def process_B(b):
+    return _example.process_B(b)
+process_B = _example.process_B
+
 def read_array(arg1):
     return _example.read_array(arg1)
 read_array = _example.read_array
@@ -187,6 +191,10 @@ gen_eigen_tensor = _example.gen_eigen_tensor
 def read_write_array(arg1):
     return _example.read_write_array(arg1)
 read_write_array = _example.read_write_array
+
+def process_real_tB(b):
+    return _example.process_real_tB(b)
+process_real_tB = _example.process_real_tB
 # This file is compatible with both classic and new-style classes.
 
 

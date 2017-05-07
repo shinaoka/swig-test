@@ -11,6 +11,7 @@
 #alps.gf.load('A.h5')
 import numpy as np
 import example
+import example_B
 
 #print example.drms(np.array([0.2, 0.1]))
 #print example.crms(1J*np.array([0.0, 0.1]))
@@ -27,3 +28,9 @@ a[0,0] = -1.0
 print(a.shape)
 example.read_write_array(a)
 print(a)
+
+b = example_B.B()
+example.process_B(b)
+
+tb = example_B.real_tB()
+example.process_real_tB(tb)

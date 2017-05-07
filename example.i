@@ -3,6 +3,7 @@
 %{
 #define SWIG_FILE_WITH_INIT
 #include "example.hpp"
+#include "example_B.hpp"
 #include <Eigen/Core>
 #include <boost/multi_array.hpp>
 %}
@@ -44,3 +45,4 @@ import_array();
 
 %include "example.hpp"
 
+%template(process_real_tB) process_tB<double>;
